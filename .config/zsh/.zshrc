@@ -27,7 +27,7 @@ zmodload zsh/complist
 bindkey -M menuselect '^[[Z' reverse-menu-complete
 
 # prompt
-PROMPT='%F{cyan}%n%f@%F{magenta}%m%f:%B%F{blue}%2~%f%b λ '
+PROMPT='%F{magenta}%m%f:%B%F{blue}%2~%f%b λ '
 
 #
 # aliases
