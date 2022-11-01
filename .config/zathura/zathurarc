@@ -1,0 +1,10 @@
+" GENERAL
+
+set selection-clipboard clipboard
+
+" APPEARANCE
+
+set font "Delugia 18"
+set guioptions none
+
+include colorscheme

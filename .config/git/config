@@ -1,0 +1,11 @@
+[user]
+	email = gabrielgbrito@icloud.com
+	name = Gabriel G. de Brito
+[core]
+	editor = vim
+[advice]
+	addEmptyPathspec = false
+[init]
+	defaultBranch = master
+[format]
+	pretty = oneline

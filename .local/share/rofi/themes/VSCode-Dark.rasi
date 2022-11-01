@@ -1,0 +1,10 @@
+/* vim:filetype=css
+ */
+* {
+    background: #1E1E1E;
+    primary:    #569cd6;
+    foreground: #56b6c2;
+    secondary:  #c678dd;
+    tertiary:   #dcdcaa;
+    width: 1000;
+}

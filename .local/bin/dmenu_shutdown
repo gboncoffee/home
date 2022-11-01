@@ -1,0 +1,32 @@
+#!/usr/bin/sh
+
+# author Gabriel G. de Brito gabrielgbrito@icloud.com
+# version 1.1.0
+# since Mar 19, 2022
+
+ACTIONS=("lock\nlogout\nsuspend\nrestart\nshutdown")
+CHOICE="$(echo -e $ACTIONS | dmenu -p 'power ')"
+
+if [ "$CHOICE" == "logout" ]
+then
+    # that's the only way I found to not having any random mpd script
+    # running
+    killall -u $USER
+
+elif [ "$CHOICE" == "restart" ]
+then
+    systemctl reboot
+
+elif [ "$CHOICE" == "shutdown" ]
+then
+    systemctl poweroff
+
+elif [ "$CHOICE" == "lock" ]
+then
+    i3lock-config
+
+elif [ "$CHOICE" == "suspend" ]
+then
+    i3lock-config
+    systemctl suspend
+fi

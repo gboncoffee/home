@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# load envvars
+[ -f ~/.zshenv ] && . ~/.zshenv

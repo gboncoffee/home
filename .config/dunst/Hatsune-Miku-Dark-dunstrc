@@ -1,0 +1,108 @@
+# See dunst(5) for all configuration options
+
+[global]
+    monitor = 0
+    follow = none
+
+    width = 500
+    height = 250
+    origin = bottom-right
+    offset = 0x0
+    scale = 0
+
+    notification_limit = 0
+
+    progress_bar = true
+    progress_bar_height = 10
+    progress_bar_frame_width = 1
+    progress_bar_min_width = 150
+    progress_bar_max_width = 300
+
+    indicate_hidden = yes
+
+    transparency = 10
+
+    separator_height = 10
+    separator_color= frame
+    padding = 8
+
+    horizontal_padding = 8
+
+    text_icon_padding = 0
+
+    frame_width = 4
+
+    sort = yes
+
+    font = Delugia Book 17
+    line_height = 0
+    markup = full
+
+    format = "<b>%s</b>\n%b"
+    alignment = left
+    vertical_alignment = center
+
+    show_age_threshold = 60
+
+    ellipsize = middle
+
+    ignore_newline = no
+
+    stack_duplicates = true
+    hide_duplicate_count = false
+
+    show_indicators = yes
+
+    icon_position = off
+    min_icon_size = 0
+    max_icon_size = 32
+    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+
+    sticky_history = yes
+    history_length = 20
+
+    dmenu = /usr/bin/dmenu -p dunst:
+
+    browser = /usr/bin/firefox
+
+    always_run_script = true
+
+    title = Dunst
+
+    class = Dunst
+
+    corner_radius = 0
+
+    ignore_dbusclose = false
+
+    force_xwayland = false
+
+    force_xinerama = false
+
+    mouse_left_click = do_action, close_current
+    mouse_middle_click = close_all
+    mouse_right_click = close_current
+
+
+
+# Experimental features that may or may not work correctly. Do not expect them
+# to have a consistent behaviour across releases.
+[experimental]
+    per_monitor_dpi = false
+
+[urgency_low]
+background = "#242829"
+foreground = "#fcfcdf"
+frame_color = "#1a86b9"
+
+[urgency_normal]
+background = "#242829"
+foreground = "#fcfcdf"
+frame_color = "#1a86b9"
+
+[urgency_critical]
+background = "#df2683"
+foreground = "#fcfcdf"
+frame_color = "#fcfcdf"
+
+# vim: ft=cfg
