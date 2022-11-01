@@ -18,3 +18,4 @@
 .local/share/rofi/themes/colors.rasi
 
 .local/bin/dmenu
+.local/bin/batterymon

@@ -52,7 +52,6 @@
             "zsh"
         ],
         "aur": [
-            "batterymon-git",
             "ctpv-git",
             "dracula",
             "i3lock-color",
@@ -128,8 +127,6 @@
         "aur": [
             "cava-git",
             "cbonsai",
-            "petit-git",
-            "todo-stupid-git",
             "tty-clock-git",
             "unimatrix-git"
         ]

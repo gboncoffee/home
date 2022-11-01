@@ -7,7 +7,7 @@
 # wrapper around i3lock-color
 
 i3lock $* \
-    --image $HOME/pics/Wallpapers/share/archlinux/nagatoro-arch-linux-dracula-bigger.png --centered \
+    --image $HOME/pics/wallpapers/share/archlinux/nagatoro-arch-linux-dracula-bigger.png --centered \
     --{time,date,layout,verif,wrong,greeter}-font='Delugia:style=Regular' \
     --{time,date,layout,greeter,verif,modif}-color=#F8F8F2FF \
     --{time,date,greeter}-size=30 \
