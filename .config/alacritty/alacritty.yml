@@ -7,7 +7,7 @@ window:
     lines: 25
 
   decorations: none
-  opacity: 0.95
+  opacity: 0.90
 
   title: Alacritty
   dynamic_title: true
