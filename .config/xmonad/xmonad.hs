@@ -259,7 +259,7 @@ myStartupHook = do
     spawnOnce "picom"
     spawnOnce "unclutter --start-hidden --jitter 10 --ignore-scrolling"
     spawnOnce "/usr/lib/xfce-polkit/xfce-polkit"
-    spawnOnce "killall batterymon 2> /dev/null ; batterymon"
+    spawnOnce "killall luabatmon 2> /dev/null ; luabatmon"
     spawnOnce "dunst"
     spawnOnce "notify-send --expire-time=3000 \"Welcome back, $USER\""
 

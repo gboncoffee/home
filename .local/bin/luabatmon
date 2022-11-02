@@ -45,8 +45,8 @@ end
 
 -- battery getter function
 getbat = function()
-    local valuefile  = io.open("capacity", "r")
-    local statusfile = io.open("status", "r")
+    local valuefile  = io.open("/sys/class/power_supply/BAT1/capacity", "r")
+    local statusfile = io.open("/sys/class/power_supply/BAT1/status", "r")
 
     value, status = valuefile:read() + 0, statusfile:read()
     
