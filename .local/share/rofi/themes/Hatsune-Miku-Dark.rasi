@@ -5,6 +5,6 @@
     primary:    #bc7fd2;
     foreground: #fcfcdf;
     secondary:  #7cc7d6;
-    tertiary:   #fcfcdf;
+    tertiary:   #1a86b9;
     width: 1000;
 }
