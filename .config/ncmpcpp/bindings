@@ -166,7 +166,7 @@ def_key "i"
 def_key "c"
   clear_main_playlist
 
-def_key "S"
+def_key "P"
   save_playlist
 
 def_key "o"
