@@ -445,7 +445,7 @@ screen_switcher_mode = playlist, media_library, search_engine
 ##
 ## Note: You can define startup screen by choosing screen from the list above.
 ##
-startup_screen = media_library
+startup_screen = playlist
 #
 ##
 ## Note: You can define startup slave screen by choosing screen from the list
