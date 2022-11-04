@@ -15,9 +15,6 @@ set cleaner ctpvclear
 &ctpv -s $id
 &ctpvquit $id
 
-# i dont like the server lol
-set autoquit on
-
 # why not?
 set hidden
 # }}}
