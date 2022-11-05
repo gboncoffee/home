@@ -52,7 +52,7 @@
             "zsh"
         ],
         "aur": [
-            "ctpv-git",
+            "stpv-git",
             "dracula",
             "i3lock-color",
             "ttf-delugia-code",
