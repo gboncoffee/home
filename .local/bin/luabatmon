@@ -101,12 +101,12 @@ repeat
         if value <= 10 and not alerted then
             alerted = true
             print "on critical"
-            notify("Critical battery level", "Battery level is below 10%%. Please connect the computer to the charger immediately.", true)
+            notify("Critical battery level", "Battery level is below 10%. Please connect the computer to the charger immediately.", true)
         -- on low
         elseif value <= 20 and not notified then
             notified = true
             print "on low"
-            notify("Low battery level", "Battery level is below 20%%. Please connect the computer to the charger.")
+            notify("Low battery level", "Battery level is below 20%. Please connect the computer to the charger.")
         end
     end
 
