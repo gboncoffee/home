@@ -18,7 +18,6 @@ import XMonad.Util.Cursor
 
 import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.EwmhDesktops
-import XMonad.Hooks.ShowWName
 
 -- Layout modifiers
 import XMonad.Layout.MultiToggle.Instances
@@ -239,15 +238,7 @@ myLayout = id
 -- EVENT HANDLING {{{
 --
 
-myShowWNameTheme :: SWNConfig
-myShowWNameTheme = def
-    { swn_font              = "xft:Delugia:Bold:size=70"
-    , swn_fade              = 0.3
-    , swn_bgcolor           = colorbg
-    , swn_color             = color5
-    }
-
-myLogHook = showWNameLogHook myShowWNameTheme
+myLogHook = return ()
 
 myStartupHook :: X ()
 myStartupHook = do
