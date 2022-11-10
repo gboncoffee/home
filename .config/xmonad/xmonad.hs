@@ -225,8 +225,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 myLayout = id
     . smartBorders
     . MT.mkToggle (MT.single NBFULL)
-      $ MG.magnifier tiled
-    ||| tiled
+      $ tiled
+    ||| MG.magnifier tiled
     where
         -- default tilling
         tiled   = Tall nmaster delta ratio
@@ -246,13 +246,11 @@ myStartupHook = do
     spawnOnce "feh --no-fehbg --bg-fill ~/.config/wallpaper"
     spawnOnce "conky"
     spawnOnce "killall mpd 2> /dev/null ; mpd"
-    spawnOnce "killall tasks 2> /dev/null ; tasks"
     spawnOnce "picom"
     spawnOnce "unclutter --start-hidden --jitter 10 --ignore-scrolling"
     spawnOnce "/usr/lib/xfce-polkit/xfce-polkit"
     spawnOnce "killall luabatmon 2> /dev/null ; luabatmon"
     spawnOnce "dunst"
-    spawnOnce "notify-send --expire-time=3000 \"Welcome back, $USER\""
 
 -- }}}
 
