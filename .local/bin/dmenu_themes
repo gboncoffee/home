@@ -53,6 +53,8 @@ function hooks {
 # add themes here, as long as all programs are individually covered
 # by theme(), it'll work
 THEMES="Dracula
+Tokyo-Night-Day
+Tokyo-Night-Night
 Catppuccin-Latte
 Catppuccin-Mocha
 Hatsune-Miku-Dark
