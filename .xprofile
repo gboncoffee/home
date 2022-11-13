@@ -2,3 +2,6 @@
 
 # load envvars
 [ -f ~/.zshenv ] && . ~/.zshenv
+
+# disable dpms
+xset s off -dpms
