@@ -1,20 +1,19 @@
 /* vim:filetype=css
  */
 
-* {
-    width: 600;
-}
-
 element-text, element-icon , mode-switcher {
     background-color: inherit;
     text-color:       inherit;
 }
 
 window {
-    height: 360px;
-    border: 3px;
+    height: 400;
+    border: 0px 4px 4px 4px;
     border-color: @tertiary;
     background-color: @background;
+    anchor: north;
+    location: north;
+    width: 55%;
 }
 
 mainbox {
@@ -22,67 +21,31 @@ mainbox {
 }
 
 inputbar {
-    children: [prompt,entry];
+    children: [entry];
     background-color: @background;
-    border-radius: 5px;
-    padding: 2px;
-}
-
-prompt {
-    background-color: @primary;
-    padding: 6px;
-    text-color: @background;
-    border-radius: 3px;
-    margin: 20px 0px 0px 20px;
-}
-
-textbox-prompt-colon {
-    expand: false;
-    str: ":";
 }
 
 entry {
-    padding: 6px;
-    margin: 20px 0px 0px 10px;
-    text-color: @foreground;
-    background-color: @background;
+    text-color: @background;
+    background-color: @tertiary;
 }
 
 listview {
-    border: 0px 0px 0px;
-    padding: 6px 0px 0px;
-    margin: 10px 0px 0px 20px;
-    columns: 3;
-    lines: 5;
+    border: 10px 0px 0px 10px;
+    columns: 4;
+    lines: 7;
     background-color: @background;
 }
 
 element {
-    padding: 5px;
     background-color: @background;
     text-color: @foreground;
+    border: 0px 10px 0px 0px;
 }
 
 element selected {
-    background-color:  @background;
-    text-color: @secondary;
-}
-
-mode-switcher {
-    spacing: 0;
-  }
-
-button {
-    padding: 10px;
-    background-color: @background;
-    text-color: @tertiary;
-    vertical-align: 0.5; 
-    horizontal-align: 0.5;
-}
-
-button selected {
-  background-color: @background;
-  text-color: @secondary;
+    background-color:  @primary;
+    text-color: @background;
 }
 
 @import "colors"
