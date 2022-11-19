@@ -7,10 +7,8 @@
             "dunst",
             "feh",
             "firefox",
-            "gnome-themes-extra",
             "gnome-screenshot",
             "gnu-free-fonts",
-            "gtk-engine-murrine",
             "imagemagick",
             "lf",
             "libnotify",
@@ -55,6 +53,7 @@
         ],
         "aur": [
             "stpv-git",
+            "dracula",
             "i3lock-color",
             "ttf-delugia-code",
             "xfce-polkit",
