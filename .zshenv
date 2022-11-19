@@ -45,5 +45,5 @@ export TERMINAL=alacritty
 export CC=clang
 
 # sensible defaults
-export GTK_THEME=Dracula
+export GTK_THEME="Tokyonight-Dark-BL"
 export PATH="$PATH:$HOME/.local/bin/"
