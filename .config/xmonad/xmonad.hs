@@ -73,6 +73,7 @@ myGridConfig colorizer = (buildDefaultGSConfig myColorizer)
 myManageHook = composeAll
     [ className =? "MPlayer"          --> doFullFloat
     , className =? "mpv"              --> doFullFloat
+    , className =? "feh"              --> doCenterFloat
     , className =? "Gimp"             --> doCenterFloat 
     , className =? "Gnome-screenshot" --> doCenterFloat
     , className =? "Xfce-polkit"      --> doCenterFloat
