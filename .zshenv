@@ -40,7 +40,7 @@ export LESS_TERMCAP_us=$'\e[1;4;36m'
 
 # default programs
 export EDITOR=nvim
-export BROWSER=firefox
+export BROWSER=chromium
 export TERMINAL=alacritty
 export CC=clang
 
