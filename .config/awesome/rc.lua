@@ -244,11 +244,9 @@ globalkeys = gears.table.join(
     keymap({ modkey }, "k", function()
         awful.client.focus.byidx(-1)
     end),
-
     --
     -- layouts
     --
-
     -- swap clients
     keymap({ modkey, "Shift" }, "j", function()
         awful.client.swap.byidx(1)
@@ -284,11 +282,9 @@ globalkeys = gears.table.join(
     keymap({ modkey, "Shift" }, "space", function()
         awful.layout.inc(-1)
     end),
-
     --
     -- progs
     --
-
     -- terminal
     keymap({ modkey }, "Return", function()
         spawn(terminal)
@@ -317,11 +313,9 @@ globalkeys = gears.table.join(
     keymap({ modkey }, "p", function()
         spawn "gnome-screenshot -i"
     end),
-
     --
     -- dmenu
     --
-
     keymap({ modkey }, "a", function()
         spawn "rofi -show run"
     end),
@@ -333,15 +327,10 @@ globalkeys = gears.table.join(
     keymap({ modkey, "Control" }, "p", function() 
         spawn "passmenu --type"
     end),
-    -- themes
-    keymap({ modkey, "Control" }, "t", function() 
-        spawn "dmenu_themes"
-    end),
     -- web
     keymap({ modkey }, "b", function() 
         spawn "dmenu_web"
     end),
-
     --
     -- audio
     --
@@ -401,10 +390,6 @@ clientkeys = gears.table.join(
     -- move to master
     keymap({ modkey, "Shift" }, "Return", function(c)
         c:swap(awful.client.getmaster())
-    end),
-    -- raise
-    keymap({ modkey, "Shift" }, "r", function(c)
-        c.ontop = not c.ontop
     end)
 )
 
