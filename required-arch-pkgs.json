@@ -1,12 +1,12 @@
 {
     "required": {
         "repos": [
-            "base-devel",
             "alacritty",
+            "awesome",
+            "base-devel",
             "bottom",
-            "dunst",
+            "chromium",
             "feh",
-            "firefox",
             "gnome-screenshot",
             "gnu-free-fonts",
             "imagemagick",
@@ -42,8 +42,6 @@
             "unclutter",
             "xclip",
             "xdg-user-dirs",
-            "xmonad",
-            "xmonad-contrib",
             "xorg",
             "yt-dlp",
             "zathura",
@@ -51,6 +49,7 @@
             "zsh"
         ],
         "aur": [
+            "lain-git",
             "stpv-git",
             "dracula",
             "i3lock-color",
@@ -77,7 +76,6 @@
             "julia",
             "luajit",
             "lua",
-            "luarocks",
             "python",
             "rustup"
         ]
