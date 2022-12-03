@@ -46,4 +46,5 @@ export CC=clang
 
 # sensible defaults
 export GTK_THEME=Dracula
+export XCURSOR_THEME=Simple-and-Soft
 export PATH="$PATH:$HOME/.local/bin/"
