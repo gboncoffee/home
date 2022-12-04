@@ -505,4 +505,5 @@ client.connect_signal("focus", function(c) c.border_color   = beautiful.border_c
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_color_normal end)
 -- }}}
 
-awful.spawn(os.getenv("HOME") .. "/.config/awesome/autorun.sh")
+io.popen(os.getenv("HOME") .. "/.config/awesome/autorun.sh")
+io.popen("xsetroot -cursor_name left_ptr")

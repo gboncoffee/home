@@ -18,6 +18,7 @@ theme.useless_gap       = nil
 theme.font              = "Delugia Book Medium 14"
 theme.notification_font = "Delugia Book Medium 18"
 theme.wallpaper         = os.getenv("HOME") .. "/.config/wallpaper"
+theme.wibar_cursor      = "Simple-and-Soft"
 
 theme.border_color_active = c.blue
 theme.border_color_normal = c.bg
