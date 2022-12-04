@@ -40,7 +40,7 @@ modkey = "Mod4"
 
 awful.layout.layouts = {
     awful.layout.suit.tile,
-    awful.layout.suit.max.fullscreen,
+    awful.layout.suit.floating
 }
 -- }}}
 
@@ -282,7 +282,6 @@ globalkeys = gears.table.join(
     keymap({ modkey, "Shift" }, "space", function()
         awful.layout.inc(-1)
     end),
-    --
     -- progs
     --
     -- terminal
@@ -358,8 +357,9 @@ globalkeys = gears.table.join(
     keymap({ "Mod1", "Control" }, "minus", function()
         spawn "mpc volume -10"
     end),
-
+    --
     -- others
+    --
     keymap({ modkey, "Control" }, "r", awesome.restart),
     keymap({ "Mod1", "Control" }, "x", function()
         spawn "changexmap"
@@ -387,6 +387,32 @@ clientkeys = gears.table.join(
     end),
     -- float toggle
     keymap({ modkey, "Shift" }, "t",  awful.client.floating.toggle),
+    -- move clients
+    keymap({ modkey, "Control" }, "h", function(c)
+        c.x = c.x - 15
+    end),
+    keymap({ modkey, "Control" }, "j", function(c)
+        c.y = c.y + 15
+    end),
+    keymap({ modkey, "Control" }, "k", function(c)
+        c.y = c.y - 15
+    end),
+    keymap({ modkey, "Control" }, "l", function(c)
+        c.x = c.x + 15
+    end),
+    -- resize clients
+    keymap({ modkey, "Mod1" }, "k", function(c)
+        c.height = c.height - 15
+    end),
+    keymap({ modkey, "Mod1" }, "j", function(c)
+        c.height = c.height + 15
+    end),
+    keymap({ modkey, "Mod1" }, "h", function(c)
+        c.width = c.width - 15
+    end),
+    keymap({ modkey, "Mod1" }, "l", function(c)
+        c.width = c.width + 15
+    end),
     -- move to master
     keymap({ modkey, "Shift" }, "Return", function(c)
         c:swap(awful.client.getmaster())
