@@ -77,13 +77,13 @@ local mympd = lain.widget.mpd {
     end,
 }
 mympd.widget.align = "center"
-local mypulse = lain.widget.pulse {
-    timeout = 1,
+local myalsa = lain.widget.alsa {
+    timeout = 2,
     settings = function()
-        if volume_now.muted == "yes" then
+        if volume_now.status == "off" then
             widget:set_text "蓼 muted"
         else
-            widget:set_text("蓼 " .. volume_now.left .. "%")
+            widget:set_text("蓼 " .. volume_now.level .. "%")
         end
     end,
 }
@@ -157,7 +157,7 @@ awful.screen.connect_for_each_screen(function(s)
             {
                 {
                     {
-                        mypulse.widget,
+                        myalsa.widget,
                         widget = wibox.container.background,
                         fg = beautiful.c.yellow
                     },
@@ -506,4 +506,3 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_c
 -- }}}
 
 io.popen(os.getenv("HOME") .. "/.config/awesome/autorun.sh")
-io.popen("xsetroot -cursor_name left_ptr")

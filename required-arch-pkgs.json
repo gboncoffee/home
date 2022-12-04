@@ -2,6 +2,7 @@
     "required": {
         "repos": [
             "alacritty",
+            "alsa-utils",
             "awesome",
             "base-devel",
             "bottom",
