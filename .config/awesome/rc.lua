@@ -115,6 +115,31 @@ local myend = wibox.widget {
 }
 -- }}}
 
+-- popup widgets {{{
+local mycalendar = wibox.widget {
+    font   = "Delugia Book 25",
+    align  = "center",
+    widget = wibox.widget.calendar.month
+}
+mycalendar.spacing  = 15
+mycalendar.fn_embed = function(widget, flag, date)
+    if flag == "focus" then
+        return wibox.widget {
+                widget,
+                fg = beautiful.border_color_active,
+                widget  = wibox.container.background
+            }
+    end
+    return widget
+end
+local mypopupclock = wibox.widget {
+    format = "%H:%M",
+    font   = "Delugia Book 70",
+    align  = "center",
+    widget = wibox.widget.textclock
+}
+-- }}}
+
 awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
     awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
@@ -124,6 +149,7 @@ awful.screen.connect_for_each_screen(function(s)
         screen  = s
     }
 
+    -- bar {{{
     s.wb = awful.wibar { position = "right" }
     s.wb:setup {
         layout = wibox.layout.align.vertical,
@@ -203,7 +229,38 @@ awful.screen.connect_for_each_screen(function(s)
                 layout = wibox.layout.fixed.vertical,
             }
         },
+    } -- }}}
+
+    -- popup {{{
+    s.calendar = mycalendar
+    s.popup = awful.popup {
+        widget = {
+            {
+                {
+                    mysep,
+                    mypopupclock,
+                    layout = wibox.layout.align.horizontal
+                },
+                {
+                    mysep,
+                    mycalendar,
+                    mysep,
+                    layout = wibox.layout.align.horizontal,
+                    expand = "outside",
+                },
+                layout = wibox.layout.align.vertical,
+            },
+            bg      = beautiful.wibar_bg,
+            widget  = wibox.container.background
+        },
+        placement      = awful.placement.centered,
+        visible        = false,
+        ontop          = true,
+        minimum_width  = 600,
+        border_width   = beautiful.border_width,
+        border_color   = beautiful.border_color_active
     }
+    -- }}}
 end)
 
 -- }}}
@@ -287,6 +344,12 @@ globalkeys = gears.table.join(
     keymap({ modkey, "Shift" }, "b", function()
         local s = awful.screen.focused()
         s.wb.visible = not s.wb.visible
+    end),
+    -- toggle calendar
+    keymap({ modkey, "Shift" }, "c", function()
+        local s = awful.screen.focused()
+        s.popup.visible = not s.popup.visible
+        s.calendar.date = os.date("*t")
     end),
     -- progs
     --
