@@ -62,7 +62,7 @@ end
 screen.connect_signal("property::geometry", set_wallpaper)
 -- }}}
 
--- widgets {{{
+-- bar widgets {{{
 local mympd = lain.widget.mpd {
     music_dir = "~/mus",
     notify    = "off",
@@ -124,8 +124,8 @@ awful.screen.connect_for_each_screen(function(s)
         screen  = s
     }
 
-    local wb = awful.wibar { position = "right" }
-    wb:setup {
+    s.wb = awful.wibar { position = "right" }
+    s.wb:setup {
         layout = wibox.layout.align.vertical,
         {
             {
@@ -205,6 +205,7 @@ awful.screen.connect_for_each_screen(function(s)
         },
     }
 end)
+
 -- }}}
 
 -- notify {{{
@@ -281,6 +282,11 @@ globalkeys = gears.table.join(
     end),
     keymap({ modkey, "Shift" }, "space", function()
         awful.layout.inc(-1)
+    end),
+    -- toggle bar
+    keymap({ modkey, "Shift" }, "b", function()
+        local s = awful.screen.focused()
+        s.wb.visible = not s.wb.visible
     end),
     -- progs
     --
