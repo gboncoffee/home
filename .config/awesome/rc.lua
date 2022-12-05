@@ -68,11 +68,11 @@ local mympd = lain.widget.mpd {
     notify    = "off",
     settings  = function()
         if mpd_now.artist == "N/A" then
-            widget:set_text(" nothing playing")
+            widget:set_markup(" nothing playing")
         elseif mpd_now.artist == "Various" then
-            widget:set_text(" " .. mpd_now.title)
+            widget:set_markup(" " .. mpd_now.title)
         else
-            widget:set_text(" " .. mpd_now.artist .. " - " .. mpd_now.title)
+            widget:set_markup(" " .. mpd_now.artist .. " - " .. mpd_now.title)
         end
     end,
 }
