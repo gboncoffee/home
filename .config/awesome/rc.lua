@@ -40,7 +40,6 @@ modkey = "Mod4"
 
 awful.layout.layouts = {
     awful.layout.suit.tile,
-    awful.layout.suit.floating
 }
 -- }}}
 
@@ -327,13 +326,6 @@ globalkeys = gears.table.join(
     --
     -- layouts
     --
-    -- swap clients
-    keymap({ modkey, "Shift" }, "j", function()
-        awful.client.swap.byidx(1)
-    end),
-    keymap({ modkey, "Shift" }, "k", function()
-        awful.client.swap.byidx(-1)
-    end),
     -- focus other screens
     keymap({ modkey, "Control" }, "period", function()
         awful.screen.focus_relative(1)
@@ -349,10 +341,10 @@ globalkeys = gears.table.join(
         awful.tag.incmwfact(-0.05)
     end),
     -- add/remove masters
-    keymap({ modkey, "Shift" }, "h", function()
+    keymap({ modkey, "Shift" }, "a", function()
         awful.tag.incnmaster(1, nil, true)
     end),
-    keymap({ modkey, "Shift" }, "l", function()
+    keymap({ modkey, "Shift" }, "s", function()
         awful.tag.incnmaster(-1, nil, true)
     end),
     -- next/previous layout
@@ -479,34 +471,62 @@ clientkeys = gears.table.join(
     -- float toggle
     keymap({ modkey, "Shift" }, "t",  awful.client.floating.toggle),
     -- move clients
-    keymap({ modkey, "Control" }, "h", function(c)
-        c.x = c.x - 15
+    keymap({ modkey, "Shift" }, "h", function(c)
+        if c.floating then
+            c.x = c.x - 15
+        else
+            awful.client.swap.bydirection("left", c)
+        end
     end),
-    keymap({ modkey, "Control" }, "j", function(c)
-        c.y = c.y + 15
+    keymap({ modkey, "Shift" }, "j", function(c)
+        if c.floating then
+            c.y = c.y + 15
+        else
+            awful.client.swap.bydirection("down", c)
+        end
     end),
-    keymap({ modkey, "Control" }, "k", function(c)
-        c.y = c.y - 15
+    keymap({ modkey, "Shift" }, "k", function(c)
+        if c.floating then
+            c.y = c.y - 15
+        else
+            awful.client.swap.bydirection("up", c)
+        end
     end),
-    keymap({ modkey, "Control" }, "l", function(c)
-        c.x = c.x + 15
+    keymap({ modkey, "Shift" }, "l", function(c)
+        if c.floating then
+            c.x = c.x + 15
+        else
+            awful.client.swap.bydirection("right", c)
+        end
     end),
     -- resize clients
-    keymap({ modkey, "Mod1" }, "k", function(c)
+    keymap({ modkey, "Control" }, "k", function(c)
+        if not c.floating then c.floating = true end
         c.height = c.height - 15
     end),
-    keymap({ modkey, "Mod1" }, "j", function(c)
+    keymap({ modkey, "Control" }, "j", function(c)
+        if not c.floating then c.floating = true end
         c.height = c.height + 15
     end),
-    keymap({ modkey, "Mod1" }, "h", function(c)
+    keymap({ modkey, "Control" }, "h", function(c)
+        if not c.floating then c.floating = true end
         c.width = c.width - 15
     end),
-    keymap({ modkey, "Mod1" }, "l", function(c)
+    keymap({ modkey, "Control" }, "l", function(c)
+        if not c.floating then c.floating = true end
         c.width = c.width + 15
     end),
     -- move to master
     keymap({ modkey, "Shift" }, "Return", function(c)
-        c:swap(awful.client.getmaster())
+        if c == awful.client.getmaster() then
+            awful.client.swap.byidx(1, c)
+        else
+            c:swap(awful.client.getmaster())
+        end
+    end),
+    -- toggle sticky
+    keymap({ modkey, "Shift" }, "0", function(c)
+        c.sticky = not c.sticky
     end)
 )
 
