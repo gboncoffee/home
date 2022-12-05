@@ -90,7 +90,29 @@ local myalsa = lain.widget.alsa {
 local mybattery = lain.widget.bat {
     battery = "BAT1",
     timeout = 10,
+    n_perc  = { 10, 20 },
     settings = function()
+        bat_notification_charged_preset = {
+            title   = "Battery full",
+            text    = "You can unplug the cable",
+            timeout = 10,
+            fg      = beautiful.notification_fg,
+            bg      = beautiful.notification_bg
+        }
+        bat_notification_low_preset = {
+            title   = "Battery low",
+            text    = "Plug the cable!",
+            timeout = 15,
+            fg      = beautiful.notification_fg,
+            bg      = beautiful.notification_bg
+        }
+        bat_notification_critical_preset = {
+            title   = "Battery exhausted",
+            text    = "Shutdown imminent",
+            timeout = 0,
+            fg      = beautiful.notification_urgent_bg,
+            bg      = beautiful.notification_fg
+        }
         local icon = " "
         if bat_now.ac_status then
             icon = " "
