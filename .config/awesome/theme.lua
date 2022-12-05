@@ -7,7 +7,8 @@ local c = {
     blue   = '#bd93f9',
     red    = '#ff5555',
     yellow = '#f1fa8c',
-    cyan   = '#8be9fd'
+    cyan   = '#8be9fd',
+    grey   = '#6272a4'
 }
 
 local theme = {}
@@ -58,6 +59,7 @@ theme.taglist_fg_focus  = c.bg
 theme.taglist_bg_focus  = c.blue
 theme.taglist_fg_urgent = c.fg
 theme.taglist_bg_urgent = c.red
+theme.taglist_fg_empty  = c.grey
 theme.taglist_spacing   = 4
 
 return theme
