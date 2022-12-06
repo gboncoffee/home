@@ -33,11 +33,7 @@ end
 beautiful.init(os.getenv("HOME") .. "/.config/awesome/theme.lua")
 
 terminal = "alacritty"
-editor = os.getenv("EDITOR")
-editor_cmd = terminal .. " -e " .. editor
-
 modkey = "Mod4"
-
 awful.layout.layouts = {
     awful.layout.suit.tile,
 }
@@ -528,6 +524,13 @@ clientkeys = gears.table.join(
     keymap({ modkey, "Shift" }, "0", function(c)
         c.sticky = not c.sticky
     end)
+    -- move between screens
+    keymap({ modkey, "Shift" }, "period", function(c)
+        c:move_to_screen(c.screen.index + 1)
+    end),
+    keymap({ modkey, "Shift" }, "comma", function(c)
+        c:move_to_screen(c.screen.index - 1)
+    end),
 )
 
 for i = 1, 9 do
