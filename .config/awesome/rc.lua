@@ -523,14 +523,14 @@ clientkeys = gears.table.join(
     -- toggle sticky
     keymap({ modkey, "Shift" }, "0", function(c)
         c.sticky = not c.sticky
-    end)
+    end),
     -- move between screens
     keymap({ modkey, "Shift" }, "period", function(c)
         c:move_to_screen(c.screen.index + 1)
     end),
     keymap({ modkey, "Shift" }, "comma", function(c)
         c:move_to_screen(c.screen.index - 1)
-    end),
+    end)
 )
 
 for i = 1, 9 do
