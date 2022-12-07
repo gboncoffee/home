@@ -16,6 +16,12 @@ local taglist_buttons = function()
 end
 
 local mysep = wibox.widget {
+    text   = " ",
+    align  = "center",
+    widget = wibox.widget.textbox
+}
+
+local mydoublesep = wibox.widget {
     text   = "  ",
     align  = "center",
     widget = wibox.widget.textbox
@@ -98,13 +104,13 @@ local myend = wibox.widget { -- {{{
 
 -- }}}
 
-M.set_bar = function(s, taglist) -- {{{
+M.set_bar = function(s, mytaglist) -- {{{
     s.wb = awful.wibar { position = "right" }
     s.wb:setup {
         layout = wibox.layout.align.vertical,
         {
             {
-                taglist,
+                mytaglist,
                 direction = 'west',
                 widget = wibox.container.rotate
             },
@@ -113,7 +119,7 @@ M.set_bar = function(s, taglist) -- {{{
         {
             layout = wibox.layout.align.vertical,
             {
-                mysep,
+                mydoublesep,
                 widget = wibox.container.rotate,
                 direction = 'west',
             },
@@ -130,6 +136,11 @@ M.set_bar = function(s, taglist) -- {{{
         {
             layout = wibox.layout.fixed.vertical,
             {
+                {
+                    mysep,
+                    widget = wibox.container.rotate,
+                    direction = 'west',
+                },
                 {
                     {
                         myalsa.widget,
