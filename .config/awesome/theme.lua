@@ -60,6 +60,6 @@ theme.taglist_bg_focus  = c.blue
 theme.taglist_fg_urgent = c.fg
 theme.taglist_bg_urgent = c.red
 theme.taglist_fg_empty  = c.grey
-theme.taglist_spacing   = 4
+theme.taglist_spacing   = 0
 
 return theme

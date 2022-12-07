@@ -137,7 +137,7 @@ M.set_bar = function(s, mytaglist) -- {{{
             layout = wibox.layout.fixed.vertical,
             {
                 {
-                    mysep,
+                    mydoublesep,
                     widget = wibox.container.rotate,
                     direction = 'west',
                 },
