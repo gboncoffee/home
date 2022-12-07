@@ -83,7 +83,7 @@ local mybattery = lain.widget.bat { -- {{{
             bg      = beautiful.notification_fg
         }
         local icon = " "
-        if bat_now.ac_status then
+        if bat_now.ac_status == 1 then
             icon = " "
         end
         widget:set_text(icon .. bat_now.perc .. "%")
