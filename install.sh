@@ -23,8 +23,6 @@ $COMMAND $PREFIX/.xprofile $HOME
 
 ln -sf /usr/bin/rofi $HOME/.local/bin/dmenu
 
-.local/bin/dmenu_themes Dracula
-
 mkdir -p $HOME/.config/zsh/plugs/
 git clone "https://github.com/ael-code/zsh-colored-man-pages"    $HOME/.config/zsh/plugs/zsh-colored-man-pages
 git clone "https://github.com/zsh-users/zsh-syntax-highlighting" $HOME/.config/zsh/plugs/zsh-syntax-highlighting
