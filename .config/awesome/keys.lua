@@ -57,7 +57,7 @@ M.globalkeys = function()
         -- toggle calendar
         keymap({ modkey, "Shift" }, "c", function()
             local s = awful.screen.focused()
-            s.popup.visible = not s.popup.visible
+            s.calendar_popup.visible = not s.calendar_popup.visible
             s.calendar.date = os.date("*t")
         end),
         -- }}}
@@ -151,7 +151,7 @@ M.globalkeys = function()
             spawn "monitors"
         end),
         keymap({ modkey, "Control" }, "c", function()
-            naughty.destroy_all_notifications(nil, nil)
+            require "naughty".destroy_all_notifications(nil, nil)
         end),
         keymap({ modkey, "Control" }, "b", function()
             spawn "dmenu_bluetooth"
@@ -282,14 +282,16 @@ end
 M.clientbuttons = function()
     return gears.table.join(
         awful.button({ }, 1, function (c)
-            c:emit_signal("request::activate", "mouse_click", {raise = true})
+            c:emit_signal("request::activate", "mouse_click", { raise = true })
         end),
         awful.button({ modkey }, 1, function (c)
-            c:emit_signal("request::activate", "mouse_click", {raise = true})
+            c:emit_signal("request::activate", "mouse_click", { raise = true })
+            if not c.floating then c.floating = true end
             awful.mouse.client.move(c)
         end),
         awful.button({ modkey }, 3, function (c)
-            c:emit_signal("request::activate", "mouse_click", {raise = true})
+            c:emit_signal("request::activate", "mouse_click", { raise = true })
+            if not c.floating then c.floating = true end
             awful.mouse.client.resize(c)
         end)
     )
