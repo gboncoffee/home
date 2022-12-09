@@ -30,11 +30,10 @@ end
 -- }}}
 
 -- ensure Lua gc runs more often cause of mem leaks
-gears.timer {
-    timeout   = 30,
-    autostart = true,
-    callback  = collectgarbage
-}
+gears.timer.start_new(10, function()
+    collectgarbage("step", 20000)
+    return true
+end)
 
 beautiful.init(os.getenv("HOME") .. "/.config/awesome/theme.lua")
 
