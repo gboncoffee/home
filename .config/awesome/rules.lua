@@ -25,6 +25,7 @@ awful.rules.rules = {
                 "Xfce-polkit",
                 "calculator",
                 "music-panel",
+                "pulse-panel",
             },
         }, 
         properties = { 

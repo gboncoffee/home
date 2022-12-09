@@ -78,7 +78,7 @@ M.globalkeys = function()
         end),
         -- sys monitor
         keymap({ modkey }, "s", function()
-            spawn(terminal .. " -t 'Sys Monitor' -e btm")
+            spawn(terminal .. " --class pulse-panel,pulse-panel -e pulsemixer")
         end),
         -- file man
         keymap({ modkey }, "f", function()
@@ -116,13 +116,13 @@ M.globalkeys = function()
         -- audio {{{
         --
         keymap({ "Mod1", "Control" }, "k", function()
-            spawn "pulsevolume --increase"
+            spawn "pulsemixer --change-volume +1"
         end),
         keymap({ "Mod1", "Control" }, "j", function()
-            spawn "pulsevolume --decrease"
+            spawn "pulsemixer --change-volume -1"
         end),
         keymap({ "Mod1", "Control" }, "m", function()
-            spawn "pulsevolume --mute"
+            spawn "pulsemixer --toggle-mute"
         end),
         keymap({ "Mod1", "Control" }, "p", function()
             spawn "mpc toggle"
