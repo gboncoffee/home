@@ -33,12 +33,17 @@ local mympd = lain.widget.mpd { -- {{{
     music_dir = "~/mus",
     notify    = "off",
     settings  = function()
+
         if mpd_now.artist == "N/A" then
             widget:set_markup(" nothing playing")
-        elseif mpd_now.artist == "Various" then
-            widget:set_markup(" " .. mpd_now.title)
         else
-            widget:set_markup(" " .. mpd_now.artist .. " - " .. mpd_now.title)
+            local icon = " "
+            if mpd_now.state == "play" then icon = " " end
+            if mpd_now.artist == "Various" then
+                widget:set_markup(" " .. mpd_now.title .. icon)
+            else
+                widget:set_markup(" " .. mpd_now.artist .. " - " .. mpd_now.title .. icon)
+            end
         end
     end,
 }
