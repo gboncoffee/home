@@ -3,7 +3,7 @@
  */
 configuration {
     modi: "run";
-    font: "Delugia Book 20";
+    font: "Delugia Book 22";
     terminal: "alacritty";
     case-sensitive: false;
     sidebar-mode: false;

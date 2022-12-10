@@ -7,13 +7,13 @@ element-text, element-icon , mode-switcher {
 }
 
 window {
-    height: 400;
-    border: 0px 4px 4px 4px;
+    border: 4px;
     border-color: @tertiary;
     background-color: @background;
-    anchor: north;
-    location: north;
-    width: 55%;
+    /* anchor: north; */
+    /* location: north; */
+    width: 600px;
+    height: 50%;
 }
 
 mainbox {
@@ -26,13 +26,14 @@ inputbar {
 }
 
 entry {
-    text-color: @background;
-    background-color: @tertiary;
+    text-color: @foreground;
+    background-color: @background;
+    border: 10px 0px 0px 10px;
 }
 
 listview {
     border: 10px 0px 0px 10px;
-    columns: 4;
+    columns: 2;
     lines: 7;
     background-color: @background;
 }
