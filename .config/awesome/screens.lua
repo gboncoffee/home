@@ -5,7 +5,7 @@ local beautiful = require "beautiful"
 local M = {}
 
 M.set_wallpaper = function()
-    gears.wallpaper.maximized(beautiful.wallpaper, s, true)
+    awful.spawn("feh --no-fehbg --bg-fill " .. beautiful.wallpaper)
 end
 
 M.initscr = function(s)
