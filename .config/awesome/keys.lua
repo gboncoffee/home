@@ -8,6 +8,22 @@ local keymap = function(mods, key, fun)
     return awful.key(mods, key, fun, {})
 end
 
+local client_movement = function(c, dir)
+    if c.floating or awful.layout.getname() == "floating" then
+        if dir == "left" then
+            c.x = c.x - 15
+        elseif dir == "down" then
+            c.y = c.y + 15
+        elseif dir == "up" then
+            c.y = c.y - 15
+        elseif dir == "right" then
+            c.x = c.x + 15
+        end
+    else
+        awful.client.swap.bydirection(dir, c)
+    end
+end
+
 -- global keys {{{
 M.globalkeys = function()
     local globalkeys = gears.table.join(
@@ -30,10 +46,10 @@ M.globalkeys = function()
         end),
         -- change master size
         keymap({ modkey }, "l", function()
-            awful.tag.incmwfact(0.05)
+            awful.tag.incmwfact(0.01)
         end),
         keymap({ modkey }, "h", function()
-            awful.tag.incmwfact(-0.05)
+            awful.tag.incmwfact(-0.01)
         end),
         -- add/remove masters
         keymap({ modkey, "Shift" }, "a", function()
@@ -211,32 +227,16 @@ M.clientkeys = function()
         keymap({ modkey, "Shift" }, "t",  awful.client.floating.toggle),
         -- move clients
         keymap({ modkey, "Shift" }, "h", function(c)
-            if c.floating then
-                c.x = c.x - 15
-            else
-                awful.client.swap.bydirection("left", c)
-            end
+            client_movement(c, "left")
         end),
         keymap({ modkey, "Shift" }, "j", function(c)
-            if c.floating then
-                c.y = c.y + 15
-            else
-                awful.client.swap.bydirection("down", c)
-            end
+            client_movement(c, "down")
         end),
         keymap({ modkey, "Shift" }, "k", function(c)
-            if c.floating then
-                c.y = c.y - 15
-            else
-                awful.client.swap.bydirection("up", c)
-            end
+            client_movement(c, "up")
         end),
         keymap({ modkey, "Shift" }, "l", function(c)
-            if c.floating then
-                c.x = c.x + 15
-            else
-                awful.client.swap.bydirection("right", c)
-            end
+            client_movement(c, "right")
         end),
         -- resize clients
         keymap({ modkey, "Control" }, "k", function(c)
