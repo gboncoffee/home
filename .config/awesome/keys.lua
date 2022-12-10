@@ -273,6 +273,26 @@ M.clientkeys = function()
         end),
         keymap({ modkey, "Shift" }, "comma", function(c)
             c:move_to_screen(c.screen.index - 1)
+        end),
+        -- all tags toggle
+        keymap({ modkey }, "0", function(c)
+            local screen = awful.screen.focused()
+            local all_toggled = true
+            for _, tag in pairs(screen.tags) do
+                if not tag.selected then
+                    all_toggled = false
+                    break
+                end
+            end
+            if all_toggled then
+                c.first_tag:view_only()
+            else
+                for _, tag in pairs(screen.tags) do
+                    if not tag.selected then
+                        awful.tag.viewtoggle(tag)
+                    end
+                end
+            end
         end)
     )
 end
