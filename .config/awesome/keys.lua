@@ -106,7 +106,10 @@ M.globalkeys = function()
         end),
         -- screenshot
         keymap({ modkey }, "p", function()
-            spawn "gnome-screenshot -i"
+            spawn "screenshotter"
+        end),
+        keymap({ modkey, "Shift" }, "p", function()
+            spawn "screenshotter select"
         end),
         -- }}}
         --
