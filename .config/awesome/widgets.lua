@@ -6,15 +6,6 @@ local lain      = require "lain"
 
 local M = {}
 
-local taglist_buttons = function()
-    return gears.table.join(
-        awful.button({ }, 1, function(t)
-            t:view_only()
-        end),
-        awful.button({ }, 3, awful.tag.viewtoggle)
-    )
-end
-
 local mysep = wibox.widget {
     text   = " ",
     align  = "center",
