@@ -46,7 +46,6 @@ theme.notification_border_color        = c.blue
 theme.notification_urgent_border_color = c.fg
 theme.notification_opacity             = 90
 theme.notification_width               = 500
-theme.notification_height              = 100
 
 --
 -- bar
