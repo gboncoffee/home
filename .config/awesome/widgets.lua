@@ -55,47 +55,26 @@ local myalsa = lain.widget.alsa { -- {{{
 local mybattery = lain.widget.bat { -- {{{
     battery = "BAT1",
     timeout = 10,
-    n_perc  = { 10, 20 },
+    notify  = "off",
     settings = function()
-        bat_notification_charged_preset = {
-            title   = "Battery full",
-            text    = "You can unplug the cable",
-            timeout = 10,
-            fg      = beautiful.notification_fg,
-            bg      = beautiful.notification_bg
-        }
-        bat_notification_low_preset = {
-            title   = "Battery low",
-            text    = "Plug the cable!",
-            timeout = 15,
-            fg      = beautiful.notification_fg,
-            bg      = beautiful.notification_bg
-        }
-        bat_notification_critical_preset = {
-            title   = "Battery exhausted",
-            text    = "Shutdown imminent",
-            timeout = 0,
-            fg      = beautiful.notification_urgent_bg,
-            bg      = beautiful.notification_fg
-        }
         local icon = " "
         if bat_now.status == "Charging" then
             icon = " "
-        elseif bat_now.perc < 20 then
+        elseif bat_now.perc <= 20 then
             icon = " "
-        elseif bat_now.perc < 30 then
+        elseif bat_now.perc <= 30 then
             icon = " "
-        elseif bat_now.perc < 40 then
+        elseif bat_now.perc <= 40 then
             icon = " "
-        elseif bat_now.perc < 50 then
+        elseif bat_now.perc <= 50 then
             icon = " "
-        elseif bat_now.perc < 60 then
+        elseif bat_now.perc <= 60 then
             icon = " "
-        elseif bat_now.perc < 70 then
+        elseif bat_now.perc <= 70 then
             icon = " "
-        elseif bat_now.perc < 80 then
+        elseif bat_now.perc <= 80 then
             icon = " "
-        elseif bat_now.perc < 90 then
+        elseif bat_now.perc <= 90 then
             icon = " "
         end
         widget:set_text(icon .. bat_now.perc .. "%")
@@ -338,21 +317,20 @@ end -- }}}
 local popupbattery = lain.widget.bat { -- {{{
     battery = "BAT1",
     timeout = 10,
-    n_perc  = { 10, 20 },
-    notify = false,
+    notify = "off",
     settings = function()
         local icon   = "  "
         local status = " Discharging"
         local init_span = "<span foreground='"..beautiful.c.blue.."'>"
         if bat_now.status == "Charging" then
             status = " Charging"
-        elseif bat_now.perc < 20 then
+        elseif bat_now.perc <= 20 then
             icon = "  "
-        elseif bat_now.perc < 40 then
+        elseif bat_now.perc <= 40 then
             icon = "  "
-        elseif bat_now.perc < 60 then
+        elseif bat_now.perc <= 60 then
             icon = "  "
-        elseif bat_now.perc < 80 then
+        elseif bat_now.perc <= 80 then
             icon = "  "
         end
         widget:set_markup(init_span..icon..bat_now.perc.."%".."</span>".. status)
