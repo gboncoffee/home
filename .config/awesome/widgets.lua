@@ -26,14 +26,14 @@ local mympd = lain.widget.mpd { -- {{{
     settings  = function()
 
         if mpd_now.artist == "N/A" then
-            widget:set_markup(" nothing playing")
+            widget:set_markup(" nothing playing")
         else
-            local icon = " "
-            if mpd_now.state == "play" then icon = " " end
+            local icon = " "
+            if mpd_now.state == "play" then icon = " " end
             if mpd_now.artist == "Various" then
-                widget:set_markup(" " .. mpd_now.title .. icon)
+                widget:set_markup(" " .. mpd_now.title .. icon)
             else
-                widget:set_markup(" " .. mpd_now.artist .. " - " .. mpd_now.title .. icon)
+                widget:set_markup(" " .. mpd_now.artist .. " - " .. mpd_now.title .. icon)
             end
         end
     end,
@@ -45,9 +45,9 @@ local myalsa = lain.widget.alsa { -- {{{
     timeout = 2,
     settings = function()
         if volume_now.status == "off" then
-            widget:set_text "蓼 muted"
+            widget:set_text "婢 mut"
         else
-            widget:set_text("蓼 " .. volume_now.level .. "%")
+            widget:set_text("墳 " .. volume_now.level .. "%")
         end
     end,
 } -- }}}
@@ -78,16 +78,32 @@ local mybattery = lain.widget.bat { -- {{{
             fg      = beautiful.notification_urgent_bg,
             bg      = beautiful.notification_fg
         }
-        local icon = " "
+        local icon = " "
         if bat_now.status == "Charging" then
             icon = " "
+        elseif bat_now.perc < 20 then
+            icon = " "
+        elseif bat_now.perc < 30 then
+            icon = " "
+        elseif bat_now.perc < 40 then
+            icon = " "
+        elseif bat_now.perc < 50 then
+            icon = " "
+        elseif bat_now.perc < 60 then
+            icon = " "
+        elseif bat_now.perc < 70 then
+            icon = " "
+        elseif bat_now.perc < 80 then
+            icon = " "
+        elseif bat_now.perc < 90 then
+            icon = " "
         end
         widget:set_text(icon .. bat_now.perc .. "%")
     end,
 } -- }}}
 
 local mytextclock = wibox.widget { -- {{{
-    format = "羽 %a %b %d, %H:%M ",
+    format = " %a %b %d, %H:%M ",
     widget = wibox.widget.textclock
 } -- }}}
 
