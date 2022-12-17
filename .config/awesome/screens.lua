@@ -19,6 +19,8 @@ M.initscr = function(s)
 
     require "widgets".set_bar(s, mytaglist)
     require "widgets".calendar_popup(s)
+    require "widgets".audio_popup(s)
+    require "widgets".battery_popup(s)
 end
 
 M.load_each_screen = function()
