@@ -93,7 +93,7 @@ local mytextclock = wibox.widget { -- {{{
 
 local myend = wibox.widget { -- {{{
     text   = "ﬦ",
-    font   = "Delugia Book Medium 20",
+    font   = "CaskaydiaCove Nerd Font 25",
     align  = "center",
     widget = wibox.widget.textbox
 } -- }}}
@@ -191,7 +191,7 @@ end -- }}}
 -- popup widgets {{{
 
 local mycalendar = wibox.widget { -- {{{
-    font   = "Delugia Book 25",
+    font   = "CaskaydiaCove Nerd Font 22",
     align  = "center",
     widget = wibox.widget.calendar.month
 }
@@ -210,7 +210,7 @@ end
 
 local mypopupclock = wibox.widget { -- {{{
     format = "%H:%M",
-    font   = "Delugia Book 70",
+    font   = "CaskaydiaCove Nerd Font 70",
     align  = "center",
     widget = wibox.widget.textclock
 } -- }}}

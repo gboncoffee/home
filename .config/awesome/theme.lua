@@ -16,8 +16,8 @@ local theme = {}
 theme.c = c
 
 theme.useless_gap       = nil
-theme.font              = "Delugia Book Medium 14"
-theme.notification_font = "Delugia Book Medium 18"
+theme.font              = "CaskaydiaCove Nerd Font 14"
+theme.notification_font = "CaskaydiaCove Nerd Font 18"
 theme.wallpaper         = os.getenv("HOME") .. "/.config/wallpaper"
 theme.wibar_cursor      = "Simple-and-Soft"
 

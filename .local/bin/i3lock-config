@@ -8,7 +8,7 @@
 
 i3lock $* \
     --image $HOME/pics/wallpapers/share/archlinux/nagatoro-arch-linux-dracula-bigger.png --centered \
-    --{time,date,layout,verif,wrong,greeter}-font='Delugia:style=Regular' \
+    --{time,date,layout,verif,wrong,greeter}-font='CaskaydiaCove Nerd Font:style=Regular' \
     --{time,date,layout,greeter,verif,modif}-color=#F8F8F2FF \
     --{time,date,greeter}-size=30 \
     --date-str="%a %b %d" \

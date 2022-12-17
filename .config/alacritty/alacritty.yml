@@ -26,7 +26,8 @@ scrolling:
 
 font:
   normal:
-    family: Delugia
+    family: CaskaydiaCove Nerd Font Mono
+      # TODO check comments
 
   bold:
     style: Bold
