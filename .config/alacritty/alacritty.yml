@@ -3,8 +3,8 @@ import:
 
 window:
   dimensions:
-    columns: 80
-    lines: 25
+    columns: 110
+    lines: 30
 
   decorations: none
   opacity: 0.95
