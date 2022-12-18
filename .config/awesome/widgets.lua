@@ -57,7 +57,7 @@ local mybattery = lain.widget.bat { -- {{{
     timeout = 10,
     notify  = "off",
     settings = function()
-        local icon = " "
+        local icon = " "
         if bat_now.status == "Charging" then
             icon = " "
         elseif bat_now.perc <= 20 then
