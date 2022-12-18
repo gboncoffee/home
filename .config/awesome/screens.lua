@@ -4,8 +4,8 @@ local beautiful = require "beautiful"
 
 local M = {}
 
-M.set_wallpaper = function()
-    awful.spawn("feh --no-fehbg --bg-fill " .. beautiful.wallpaper)
+M.set_wallpaper = function(s)
+    gears.wallpaper.fit(beautiful.wallpaper, s)
 end
 
 M.initscr = function(s)
