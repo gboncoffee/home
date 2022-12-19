@@ -24,11 +24,11 @@ local client_movement = function(c, dir)
     end
 end
 
--- global keys {{{
+-- global keys
 M.globalkeys = function()
     local globalkeys = gears.table.join(
         --
-        -- layouts {{{
+        -- layouts
         --
         -- focus other clients
         keymap({ modkey }, "j", function()
@@ -78,9 +78,9 @@ M.globalkeys = function()
             s.battery_popup.visible = not s.battery_popup.visible
             s.calendar.date = os.date("*t")
         end),
-        -- }}}
         --
-        -- progs {{{
+        --
+        -- progs
         --
         -- terminal
         keymap({ modkey }, "Return", function()
@@ -94,7 +94,7 @@ M.globalkeys = function()
         keymap({ modkey }, "m", function()
             spawn(terminal .. " --class music-panel,music-panel -e ncmpcpp")
         end),
-        -- sys monitor
+        -- sound panel
         keymap({ modkey }, "s", function()
             spawn(terminal .. " --class pulse-panel,pulse-panel -e pulsemixer")
         end),
@@ -106,6 +106,10 @@ M.globalkeys = function()
         keymap({ modkey }, "c", function()
             spawn(terminal .. " -t Calculator --class calculator,calculator -e julia")
         end),
+        -- sys monitor
+        keymap({ modkey }, "t", function()
+            spawn(terminal .. " -e btm")
+        end),
         -- screenshot
         keymap({ modkey }, "p", function()
             spawn "screenshotter"
@@ -113,9 +117,9 @@ M.globalkeys = function()
         keymap({ modkey, "Shift" }, "p", function()
             spawn "screenshotter select"
         end),
-        -- }}}
         --
-        -- dmenu {{{
+        --
+        -- dmenu
         --
         keymap({ modkey }, "a", function()
             spawn "rofi -show run"
@@ -132,9 +136,9 @@ M.globalkeys = function()
         keymap({ modkey }, "b", function() 
             spawn "dmenu_web"
         end),
-        -- }}}
         --
-        -- audio {{{
+        --
+        -- audio
         --
         keymap({ "Mod1", "Control" }, "k", function()
             spawn "pulsemixer --change-volume +1"
@@ -160,9 +164,9 @@ M.globalkeys = function()
         keymap({ "Mod1", "Control" }, "minus", function()
             spawn "mpc volume -10"
         end),
-        -- }}}
         --
-        -- others {{{
+        --
+        -- others
         --
         keymap({ modkey, "Control" }, "r", awesome.restart),
         keymap({ "Mod1", "Control" }, "x", function()
@@ -176,10 +180,10 @@ M.globalkeys = function()
         end),
         keymap({ modkey, "Control" }, "b", function()
             spawn "dmenu_bluetooth"
-        end) -- }}}
+        end)
     )
 
-    for i = 1, 9 do -- {{{
+    for i = 1, 9 do
         globalkeys = gears.table.join(globalkeys,
             -- view tag only
             keymap({ modkey }, "#" .. i + 9, function()
@@ -207,16 +211,15 @@ M.globalkeys = function()
                 end
             end)
         )
-    end -- }}}
+    end
     return globalkeys
 end
 
 M.globalkeys_setup = function()
     root.keys(M.globalkeys())
 end
--- }}}
 
--- client keys {{{
+-- client keys
 M.clientkeys = function()
     return gears.table.join(
         -- fullscreen
@@ -301,9 +304,8 @@ M.clientkeys = function()
         end)
     )
 end
--- }}}
 
--- client buttons {{{
+-- client buttons
 M.clientbuttons = function()
     return gears.table.join(
         awful.button({ }, 1, function (c)
@@ -321,6 +323,5 @@ M.clientbuttons = function()
         end)
     )
 end
--- }}}
 
 return M
