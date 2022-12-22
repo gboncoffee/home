@@ -24,7 +24,24 @@ bindkey -v
 # Custom
 #
 zmodload zsh/complist
+
+# 
+# keys
+#
+# scroll suggestions backwards with Shift-Tab
 bindkey -M menuselect '^[[Z' reverse-menu-complete
+# history search
+bindkey -M viins '^r' history-increment-search-forward
+# readline on Vi mode
+bindkey -M viins '^a' beginning-of-line
+bindkey -M viins '^e' end-of-line
+bindkey -M viins '^d' delete-char
+bindkey -M viins '^f' forward-char
+bindkey -M viins '^b' backward-char
+bindkey -M viins '^w' backward-kill-word
+# fix Ctrl-C
+bindkey -M vicmd '^c' self-insert
+bindkey -M visual '^c' self-insert
 
 # prompt
 PROMPT='%F{magenta}%m%f:%B%F{blue}%2~%f%b λ '
@@ -43,12 +60,13 @@ alias convert-to-web='ffmpeg -i out.mp4 -c:v libx264 -crf 20 -preset slow -vf fo
 # command configs
 alias cbonsai='cbonsai -l -S -i'
 alias tty-clock='tty-clock -s'
+alias ide='cd ~/src && nvim -c "YaftToggle"'
 # other
 alias fuck='sudo $(fc -ln -1)'
 
-# edit line in nvim (very useful to test little scripts)
-autoload edit-command-line; zle -N edit-command-line
-bindkey '^e' edit-command-line
+# # edit line in nvim (very useful to test little scripts)
+# autoload edit-command-line; zle -N edit-command-line
+# bindkey '^e' edit-command-line
 
 # print exit value if != 0
 setopt PRINT_EXIT_VALUE
