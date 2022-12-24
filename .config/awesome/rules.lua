@@ -27,6 +27,9 @@ awful.rules.rules = {
                 "music-panel",
                 "pulse-panel",
             },
+            name = {
+                "Open File",
+            },
         }, 
         properties = { 
             floating  = true,
