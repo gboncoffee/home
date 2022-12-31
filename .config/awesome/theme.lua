@@ -8,7 +8,8 @@ local c = {
     red    = '#ff5555',
     yellow = '#f1fa8c',
     cyan   = '#8be9fd',
-    grey   = '#6272a4'
+    grey   = '#6272a4',
+    black  = '#21222c',
 }
 
 local theme = {}

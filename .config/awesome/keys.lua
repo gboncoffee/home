@@ -73,9 +73,7 @@ M.globalkeys = function()
         -- toggle popups
         keymap({ modkey, "Shift" }, "c", function()
             local s = awful.screen.focused()
-            s.calendar_popup.visible = not s.calendar_popup.visible
-            s.audio_popup.visible = not s.audio_popup.visible
-            s.battery_popup.visible = not s.battery_popup.visible
+            s.popup.visible = not s.popup.visible
             s.calendar.date = os.date("*t")
         end),
         --

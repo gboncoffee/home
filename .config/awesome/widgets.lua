@@ -18,9 +18,9 @@ local mydoublesep = wibox.widget {
     widget = wibox.widget.textbox
 }
 
--- bar widgets {{{
+-- bar widgets
 
-local mympd = lain.widget.mpd { -- {{{
+local mympd = lain.widget.mpd {
     music_dir = "~/mus",
     notify    = "off",
     settings  = function()
@@ -39,9 +39,8 @@ local mympd = lain.widget.mpd { -- {{{
     end,
 }
 mympd.widget.align = "center"
--- }}}
 
-local myalsa = lain.widget.alsa { -- {{{
+local myalsa = lain.widget.alsa {
     timeout = 2,
     settings = function()
         if volume_now.status == "off" then
@@ -50,9 +49,9 @@ local myalsa = lain.widget.alsa { -- {{{
             widget:set_text("墳 " .. volume_now.level .. "%")
         end
     end,
-} -- }}}
+}
 
-local mybattery = lain.widget.bat { -- {{{
+local mybattery = lain.widget.bat {
     battery = "BAT1",
     timeout = 10,
     notify  = "off",
@@ -79,23 +78,21 @@ local mybattery = lain.widget.bat { -- {{{
         end
         widget:set_text(icon .. bat_now.perc .. "%")
     end,
-} -- }}}
+}
 
-local mytextclock = wibox.widget { -- {{{
+local mytextclock = wibox.widget {
     format = " %a %b %d, %H:%M ",
     widget = wibox.widget.textclock
-} -- }}}
+}
 
-local myend = wibox.widget { -- {{{
+local myend = wibox.widget {
     text   = "ﬦ",
     font   = "CaskaydiaCove Nerd Font 25",
     align  = "center",
     widget = wibox.widget.textbox
-} -- }}}
+}
 
--- }}}
-
-M.set_bar = function(s, mytaglist) -- {{{
+M.set_bar = function(s, mytaglist)
     s.wb = awful.wibar { position = "right" }
     s.wb:setup {
         layout = wibox.layout.align.vertical,
@@ -181,11 +178,11 @@ M.set_bar = function(s, mytaglist) -- {{{
             }
         },
     }
-end -- }}}
+end
 
--- calendar widgets {{{
+-- popup widgets
 
-local mycalendar = wibox.widget { -- {{{
+local mycalendar = wibox.widget {
     font   = "CaskaydiaCove Nerd Font 22",
     align  = "center",
     widget = wibox.widget.calendar.month
@@ -201,51 +198,17 @@ mycalendar.fn_embed = function(widget, flag, date)
     end
     return widget
 end
--- }}}
 
-local mypopupclock = wibox.widget { -- {{{
-    format = "%H:%M",
-    font   = "CaskaydiaCove Nerd Font 70",
+local mypopupclock = wibox.widget {
+    format = " %H:%M",
+    font   = "CaskaydiaCove Nerd Font 55",
     align  = "center",
     widget = wibox.widget.textclock
-} -- }}}
+}
 
--- }}}
+-- audio popup widgets
 
-M.calendar_popup = function(s) -- {{{
-    s.calendar       = mycalendar
-    s.calendar_popup = awful.popup {
-        widget = {
-            {
-                {
-                    mysep,
-                    mypopupclock,
-                    layout = wibox.layout.align.horizontal
-                },
-                {
-                    mysep,
-                    mycalendar,
-                    mysep,
-                    layout = wibox.layout.align.horizontal,
-                    expand = "outside",
-                },
-                layout = wibox.layout.align.vertical,
-            },
-            bg      = beautiful.wibar_bg,
-            widget  = wibox.container.background
-        },
-        placement      = awful.placement.centered,
-        visible        = false,
-        ontop          = true,
-        minimum_width  = 600,
-        border_width   = beautiful.border_width,
-        border_color   = beautiful.border_color_active
-    }
-end -- }}}
-
--- audio popup widgets {{{
-
-local popupmpd = lain.widget.mpd { -- {{{
+local popupmpd = lain.widget.mpd {
     music_dir = "~/mus",
     notify    = "off",
     settings  = function()
@@ -257,71 +220,40 @@ local popupmpd = lain.widget.mpd { -- {{{
             local init_span = "<span foreground='"..beautiful.c.cyan.."'>"
             if mpd_now.state == "play" then status = "Playing:\n" end
             if mpd_now.artist == "Various" then
-                widget:set_markup(init_span..status.."</span>"..string.gsub(mpd_now.title, "-", "\n", 1, true))
+                widget:set_markup(init_span..status.."</span>"..string.gsub(mpd_now.title, "-", "\n\n", 1, true))
             else
-                widget:set_markup(init_span..status.."</span>"..mpd_now.artist.."\n"..mpd_now.title)
+                widget:set_markup(init_span..status.."</span>"..mpd_now.artist.."\n\n"..mpd_now.title)
             end
         end
     end,
 }
 popupmpd.widget.align = "center"
 popupmpd.widget.font  = "CaskaydiaCove Nerd Font 25"
--- }}}
 
-local popupalsa = lain.widget.alsa { -- {{{
+local popupalsa = lain.widget.alsa {
     timeout = 2,
     settings = function()
         local init_span = "<span foreground='"..beautiful.c.yellow.."'>"
         if volume_now.status == "off" then
-            widget:set_markup(init_span.." 婢 mut".."</span>")
+            widget:set_markup(init_span.."  婢 mut".."</span> Muted")
         else
-            widget:set_markup(init_span.." 墳 "..volume_now.level.."%".."</span>")
+            widget:set_markup(init_span.."  墳 "..volume_now.level.."%".."</span> On")
         end
     end,
 }
-popupalsa.widget.align = "center"
-popupalsa.widget.font  = "CaskaydiaCove Nerd Font 50"
--- }}}
+popupalsa.widget.align = "left"
+popupalsa.widget.font  = "CaskaydiaCove Nerd Font 25"
 
--- }}}
+-- battery popup
 
-M.audio_popup = function(s) -- {{{
-    s.audio_popup = awful.popup {
-        widget = {
-            {
-                popupmpd,
-                {
-                    mysep,
-                    popupalsa,
-                    mysep,
-                    layout = wibox.layout.align.horizontal,
-                    expand = "outside",
-                },
-                layout = wibox.layout.align.horizontal,
-            },
-            bg      = beautiful.wibar_bg,
-            widget  = wibox.container.background
-        },
-        placement      = function(c)
-            awful.placement.bottom(c, { margins = 100 })
-        end,
-        visible        = false,
-        ontop          = true,
-        border_width   = beautiful.border_width,
-        border_color   = beautiful.border_color_active
-    }
-end -- }}}
-
--- battery popup {{{
-
-local popupbattery = lain.widget.bat { -- {{{
+local popupbattery = lain.widget.bat {
     battery = "BAT1",
     timeout = 10,
     notify = "off",
     settings = function()
         local icon   = "  "
         local status = " Discharging"
-        local init_span = "<span foreground='"..beautiful.c.blue.."'>"
+        local init_span = " <span foreground='"..beautiful.c.blue.."'>"
         if bat_now.status == "Charging" then
             status = " Charging"
         elseif bat_now.perc <= 20 then
@@ -336,32 +268,67 @@ local popupbattery = lain.widget.bat { -- {{{
         widget:set_markup(init_span..icon..bat_now.perc.."%".."</span>".. status)
     end,
 }
-popupbattery.widget.align = "center"
+popupbattery.widget.align = "left"
 popupbattery.widget.font  = "CaskaydiaCove Nerd Font 25"
 popupbattery.widget.forced_width  = 400
 popupbattery.widget.forced_height = 70
--- }}}
 
-M.battery_popup = function(s) -- {{{
-    s.battery_popup = awful.popup {
-        widget    = {
+M.set_popup = function(s)
+    s.calendar = mycalendar
+    s.popup = awful.popup {
+        widget = {
             {
-                popupbattery,
-                layout = wibox.layout.align.horizontal,
+                {
+                    mydoublesep,
+                    popupmpd,
+                    layout = wibox.layout.align.vertical,
+                },
+                {
+                    {
+                        {
+                            mydoublesep,
+                            mycalendar,
+                            mydoublesep,
+                            expand = "outside",
+                            layout = wibox.layout.align.horizontal,
+                        },
+                        {
+                            mydoublesep,
+                            {
+                                mypopupclock,
+                                widget = wibox.container.background,
+                                fg     = beautiful.c.red,
+                            },
+                            mydoublesep,
+                            expand = "outside",
+                            layout = wibox.layout.align.horizontal,
+                        },
+                        expand = "inside",
+                        layout = wibox.layout.align.vertical,
+                    },
+                    widget = wibox.container.background,
+                    bg     = beautiful.c.black,
+                },
+                {
+                    popupbattery,
+                    popupalsa,
+                    mydoublesep,
+                    layout = wibox.layout.align.vertical,
+                },
+                expand = "none",
+                layout = wibox.layout.align.vertical,
             },
-            bg      = beautiful.wibar_bg,
-            widget  = wibox.container.background
+            widget = wibox.container.background,
+            bg = beautiful.wibar_bg,
+            forced_height = 1072,
+            forced_width  = 400,
         },
-        placement = function(c)
-            awful.placement.top(c, { margins = 100 })
-        end,
-        visible        = false,
-        ontop          = true,
-        border_width   = beautiful.border_width,
-        border_color   = beautiful.border_color_active
+        placement     = awful.placement.right,
+        visible       = false,
+        ontop         = true,
+        border_width  = beautiful.border_width,
+        border_color  = beautiful.border_color_active,
     }
-end -- }}}
-
--- }}}
+end
 
 return M
