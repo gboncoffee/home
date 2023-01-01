@@ -7,4 +7,9 @@ set selection-clipboard clipboard
 set font "CaskaydiaCove Nerd Font 18"
 set guioptions none
 
+set recolor "true"
+set recolor-lightcolor "#282a36"
+set recolor-darkcolor "#f8f8f2"
+set recolor-keephue "true"
+
 include colorscheme
