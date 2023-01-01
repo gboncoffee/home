@@ -1,21 +1,11 @@
-.config/dunst/dunstrc
-.config/alacritty/colors.yml
-.config/xmobar/xmobarrc
-.config/xmonad/lib/Colors.hs
 .config/ncmpcpp/*error
 .config/ncmpcpp/*.log
-.config/polybar/colors.ini
 .config/gtk-2.0/gtkfilechooser.ini
 .config/gtk-3.0/bookmarks
-.config/zathura/colorscheme
-.config/ipython/profile_default
-.config/conky/colors.lua
 .config/zsh/.zcompdump
 .config/zsh/plugs
 .config/mpd/sticker.sql
 .config/mpd/database
-
-.local/share/rofi/themes/colors.rasi
 
 .local/bin/dmenu
 .local/bin/batterymon
