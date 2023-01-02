@@ -28,8 +28,8 @@ local mympd = lain.widget.mpd {
         if mpd_now.artist == "N/A" then
             widget:set_markup(" <span foreground='"..beautiful.c.cyan.."'> Nothing playing.</span>")
         else
-            local icon = " "
-            if mpd_now.state == "play" then icon = " " end
+            local icon = " ||"
+            if mpd_now.state == "play" then icon = " |>" end
 
             local str = " <span foreground='"..beautiful.c.magenta.."'> "
             local artist = mpd_now.artist
@@ -150,8 +150,8 @@ local popupmpd = lain.widget.mpd {
         if mpd_now.artist == "N/A" then
             widget:set_markup("Nothing playing.")
         else
-            local str = " "
-            if mpd_now.state == "play" then str = " " end
+            local str = "|| "
+            if mpd_now.state == "play" then str = "|> " end
 
             local artist = mpd_now.artist
             local title  = mpd_now.title
