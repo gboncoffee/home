@@ -26,70 +26,36 @@ local mympd = lain.widget.mpd {
     settings  = function()
 
         if mpd_now.artist == "N/A" then
-            widget:set_markup(" nothing playing")
+            widget:set_markup(" <span foreground='"..beautiful.c.cyan.."'> nothing playing</span>")
         else
             local icon = " "
             if mpd_now.state == "play" then icon = " " end
+
+            local str = " <span foreground='"..beautiful.c.magenta.."'> "
+            local artist = mpd_now.artist
+            local title  = mpd_now.title
+
             if mpd_now.artist == "Various" then
-                widget:set_markup(" " .. mpd_now.title .. icon)
-            else
-                widget:set_markup(" " .. mpd_now.artist .. " - " .. mpd_now.title .. icon)
+                artist = string.sub(mpd_now.title, 1, string.find(mpd_now.title, "-") - 2)
+                title  = string.sub(mpd_now.title, string.find(mpd_now.title, "-") + 2)
             end
+
+            str = str .. artist .. "</span> "
+            str = str .. "<span foreground='"..beautiful.c.green.."'>::</span>"
+            str = str .. "<span foreground='"..beautiful.c.cyan.."'> "..title.."</span>"
+            widget:set_markup(str .. icon)
         end
     end,
 }
 mympd.widget.align = "center"
 
-local myalsa = lain.widget.alsa {
-    timeout = 2,
-    settings = function()
-        if volume_now.status == "off" then
-            widget:set_text "婢 mut"
-        else
-            widget:set_text("墳 " .. volume_now.level .. "%")
-        end
-    end,
-}
-
-local mybattery = lain.widget.bat {
-    battery = "BAT1",
-    timeout = 10,
-    notify  = "off",
-    settings = function()
-        local icon = " "
-        if bat_now.status == "Charging" then
-            icon = " "
-        elseif bat_now.perc <= 20 then
-            icon = " "
-        elseif bat_now.perc <= 30 then
-            icon = " "
-        elseif bat_now.perc <= 40 then
-            icon = " "
-        elseif bat_now.perc <= 50 then
-            icon = " "
-        elseif bat_now.perc <= 60 then
-            icon = " "
-        elseif bat_now.perc <= 70 then
-            icon = " "
-        elseif bat_now.perc <= 80 then
-            icon = " "
-        elseif bat_now.perc <= 90 then
-            icon = " "
-        end
-        widget:set_text(icon .. bat_now.perc .. "%")
-    end,
-}
-
-local mytextclock = wibox.widget {
-    format = " %a %b %d, %H:%M ",
+local mytextdate = wibox.widget {
+    format = " %a %b %d ",
     widget = wibox.widget.textclock
 }
-
-local myend = wibox.widget {
-    text   = "ﬦ",
-    font   = "CaskaydiaCove Nerd Font 25",
-    align  = "center",
-    widget = wibox.widget.textbox
+local mytextclock = wibox.widget {
+    format = "  %H:%M ",
+    widget = wibox.widget.textclock
 }
 
 M.set_bar = function(s, mytaglist)
@@ -112,11 +78,7 @@ M.set_bar = function(s, mytaglist)
                 direction = 'west',
             },
             {
-                {
-                    mympd.widget,
-                    widget = wibox.container.background,
-                    fg = beautiful.c.cyan
-                },
+                mympd.widget,
                 widget = wibox.container.rotate,
                 direction = 'west',
             }
@@ -131,51 +93,23 @@ M.set_bar = function(s, mytaglist)
                 },
                 {
                     {
-                        myalsa.widget,
-                        widget = wibox.container.background,
-                        fg = beautiful.c.yellow
-                    },
-                    widget = wibox.container.rotate,
-                    direction = 'west',
-                },
-                {
-                    mysep,
-                    widget = wibox.container.rotate,
-                    direction = 'west',
-                },
-                {
-                    {
-                        mybattery.widget,
-                        widget = wibox.container.background,
-                        fg = beautiful.c.blue
-                    },
-                    widget = wibox.container.rotate,
-                    direction = 'west',
-                },
-                {
-                    mysep,
-                    widget = wibox.container.rotate,
-                    direction = 'west',
-                },
-                {
-                    {
-                        mytextclock,
-                        widget = wibox.container.background,
-                        fg = beautiful.c.red
+                        {
+                            mytextdate,
+                            widget = wibox.container.background,
+                            fg = beautiful.c.yellow
+                        },
+                        {
+                            mytextclock,
+                            widget = wibox.container.background,
+                            fg = beautiful.c.red
+                        },
+                        layout = wibox.layout.align.horizontal,
                     },
                     widget = wibox.container.rotate,
                     direction = 'west',
                 },
                 layout = wibox.layout.fixed.vertical,
             },
-            {
-                {
-                    myend,
-                    widget = wibox.container.background,
-                    direction = 'north',
-                },
-                layout = wibox.layout.fixed.vertical,
-            }
         },
     }
 end

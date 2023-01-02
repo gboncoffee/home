@@ -2,14 +2,16 @@ local gfs = require("gears.filesystem")
 local themes_path = gfs.get_themes_dir()
 
 local c = {
-    bg     = '#282a36',
-    fg     = '#f8f8f2',
-    blue   = '#bd93f9',
-    red    = '#ff5555',
-    yellow = '#f1fa8c',
-    cyan   = '#8be9fd',
-    grey   = '#6272a4',
-    black  = '#21222c',
+    bg      = '#282a36',
+    fg      = '#f8f8f2',
+    blue    = '#bd93f9',
+    red     = '#ff5555',
+    yellow  = '#f1fa8c',
+    cyan    = '#8be9fd',
+    magenta = '#ff92df',
+    green   = '#50fa7b',
+    grey    = '#6272a4',
+    black   = '#21222c',
 }
 
 local theme = {}
