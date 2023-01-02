@@ -26,10 +26,10 @@ local mympd = lain.widget.mpd {
     settings  = function()
 
         if mpd_now.artist == "N/A" then
-            widget:set_markup(" <span foreground='"..beautiful.c.cyan.."'> nothing playing</span>")
+            widget:set_markup(" <span foreground='"..beautiful.c.cyan.."'> Nothing playing.</span>")
         else
-            local icon = " "
-            if mpd_now.state == "play" then icon = " " end
+            local icon = " "
+            if mpd_now.state == "play" then icon = " " end
 
             local str = " <span foreground='"..beautiful.c.magenta.."'> "
             local artist = mpd_now.artist
@@ -150,14 +150,19 @@ local popupmpd = lain.widget.mpd {
         if mpd_now.artist == "N/A" then
             widget:set_markup("Nothing playing.")
         else
-            local status = "Paused:\n"
-            local init_span = "<span foreground='"..beautiful.c.cyan.."'>"
-            if mpd_now.state == "play" then status = "Playing:\n" end
+            local str = " "
+            if mpd_now.state == "play" then str = " " end
+
+            local artist = mpd_now.artist
+            local title  = mpd_now.title
             if mpd_now.artist == "Various" then
-                widget:set_markup(init_span..status.."</span>"..string.gsub(mpd_now.title, "-", "\n\n", 1, true))
-            else
-                widget:set_markup(init_span..status.."</span>"..mpd_now.artist.."\n\n"..mpd_now.title)
+                artist = string.sub(mpd_now.title, 1, string.find(mpd_now.title, "-") - 2)
+                title  = string.sub(mpd_now.title, string.find(mpd_now.title, "-") + 2)
             end
+
+            str = str .. "<span foreground='"..beautiful.c.magenta.."'>" .. artist .. "</span>\n\n"
+            str = str .. "<span foreground='"..beautiful.c.cyan.."'>" .. title .. "</span>"
+            widget:set_markup(str)
         end
     end,
 }
