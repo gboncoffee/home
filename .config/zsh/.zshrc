@@ -60,7 +60,6 @@ alias convert-to-web='ffmpeg -i out.mp4 -c:v libx264 -crf 20 -preset slow -vf fo
 # command configs
 alias cbonsai='cbonsai -l -S -i'
 alias tty-clock='tty-clock -s'
-alias ide='cd ~/src && nvim -c "YaftToggle"'
 # other
 alias fuck='sudo $(fc -ln -1)'
 
