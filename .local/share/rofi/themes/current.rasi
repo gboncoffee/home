@@ -7,7 +7,7 @@ element-text, element-icon , mode-switcher {
 }
 
 window {
-    border: 4px;
+    border: 2px;
     border-color: @tertiary;
     background-color: @background;
     /* anchor: north; */

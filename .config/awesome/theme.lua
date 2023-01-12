@@ -19,17 +19,16 @@ local theme = {}
 theme.c = c
 
 theme.useless_gap       = nil
-theme.font              = "CaskaydiaCove Nerd Font 13"
-theme.notification_font = "CaskaydiaCove Nerd Font 16"
+theme.font              = "CaskaydiaCove Nerd Font 12"
+theme.notification_font = "CaskaydiaCove Nerd Font 14"
 theme.wallpaper         = os.getenv("HOME") .. "/.config/wallpaper"
-theme.wibar_cursor      = "Simple-and-Soft"
 
 theme.border_color_active = c.blue
 theme.border_color_normal = c.bg
 theme.border_color_urgent = c.red
 
-theme.border_width            = 4
-theme.border_width_floating   = 4
+theme.border_width            = 2
+theme.border_width_floating   = 2
 theme.border_width_maximized  = 0
 theme.border_width_fullscreen = 0
 

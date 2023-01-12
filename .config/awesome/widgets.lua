@@ -114,10 +114,10 @@ M.set_bar = function(s, mytaglist)
     }
 end
 
--- popup widgets
+-- popup
 
 local mycalendar = wibox.widget {
-    font   = "CaskaydiaCove Nerd Font 22",
+    font   = "CaskaydiaCove Nerd Font 20",
     align  = "center",
     widget = wibox.widget.calendar.month
 }
@@ -135,7 +135,7 @@ end
 
 local mypopupclock = wibox.widget {
     format = " %H:%M",
-    font   = "CaskaydiaCove Nerd Font 55",
+    font   = "CaskaydiaCove Nerd Font 40",
     align  = "center",
     widget = wibox.widget.textclock
 }
@@ -167,7 +167,7 @@ local popupmpd = lain.widget.mpd {
     end,
 }
 popupmpd.widget.align = "center"
-popupmpd.widget.font  = "CaskaydiaCove Nerd Font 25"
+popupmpd.widget.font  = "CaskaydiaCove Nerd Font 20"
 
 local popupalsa = lain.widget.alsa {
     timeout = 2,
@@ -181,7 +181,7 @@ local popupalsa = lain.widget.alsa {
     end,
 }
 popupalsa.widget.align = "left"
-popupalsa.widget.font  = "CaskaydiaCove Nerd Font 25"
+popupalsa.widget.font  = "CaskaydiaCove Nerd Font 20"
 
 -- battery popup
 
@@ -208,7 +208,7 @@ local popupbattery = lain.widget.bat {
     end,
 }
 popupbattery.widget.align = "left"
-popupbattery.widget.font  = "CaskaydiaCove Nerd Font 25"
+popupbattery.widget.font  = "CaskaydiaCove Nerd Font 20"
 popupbattery.widget.forced_width  = 400
 popupbattery.widget.forced_height = 70
 
