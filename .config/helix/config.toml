@@ -3,10 +3,9 @@ theme = "dracula"
 [editor]
 line-number = "relative"
 scrolloff   = 10
-auto-info   = true
 bufferline  = "multiple"
 color-modes = true
-gutters     = [ "diagnostics", "line-numbers", "diff" ]
+gutters     = [ "diff", "diagnostics", "line-numbers", "spacer" ]
 
 [editor.file-picker]
 hidden = false
