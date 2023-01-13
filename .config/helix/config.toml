@@ -1,0 +1,30 @@
+theme = "dracula"
+
+[editor]
+line-number = "relative"
+scrolloff   = 10
+auto-info   = true
+bufferline  = "multiple"
+color-modes = true
+gutters     = [ "diagnostics", "line-numbers", "diff" ]
+
+[editor.file-picker]
+hidden = false
+
+[editor.auto-pairs]
+'(' = ')'
+'{' = '}'
+'[' = ']'
+'"' = '"'
+'`' = '`'
+'<' = '>'
+
+[editor.statusline]
+left   = [ "mode", "file-type", "workspace-diagnostics" ]
+center = [ "file-name" ]
+right  = [ "position", "total-line-numbers" ]
+
+[keys.normal]
+space   = { q = ":bc" }
+tab     = ":bn"
+"S-tab" = ":bp"
