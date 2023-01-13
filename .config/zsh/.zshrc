@@ -63,10 +63,6 @@ alias tty-clock='tty-clock -s'
 # other
 alias fuck='sudo $(fc -ln -1)'
 
-# # edit line in nvim (very useful to test little scripts)
-# autoload edit-command-line; zle -N edit-command-line
-# bindkey '^e' edit-command-line
-
 # print exit value if != 0
 setopt PRINT_EXIT_VALUE
 
