@@ -1,11 +1,12 @@
 theme = "dracula"
 
 [editor]
-line-number = "relative"
-scrolloff   = 10
-bufferline  = "multiple"
-color-modes = true
-gutters     = [ "diff", "diagnostics", "line-numbers", "spacer" ]
+line-number  = "relative"
+scrolloff    = 10
+bufferline   = "multiple"
+color-modes  = true
+gutters      = [ "diff", "diagnostics", "line-numbers", "spacer" ]
+idle-timeout = 0
 
 [editor.file-picker]
 hidden = false
