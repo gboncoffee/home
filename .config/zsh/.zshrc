@@ -31,7 +31,8 @@ zmodload zsh/complist
 # scroll suggestions backwards with Shift-Tab
 bindkey -M menuselect '^[[Z' reverse-menu-complete
 # history search
-bindkey -M viins '^r' history-increment-search-forward
+bindkey -M viins '^j' history-search-forward
+bindkey -M viins '^k' history-search-backward
 # readline on Vi mode
 bindkey -M viins '^a' beginning-of-line
 bindkey -M viins '^e' end-of-line
