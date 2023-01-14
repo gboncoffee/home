@@ -5,7 +5,7 @@ local beautiful = require "beautiful"
 local M = {}
 
 M.set_wallpaper = function(s)
-    gears.wallpaper.fit(beautiful.wallpaper, s)
+    gears.wallpaper.maximized(beautiful.wallpaper, s)
 end
 
 M.initscr = function(s)
