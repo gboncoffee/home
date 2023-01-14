@@ -18,7 +18,7 @@ local theme = {}
 
 theme.c = c
 
-theme.useless_gap       = nil
+theme.useless_gap       = 4
 theme.font              = "CaskaydiaCove Nerd Font 12"
 theme.notification_font = "CaskaydiaCove Nerd Font 14"
 theme.wallpaper         = os.getenv("HOME") .. "/.config/wallpaper"
