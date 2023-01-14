@@ -11,14 +11,6 @@ idle-timeout = 0
 [editor.file-picker]
 hidden = false
 
-[editor.auto-pairs]
-'(' = ')'
-'{' = '}'
-'[' = ']'
-'"' = '"'
-'`' = '`'
-'<' = '>'
-
 [editor.statusline]
 left   = [ "mode", "file-type", "workspace-diagnostics" ]
 center = [ "file-name" ]
