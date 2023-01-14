@@ -24,6 +24,8 @@ center = [ "file-name" ]
 right  = [ "position", "total-line-numbers" ]
 
 [keys.normal]
-space   = { q = ":bc" }
 tab     = ":bn"
 "S-tab" = ":bp"
+X       = "extend_line_above"
+J       = "copy_selection_on_next_line"
+K       = "copy_selection_on_prev_line"
