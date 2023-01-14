@@ -1,0 +1,6 @@
+#!/usr/bin/sh
+
+selected=$(ls -A $HOME/src | fzf)
+[ "$selected" == "" ] && exit
+cd "$HOME/src/$selected" || exit
+tmux new-session -s $selected
