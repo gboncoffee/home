@@ -29,8 +29,6 @@ theme.border_color_urgent = c.red
 
 theme.border_width            = 2
 theme.border_width_floating   = 2
-theme.border_width_maximized  = 0
-theme.border_width_fullscreen = 0
 
 -- fullscreen
 theme.fullscreen_hide_border = true
