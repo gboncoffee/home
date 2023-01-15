@@ -11,13 +11,13 @@ end
 local client_movement = function(c, dir)
     if c.floating or awful.layout.getname() == "floating" then
         if dir == "left" then
-            c.x = c.x - 15
+            c.x = c.x - 35
         elseif dir == "down" then
-            c.y = c.y + 15
+            c.y = c.y + 35
         elseif dir == "up" then
-            c.y = c.y - 15
+            c.y = c.y - 35
         elseif dir == "right" then
-            c.x = c.x + 15
+            c.x = c.x + 35
         end
     else
         awful.client.swap.bydirection(dir, c)
@@ -246,19 +246,15 @@ M.clientkeys = function()
         end),
         -- resize clients
         keymap({ modkey, "Control" }, "k", function(c)
-            if not c.floating then c.floating = true end
             c.height = c.height - 15
         end),
         keymap({ modkey, "Control" }, "j", function(c)
-            if not c.floating then c.floating = true end
             c.height = c.height + 15
         end),
         keymap({ modkey, "Control" }, "h", function(c)
-            if not c.floating then c.floating = true end
             c.width = c.width - 15
         end),
         keymap({ modkey, "Control" }, "l", function(c)
-            if not c.floating then c.floating = true end
             c.width = c.width + 15
         end),
         -- move to master

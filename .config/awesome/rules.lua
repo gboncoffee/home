@@ -12,7 +12,7 @@ awful.rules.rules = {
             keys         = require "keys".clientkeys(),
             buttons      = require "keys".clientbuttons(),
             screen       = awful.screen.preferred,
-            placement    = awful.placement.no_overlap+awful.placement.no_offscreen
+            placement    = awful.placement.centered
         }
     },
     -- floating
@@ -21,7 +21,6 @@ awful.rules.rules = {
             class = {
                 "feh",
                 "Gimp",
-                "Gnome-screenshot",
                 "Xfce-polkit",
                 "calculator",
                 "music-panel",
@@ -33,7 +32,6 @@ awful.rules.rules = {
         }, 
         properties = { 
             floating  = true,
-            placement = awful.placement.centered
         }
     },
     -- maximized
