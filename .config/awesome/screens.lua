@@ -9,15 +9,18 @@ M.set_wallpaper = function(s)
 end
 
 M.initscr = function(s)
+
     M.set_wallpaper(s)
     awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+
+    local mylayoutbox = awful.widget.layoutbox(s)
+
     local mytaglist = awful.widget.taglist {
-        buttons = taglist_buttons,
         filter  = awful.widget.taglist.filter.all,
         screen  = s
     }
 
-    require "widgets".set_bar(s, mytaglist)
+    require "widgets".set_bar(s, mytaglist, mylayoutbox)
     require "widgets".set_popup(s)
 end
 

@@ -57,12 +57,19 @@ local mytextclock = wibox.widget {
     format = "  %H:%M ",
     widget = wibox.widget.textclock
 }
+local myend = wibox.widget {
+    text   = "ﬦ",
+    align  = "center",
+    font   = "CaskaydiaCove Nerd Font 20",
+    widget = wibox.widget.textbox,
+}
 
-M.set_bar = function(s, mytaglist)
+M.set_bar = function(s, mytaglist, mylayoutbox)
     s.wb = awful.wibar { position = "right" }
     s.wb:setup {
         layout = wibox.layout.align.vertical,
         {
+            mylayoutbox,
             {
                 mytaglist,
                 direction = 'west',
@@ -107,6 +114,14 @@ M.set_bar = function(s, mytaglist)
                     },
                     widget = wibox.container.rotate,
                     direction = 'west',
+                },
+                layout = wibox.layout.fixed.vertical,
+            },
+            {
+                {
+                    myend,
+                    widget = wibox.container.background,
+                    direction = 'north',
                 },
                 layout = wibox.layout.fixed.vertical,
             },
