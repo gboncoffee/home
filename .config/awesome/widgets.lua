@@ -119,9 +119,13 @@ M.set_bar = function(s, mytaglist, mylayoutbox)
             },
             {
                 {
-                    myend,
+                    {
+                        myend,
+                        widget = wibox.container.background,
+                        fg = beautiful.c.bg,
+                    },
                     widget = wibox.container.background,
-                    direction = 'north',
+                    bg = beautiful.c.magenta,
                 },
                 layout = wibox.layout.fixed.vertical,
             },
