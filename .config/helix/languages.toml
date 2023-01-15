@@ -20,3 +20,15 @@ name = "html"
 '`' = '`'
 '<' = '>'
 "'" = "'"
+
+[[language]]
+name = "lua"
+indent = { tab-width = 4, unit = "    " }
+
+[[language]]
+name = "c"
+indent = { tab-width = 4, unit = "    " }
+
+[[language]]
+name = "bash"
+indent = { tab-width = 4, unit = "    " }
