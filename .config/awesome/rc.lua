@@ -1,3 +1,4 @@
+pcall(require, "luarocks.loader")
 local gears     = require "gears"
 local awful     = require "awful"
 require("awful.autofocus")
@@ -6,7 +7,7 @@ local beautiful = require "beautiful"
 local naughty   = require "naughty"
 local lain      = require "lain"
 
--- error handling {{{ 
+-- error handling 
 if awesome.startup_errors then
     naughty.notify {
         preset = naughty.config.presets.critical,
@@ -27,7 +28,6 @@ do
         in_error = false
     end)
 end
--- }}}
 
 -- ensure Lua gc runs more often cause of mem leaks
 gears.timer.start_new(10, function()
