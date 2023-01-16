@@ -48,6 +48,14 @@ local mympd = lain.widget.mpd {
     end,
 }
 mympd.widget.align = "center"
+mympd.widget:buttons(gears.table.join(
+    awful.button({ }, 1, function() awful.spawn "mpc toggle" end),
+    awful.button({ }, 3, function()
+        awful.spawn(terminal .. " --class music-panel,music-panel -e ncmpcpp")
+    end),
+    awful.button({ }, 5, function() awful.spawn "mpc next" end),
+    awful.button({ }, 4, function() awful.spawn "mpc prev" end)
+))
 
 local mytextdate = wibox.widget {
     format = " %a %b %d ",
@@ -63,6 +71,13 @@ local myend = wibox.widget {
     font   = "CaskaydiaCove Nerd Font 20",
     widget = wibox.widget.textbox,
 }
+myend:buttons(gears.table.join(
+    awful.button({ }, 1, function()
+        local s = awful.screen.focused()
+        s.popup.visible = not s.popup.visible
+        s.calendar.date = os.date("*t")
+    end)
+))
 
 M.set_bar = function(s, mytaglist, mylayoutbox)
     s.wb = awful.wibar { position = "right" }
@@ -187,6 +202,14 @@ local popupmpd = lain.widget.mpd {
 }
 popupmpd.widget.align = "center"
 popupmpd.widget.font  = "CaskaydiaCove Nerd Font 20"
+popupmpd.widget:buttons(gears.table.join(
+    awful.button({ }, 1, function() awful.spawn "mpc toggle" end),
+    awful.button({ }, 3, function()
+        awful.spawn(terminal .. " --class music-panel,music-panel -e ncmpcpp")
+    end),
+    awful.button({ }, 5, function() awful.spawn "mpc next" end),
+    awful.button({ }, 4, function() awful.spawn "mpc prev" end)
+))
 
 local popupalsa = lain.widget.alsa {
     timeout = 2,
@@ -201,6 +224,14 @@ local popupalsa = lain.widget.alsa {
 }
 popupalsa.widget.align = "left"
 popupalsa.widget.font  = "CaskaydiaCove Nerd Font 20"
+popupalsa.widget:buttons(gears.table.join(
+    awful.button({ }, 1, function() awful.spawn "pulsemixer --toggle-mute" end),
+    awful.button({ }, 3, function()
+        spawn(terminal .. " --class pulse-panel,pulse-panel -e pulsemixer")
+    end),
+    awful.button({ }, 5, function() awful.spawn "pulsemixer --change-volume -1" end),
+    awful.button({ }, 4, function() awful.spawn "pulsemixer --change-volume +1" end)
+))
 
 -- battery popup
 
@@ -278,10 +309,14 @@ M.set_popup = function(s)
             },
             widget = wibox.container.background,
             bg = beautiful.wibar_bg,
-            forced_height = 1072,
+            forced_height = 1074,
             forced_width  = 400,
         },
-        placement     = awful.placement.right,
+        placement = function(d)
+            awful.placement.right(d, {
+                honor_workarea = true
+            })
+        end,
         visible       = false,
         ontop         = true,
         border_width  = beautiful.border_width,
