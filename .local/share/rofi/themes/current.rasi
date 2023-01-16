@@ -8,7 +8,7 @@ element-text, element-icon , mode-switcher {
 
 window {
     border: 2px;
-    border-color: @tertiary;
+    border-color: @primary;
     background-color: @background;
     /* anchor: north; */
     /* location: north; */

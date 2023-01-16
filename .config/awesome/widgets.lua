@@ -242,7 +242,7 @@ local popupbattery = lain.widget.bat {
     settings = function()
         local icon   = "  "
         local status = " Discharging"
-        local init_span = " <span foreground='"..beautiful.c.blue.."'>"
+        local init_span = " <span foreground='"..beautiful.c.magenta.."'>"
         if bat_now.status == "Charging" then
             status = " Charging"
         elseif bat_now.perc <= 20 then
