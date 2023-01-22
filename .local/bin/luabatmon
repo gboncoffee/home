@@ -48,7 +48,7 @@ getbat = function()
     local valuefile  = io.open("/sys/class/power_supply/BAT1/capacity", "r")
     local statusfile = io.open("/sys/class/power_supply/ADP1/online", "r")
 
-    value, status = valuefile:read() + 0, statusfile:read()
+    value, status = valuefile:read() + 0, statusfile:read() + 0
     
     valuefile:close()
     statusfile:close()
@@ -62,8 +62,6 @@ sleep(10)
 repeat
     value, status = getbat()
 
-    print(value .. " " .. status)
-
     if status == 1 then
 
         -- on plug
@@ -71,14 +69,12 @@ repeat
             plugged   = true
             notified  = false
             alerted   = false
-            print "on plug"
             notify("Charger connected.")
         end
         
         -- on full
         if value == 100 and not not_full then
             not_full = true
-            print "on full"
             notify("Battery is full", "You can disconnected the charger now.")
         end
 
@@ -87,25 +83,21 @@ repeat
         -- on unplug
         if plugged then
             plugged = false
-            print "on unplug"
             notify("Charger disconnected.")
         end
 
         -- on full disconnected
         if not_full then 
-            print "on full disconnected"
             not_full = false 
         end
 
         -- on critical
         if value <= 10 and not alerted then
             alerted = true
-            print "on critical"
             notify("Critical battery level", "Battery level is below 10%. Please connect the computer to the charger immediately.", true)
         -- on low
         elseif value <= 20 and not notified then
             notified = true
-            print "on low"
             notify("Low battery level", "Battery level is below 20%. Please connect the computer to the charger.")
         end
     end

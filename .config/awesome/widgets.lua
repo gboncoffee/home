@@ -66,8 +66,8 @@ local mybattery = lain.widget.bat {
     ac       = "ADP1",
     settings = function()
         local color = beautiful.c.green
-        if bat_now.ac_status == 1 then
-            color = beautiful.c.blue
+        if bat_now.ac_status + 0 == 1 then
+            color = beautiful.c.cyan
         elseif bat_now.perc <= 20 then
             color = beautiful.c.red
         end
