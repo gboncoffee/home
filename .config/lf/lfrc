@@ -11,10 +11,10 @@ set ratios 1:2:4
 set icons
 
 # previewer and etc
-set previewer stpv
-set cleaner stpvimgclr
-&stpvimg --listen $id
-cmd on-quit $stpvimg --end $id
+set previewer ctpv
+set cleaner ctpvclear
+&ctpv -s $id
+&ctpvquit $id
 
 # why not?
 set hidden

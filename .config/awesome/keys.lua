@@ -70,13 +70,6 @@ M.globalkeys = function()
             local s = awful.screen.focused()
             s.wb.visible = not s.wb.visible
         end),
-        -- toggle popups
-        keymap({ modkey, "Shift" }, "c", function()
-            local s = awful.screen.focused()
-            s.popup.visible = not s.popup.visible
-            s.calendar.date = os.date("*t")
-        end),
-        --
         --
         -- progs
         --
@@ -106,7 +99,7 @@ M.globalkeys = function()
         end),
         -- sys monitor
         keymap({ modkey }, "t", function()
-            spawn(terminal .. " -e btm")
+            spawn(terminal .. " -e htop")
         end),
         -- screenshot
         keymap({ modkey }, "p", function()
@@ -167,9 +160,6 @@ M.globalkeys = function()
         -- others
         --
         keymap({ modkey, "Control" }, "r", awesome.restart),
-        keymap({ "Mod1", "Control" }, "x", function()
-            spawn "changexmap"
-        end),
         keymap({ "Mod1", "Control" }, "d", function()
             spawn "monitors"
         end),

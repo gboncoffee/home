@@ -6,7 +6,6 @@ window:
     columns: 110
     lines: 30
 
-  decorations: none
   opacity: 0.95
 
   title: Alacritty

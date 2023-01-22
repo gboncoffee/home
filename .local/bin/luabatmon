@@ -46,7 +46,7 @@ end
 -- battery getter function
 getbat = function()
     local valuefile  = io.open("/sys/class/power_supply/BAT1/capacity", "r")
-    local statusfile = io.open("/sys/class/power_supply/BAT1/status", "r")
+    local statusfile = io.open("/sys/class/power_supply/ADP1/online", "r")
 
     value, status = valuefile:read() + 0, statusfile:read()
     
@@ -64,11 +64,11 @@ repeat
 
     print(value .. " " .. status)
 
-    if status == "Charging" then
+    if status == 1 then
 
         -- on plug
-        if not charging then
-            charging  = true
+        if not plugged then
+            plugged   = true
             notified  = false
             alerted   = false
             print "on plug"
@@ -85,8 +85,8 @@ repeat
     else -- Discharging
 
         -- on unplug
-        if charging then
-            charging = false
+        if plugged then
+            plugged = false
             print "on unplug"
             notify("Charger disconnected.")
         end

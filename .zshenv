@@ -53,4 +53,5 @@ export CC=clang
 
 # sensible defaults
 export GTK_THEME=Dracula
-export PATH="$PATH:$HOME/.local/bin/:$HOME/.local/share/cargo/bin/"
+export PATH="$PATH:$HOME/.local/bin/:$HOME/opt/bin:$HOME/.local/share/cargo/bin/"
+. "/home/gb/.local/share/cargo/env"

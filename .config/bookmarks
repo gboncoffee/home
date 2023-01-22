@@ -1,21 +1,17 @@
 Wikipedia|https://www.wikipedia.org/
 Arch Wiki|https://wiki.archlinux.org/
 Arch Linux|https://archlinux.org/
-AUR|https://aur.archlinux.org/
 GitHub|https://github.com/
-TabNews|https://www.tabnews.com.br/
 gboncoffee|https://gboncoffee.github.io/
-The Book|~/.local/share/rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc/rust/html/book/foreword.html
 Rust Docs|~/.local/share/rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc/rust/html/index.html
 Rust Std Docs|~/.local/share/rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc/rust/html/std/index.html
 Crates.io|https://crates.io/
-Python Docs|~/etc/python-docs/index.html
-JavaScript Reference|https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
+Mozilla Web Reference|https://developer.mozilla.org/en-US/docs/Web
 Lua Reference|https://www.lua.org/manual/5.1/
-Awesome API Docs|https://awesomewm.org/apidoc/index.html
+Awesome API Docs|https://awesomewm.org/doc/api/documentation/07-my-first-awesome.md.html#
 GPT|https://chat.openai.com/chat
 Nerd Fonts Cheat Sheet|https://www.nerdfonts.com/cheat-sheet
-iCloud|https://www.icloud.com/mail/
+iCloud|https://www.icloud.com/
 YouTube|https://www.youtube.com/
 Twitch|https://www.twitch.tv
 GeoGebra|https://www.geogebra.org/calculator
@@ -25,6 +21,6 @@ Google Earth|https://earth.google.com/
 Reddit|https://www.reddit.com/
 Discord|https://discord.com/channels/@me
 Instagram|https://www.instagram.com/?theme=dark
-Telegram|https://web.telegram.org/z/
+Telegram|https://web.telegram.org/k/
 WhatsApp|https://web.whatsapp.com/
 Twitter|https://twitter.com/home

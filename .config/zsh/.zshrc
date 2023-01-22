@@ -6,13 +6,13 @@ zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}' 'm:{[:lower:]
 zstyle ':completion:*' menu select=1
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 zstyle ':completion:*' use-compctl false
-zstyle :compinstall filename '/home/gg/.config/zsh/.zshrc'
+zstyle :compinstall filename '/home/gb/.config/zsh/.zshrc'
 
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 # Lines configured by zsh-newuser-install
-HISTFILE='/home/gg/.local/share/zsh/histfile'
+HISTFILE='/home/gb/.local/share/zsh/histfile'
 HISTSIZE=1000
 SAVEHIST=1000
 setopt autocd beep notify
@@ -68,8 +68,7 @@ alias fuck='sudo $(fc -ln -1)'
 setopt PRINT_EXIT_VALUE
 
 # source plugins
-PLUGS_HOME=$HOME"/.config/zsh/plugs"
-source $PLUGS_HOME"/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # jokes haha
 echo "Welcome to zsh, the unfriendly interactive shell"

@@ -1,4 +1,5 @@
 local awful     = require "awful"
+local wibox     = require "wibox"
 local gears     = require "gears"
 local beautiful = require "beautiful"
 
@@ -55,10 +56,19 @@ M.initscr = function(s)
         filter  = awful.widget.taglist.filter.all,
         screen  = s,
         buttons = taglist_buttons,
+        layout = wibox.layout.fixed.vertical,
+        widget_template = {
+            {
+                align  = "center",
+                id     = "text_role",
+                widget = wibox.widget.textbox,
+            },
+            id     = "background_role",
+            widget = wibox.container.background,
+        },
     }
 
     require "widgets".set_bar(s, mytaglist, mylayoutbox)
-    require "widgets".set_popup(s)
 end
 
 M.load_each_screen = function()
