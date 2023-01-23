@@ -6,6 +6,7 @@
 .config/zsh/plugs
 .config/mpd/sticker.sql
 .config/mpd/database
+.config/mpd/playlists
 
 .local/bin/dmenu
 .local/bin/batterymon

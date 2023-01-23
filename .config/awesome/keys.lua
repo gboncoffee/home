@@ -215,6 +215,11 @@ M.clientkeys = function()
             c.fullscreen = not c.fullscreen
             c:raise()
         end),
+        -- maximization
+        keymap({ modkey, "Shift" }, "m", function(c)
+            c.maximized = not c.maximized
+            c:raise()
+        end),
         -- kill client
         keymap({ modkey }, "w", function(c)
             c:kill()
