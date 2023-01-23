@@ -54,13 +54,10 @@ PROMPT='%F{magenta}%m%f:%B%F{blue}%2~%f%b λ '
 # common commands
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-alias hi='highlight -O ansi'
+alias ip='ip -color=auto'
 # downloads and records
 alias music-dl='yt-dlp -i -x --audio-format mp3'
 alias convert-to-web='ffmpeg -i out.mp4 -c:v libx264 -crf 20 -preset slow -vf format=yuv420p -c:a aac -movflags +faststart output.mp4'
-# command configs
-alias cbonsai='cbonsai -l -S -i'
-alias tty-clock='tty-clock -s'
 # other
 alias fuck='sudo $(fc -ln -1)'
 
