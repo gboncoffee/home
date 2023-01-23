@@ -71,7 +71,11 @@ local mybattery = lain.widget.bat {
         elseif bat_now.perc <= 20 then
             color = beautiful.c.red
         end
-        widget:set_markup("<span foreground='"..color.."'>"..bat_now.perc.."</span>")
+        local num = bat_now.perc
+        if num == 100 then
+            num = "MX"
+        end
+        widget:set_markup("<span foreground='"..color.."'>"..num.."</span>")
     end,
 }
 mybattery.widget.font = beautiful.bigger_font
