@@ -1,5 +1,6 @@
-local awful = require "awful"
-local gears = require "gears"
+local awful     = require "awful"
+local gears     = require "gears"
+local beautiful = require "beautiful"
 
 local M = {}
 
@@ -65,10 +66,15 @@ M.globalkeys = function()
         keymap({ modkey, "Shift" }, "space", function()
             awful.layout.inc(-1)
         end),
-        -- toggle bar
+        -- toggle bar and gaps
         keymap({ modkey, "Shift" }, "b", function()
             local s = awful.screen.focused()
             s.wb.visible = not s.wb.visible
+            if beautiful.useless_gap then
+                beautiful.useless_gap = nil
+            else
+                beautiful.useless_gap = 4
+            end
         end),
         --
         -- progs
