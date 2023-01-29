@@ -9,6 +9,10 @@ gutters      = [ "diff", "diagnostics", "line-numbers", "spacer" ]
 idle-timeout = 0
 rulers       = [ 80 ]
 
+[editor.lsp]
+display-messages = true
+display-signature-help-docs = false
+
 [editor.file-picker]
 hidden = false
 
