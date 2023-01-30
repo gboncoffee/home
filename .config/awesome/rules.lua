@@ -25,6 +25,8 @@ awful.rules.rules = {
                 "calculator",
                 "music-panel",
                 "pulse-panel",
+                "QjackCtl",
+                "Guitarix",
             },
             name = {
                 "Open File",
