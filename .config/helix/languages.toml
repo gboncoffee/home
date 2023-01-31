@@ -1,5 +1,6 @@
 [[language]]
 name = "rust"
+config = { check = { allTargets = false } }
 
 [language.auto-pairs]
 '(' = ')'
