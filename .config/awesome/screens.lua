@@ -56,16 +56,7 @@ M.initscr = function(s)
         filter  = awful.widget.taglist.filter.all,
         screen  = s,
         buttons = taglist_buttons,
-        layout = wibox.layout.fixed.vertical,
-        widget_template = {
-            {
-                align  = "center",
-                id     = "text_role",
-                widget = wibox.widget.textbox,
-            },
-            id     = "background_role",
-            widget = wibox.container.background,
-        },
+        layout = wibox.layout.fixed.horizontal,
     }
 
     require "widgets".set_bar(s, mytaglist, mylayoutbox)

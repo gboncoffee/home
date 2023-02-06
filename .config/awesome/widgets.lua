@@ -7,13 +7,18 @@ local lain      = require "lain"
 local M = {}
 
 local mysep = wibox.widget {
+    text   = "  ",
+    align  = "center",
+    widget = wibox.widget.textbox
+}
+local myvisiblesep = wibox.widget {
     {
-        text   = " ",
-        align  = "center",
+        text = " | ",
+        align = "center",
         widget = wibox.widget.textbox
     },
-    widget = wibox.container.rotate,
-    direction = 'west',
+    fg     = beautiful.c.grey,
+    widget = wibox.container.background,
 }
 
 local mympd = lain.widget.mpd {
@@ -54,12 +59,6 @@ mympd.widget:buttons(gears.table.join(
     awful.button({ }, 4, function() awful.spawn "mpc prev" end)
 ))
 
-local mybatteryicon = wibox.widget {
-    text   = "",
-    align  = "center",
-    font   = "CaskaydiaCove Nerd Font 20",
-    widget = wibox.widget.textbox,
-}
 local mybattery = lain.widget.bat {
     notify   = "off",
     battery  = "BAT1",
@@ -71,130 +70,74 @@ local mybattery = lain.widget.bat {
         elseif bat_now.perc <= 20 then
             color = beautiful.c.red
         end
-        local num = bat_now.perc
-        if num == 100 then
-            num = "MX"
-        end
-        widget:set_markup("<span foreground='"..color.."'>"..num.."</span>")
+        widget:set_markup("<span foreground='"..color.."'>".."Energy: "..bat_now.perc.."%</span>")
     end,
 }
-mybattery.widget.font = beautiful.bigger_font
 
-local myweekday = wibox.widget {
-    format = "%a",
-    widget = wibox.widget.textclock,
+local mycputemp = lain.widget.temp {
+    settings = function()
+        widget:set_markup("<span foreground='"..beautiful.c.magenta.."'>Coffee: "..coretemp_now.."ºC</span>")
+    end
 }
-local mymonth = wibox.widget {
-    format = "%b",
-    widget = wibox.widget.textclock,
+
+local myfs = lain.widget.fs {
+    showpopup = "off",
+    settings = function()
+        local load = string.format("%.2f", fs_now["/"].used)
+        local unit = fs_now["/"].units
+        widget:set_markup("<span foreground='"..beautiful.c.cyan.."'>Animes: "..load..unit.."</span>")
+    end
 }
+
+local mymem = lain.widget.mem {
+    settings = function()
+        widget:set_markup("<span foreground='"..beautiful.c.yellow.."'>Entropy: "..mem_now.used.."Mib</span>")
+    end
+}
+
 local myday = wibox.widget {
-    {
-        format = "%d",
-        font   = beautiful.bigger_font,
-        widget = wibox.widget.textclock,
-    },
-    left   = 2,
-    widget = wibox.container.margin,
+    format = "%a %b %d",
+    widget = wibox.widget.textclock,
 }
 
-local myhours = wibox.widget {
-    {
-        format = "%H",
-        font   = beautiful.bigger_font,
-        widget = wibox.widget.textclock,
-    },
-    left   = 2,
-    widget = wibox.container.margin,
-}
-local myminutes = wibox.widget {
-    {
-        format = "%M",
-        font   = beautiful.bigger_font,
-        widget = wibox.widget.textclock,
-    },
-    left   = 2,
-    widget = wibox.container.margin,
-}
-local mytimesep = wibox.widget {
-    {
-        {
-            text = ":",
-            font   = beautiful.bigger_font,
-            widget = wibox.widget.textbox,
-        },
-        margins = -5,
-        widget = wibox.container.margin,
-    },
-    direction = "west",
-    widget    = wibox.container.rotate,
-}
-
-local myend = wibox.widget {
-    text   = "ﬦ",
-    align  = "center",
-    font   = "CaskaydiaCove Nerd Font 20",
-    widget = wibox.widget.textbox,
+local myclock = wibox.widget {
+    format = "%H:%M ",
+    widget = wibox.widget.textclock,
 }
 
 M.set_bar = function(s, mytaglist, mylayoutbox)
-    s.wb = awful.wibar { position = "right" }
+    s.wb = awful.wibar { position = "top" }
     s.wb:setup {
-        layout = wibox.layout.align.vertical,
+        layout = wibox.layout.align.horizontal,
         {
             mylayoutbox,
             mytaglist,
             mysep,
-            {
-                mympd.widget,
-                widget = wibox.container.rotate,
-                direction = "west",
-            },
-            layout = wibox.layout.fixed.vertical,
+            mympd.widget,
+            layout = wibox.layout.fixed.horizontal,
         },
         mysep,
         {
-            {
-                mybatteryicon,
-                {
-                    mybattery.widget,
-                    left   = 2,
-                    widget = wibox.container.margin,
-                },
-                layout = wibox.layout.align.vertical,
-            },
+            mymem.widget,
             mysep,
+            myfs.widget,
+            mysep,
+            mycputemp.widget,
+            mysep,
+            mybattery.widget,
+            myvisiblesep,
             {
-                {
-                    myweekday,
-                    mymonth,
-                    myday,
-                    layout = wibox.layout.align.vertical,
-                },
+                myday,
                 widget = wibox.container.background,
                 fg = beautiful.c.red,
             },
             mysep,
             {
-                {
-                    myhours,
-                    mytimesep,
-                    myminutes,
-                    layout = wibox.layout.align.vertical,
-                },
+                myclock,
                 widget = wibox.container.background,
                 fg = beautiful.c.yellow,
             },
-            {
-                {
-                    myend,
-                    widget = wibox.container.background,
-                    fg = beautiful.c.bg,
-                },
-                widget = wibox.container.background,
-                bg = beautiful.c.magenta,
-            },
-            layout = wibox.layout.fixed.vertical,
+            layout = wibox.layout.fixed.horizontal,
         },
     }
 end

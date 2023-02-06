@@ -17,18 +17,17 @@ local theme = {}
 
 theme.c = c
 
-theme.useless_gap       = 4
+theme.useless_gap       = 3
 theme.font              = "CaskaydiaCove Nerd Font 12"
 theme.notification_font = "CaskaydiaCove Nerd Font 14"
-theme.bigger_font       = "CaskaydiaCove Nerd Font 16"
 theme.wallpaper         = os.getenv("HOME") .. "/.config/wallpaper"
 
 theme.border_color_active = c.magenta
 theme.border_color_normal = c.bg
 theme.border_color_urgent = c.red
 
-theme.border_width            = 3
-theme.border_width_floating   = 3
+theme.border_width            = 2
+theme.border_width_floating   = 2
 
 -- fullscreen
 theme.fullscreen_hide_border = true
