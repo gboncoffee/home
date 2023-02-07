@@ -73,7 +73,7 @@ M.globalkeys = function()
             if beautiful.useless_gap then
                 beautiful.useless_gap = nil
             else
-                beautiful.useless_gap = 4
+                beautiful.useless_gap = 3
             end
         end),
         --
