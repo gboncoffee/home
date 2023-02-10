@@ -70,7 +70,7 @@ local mybattery = lain.widget.bat {
         elseif bat_now.perc <= 20 then
             color = beautiful.c.red
         end
-        widget:set_markup("<span foreground='"..color.."'>".."Energy: "..bat_now.perc.."%</span>")
+        widget:set_markup("<span foreground='"..color.."'>".."Sleep: "..bat_now.perc.."%</span>")
     end,
 }
 
@@ -91,7 +91,7 @@ local myfs = lain.widget.fs {
 
 local mymem = lain.widget.mem {
     settings = function()
-        widget:set_markup("<span foreground='"..beautiful.c.yellow.."'>Entropy: "..mem_now.used.."Mib</span>")
+        widget:set_markup("<span foreground='"..beautiful.c.yellow.."'>Chaos: "..mem_now.used.."Mib</span>")
     end
 }
 
