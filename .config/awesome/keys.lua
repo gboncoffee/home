@@ -70,11 +70,6 @@ M.globalkeys = function()
         keymap({ modkey, "Shift" }, "b", function()
             local s = awful.screen.focused()
             s.wb.visible = not s.wb.visible
-            if beautiful.useless_gap then
-                beautiful.useless_gap = nil
-            else
-                beautiful.useless_gap = 3
-            end
         end),
         --
         -- progs
