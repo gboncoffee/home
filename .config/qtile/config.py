@@ -27,19 +27,15 @@ def autostart():
 
 
 keys = [
-    # monadtall
-    Key([mod], "h", lazy.layout.left()),
-    Key([mod], "l", lazy.layout.right()),
-    Key([mod], "j", lazy.layout.down()),
-    Key([mod], "k", lazy.layout.up()),
+    Key([mod], "h", lazy.layout.shrink_main()),
+    Key([mod], "l", lazy.layout.grow_main()),
+    Key([mod], "j", lazy.group.next_window()),
+    Key([mod], "k", lazy.group.prev_window()),
 
     Key([mod, "shift"], "h", lazy.layout.swap_left()),
     Key([mod, "shift"], "l", lazy.layout.swap_right()),
     Key([mod, "shift"], "j", lazy.layout.shuffle_down()),
     Key([mod, "shift"], "k", lazy.layout.shuffle_up()),
-
-    Key([mod, "shift"], "a", lazy.layout.grow()),
-    Key([mod, "shift"], "s", lazy.layout.shrink()),
 
     # general
     Key([mod], "w", lazy.window.kill()),
