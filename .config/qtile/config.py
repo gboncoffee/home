@@ -149,6 +149,7 @@ screens = [
             [
                 widget.GroupBox(
                     this_current_screen_border=colors["magenta"],
+                    inactive=colors["fg"],
                     margin_y=2,
                     hide_unused=True
                 ),
@@ -225,7 +226,8 @@ screens = [
                 )
             ],
             28,
-            background=colors["bg"]
+            background=colors["bg"],
+            opacity=0.95,
         )
     )
 ]
