@@ -136,7 +136,7 @@ layouts = [
 
 widget_defaults = dict(
     font="Caskaydia Cove Nerd Font",
-    fontsize=12,
+    fontsize=14,
     background=colors["bg"],
     foreground=colors["fg"],
     margin=0
@@ -147,8 +147,23 @@ screens = [
     Screen(
         top=bar.Bar(
             [
+                widget.GroupBox(
+                    this_current_screen_border=colors["magenta"],
+                    margin_y=2,
+                    hide_unused=True
+                ),
+                widget.TextBox("|", foreground=colors["grey"]),
+                widget.TaskList(
+                    highlight_method="block",
+                    markup=True,
+                    max_title_width=120,
+                    margin_y=2,
+                    icon_size=16,
+                    markup_focused='<span foreground="#282a36">{}</span>',
+                    border=colors["magenta"]
+                ),
+                widget.Spacer(),
                 # mpd
-                widget.TextBox("󰘧", fontsize=18),
                 widget.Mpd2(
                     idle_format="Nothing",
                     no_connection="MPD is",
@@ -166,7 +181,7 @@ screens = [
                     no_connection="",
                     status_format="{play_status}",
                 ),
-                widget.Spacer(),
+                widget.TextBox("|", foreground=colors["grey"]),
                 # sys
                 widget.KeyboardLayout(
                     foreground=colors["green"],
@@ -209,28 +224,9 @@ screens = [
                     foreground=colors["yellow"]
                 )
             ],
-            18,
+            28,
             background=colors["bg"]
-        ),
-        bottom=bar.Bar(
-            [
-                widget.GroupBox(
-                    this_current_screen_border=colors["magenta"],
-                    margin_y=3
-                ),
-                widget.TaskList(
-                    highlight_method="block",
-                    markup=True,
-                    markup_focused='<span foreground="#282a36">{}</span>',
-                    icon_size=11,
-                    border=colors["magenta"]
-                ),
-                widget.Spacer(),
-                widget.Systray(icon_size=11)
-            ],
-            18,
-            background=colors["bg"]
-        ),
+        )
     )
 ]
 
