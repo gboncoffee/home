@@ -46,6 +46,7 @@ keys = [
     Key([mod, "shift"], "t", lazy.window.toggle_floating()),
     Key([mod, "shift"], "f", lazy.window.toggle_fullscreen()),
     Key([mod, "control"], "r", lazy.reload_config()),
+    Key([mod, "control"], "c", lazy.spawn("dunstctl close")),
     Key([mod], "space", lazy.widget["keyboardlayout"].next_keyboard()),
     Key([mod], "Tab", lazy.next_layout()),
 
