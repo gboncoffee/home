@@ -15,6 +15,16 @@ terminal = "alacritty"
 browser = os.getenv("BROWSER")
 home = os.getenv("HOME")
 
+@lazy.window.function
+def resize_floating_window(window, width=0, height=0):
+    window.cmd_set_size_floating(window.width + width, window.height + height)
+
+
+@lazy.window.function
+def move_floating_window(window, x=0, y=0):
+    window.cmd_set_position_floating(window.float_x + x, window.float_y + y)
+
+
 @hook.subscribe.startup_once
 def autostart():
     subprocess.Popen(["picom"])
@@ -36,6 +46,16 @@ keys = [
     Key([mod, "shift"], "l", lazy.layout.swap_right()),
     Key([mod, "shift"], "j", lazy.layout.shuffle_down()),
     Key([mod, "shift"], "k", lazy.layout.shuffle_up()),
+
+    Key([mod, "control"], "h", move_floating_window(x=-20)),
+    Key([mod, "control"], "l", move_floating_window(x=20)),
+    Key([mod, "control"], "j", move_floating_window(y=20)),
+    Key([mod, "control"], "k", move_floating_window(y=-20)),
+
+    Key([mod, "mod1"], "h", resize_floating_window(width=-20)),
+    Key([mod, "mod1"], "l", resize_floating_window(width=20)),
+    Key([mod, "mod1"], "j", resize_floating_window(height=20)),
+    Key([mod, "mod1"], "k", resize_floating_window(height=-20)),
 
     # general
     Key([mod], "w", lazy.window.kill()),
@@ -205,7 +225,7 @@ screens = [
                 ),
                 widget.Battery(
                     battery=1,
-                    foreground=colors["cyan"],
+                    foreground=colors["green"],
                     low_foreground=colors["red"],
                     low_percentage=0.2,
                     show_short_text=False,
