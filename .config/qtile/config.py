@@ -22,6 +22,7 @@ def autostart():
     subprocess.Popen(["/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"])
     subprocess.Popen(["unclutter", "--timeout", "--jitter", "--start-hidden"])
     subprocess.Popen(["luabatmon"])
+    subprocess.Popen(["dunst"])
     subprocess.Popen(["feh", "--no-fehbg", "--bg-fill", f"{home}/.config/wallpaper"])
 
 
@@ -223,7 +224,9 @@ screens = [
                     markup_focused='<span foreground="#282a36">{}</span>',
                     icon_size=11,
                     border=colors["magenta"]
-                )
+                ),
+                widget.Spacer(),
+                widget.Systray(icon_size=11)
             ],
             18,
             background=colors["bg"]
