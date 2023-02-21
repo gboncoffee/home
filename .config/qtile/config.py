@@ -264,8 +264,9 @@ cursor_warp        = False
 floating_layout    = layout.Floating(
     float_rules = [
         *layout.Floating.default_float_rules,
-        Match(title    = "pinentry"),
         Match(title    = "Open File"),
+        Match(wm_class = "pinentry-gtk-2"),
+        Match(wm_class = "Pinentry-gtk-2"),
         Match(wm_class = "feh"),
         Match(wm_class = "Gimp"),
         Match(wm_class = "Xfce-polkit"),
