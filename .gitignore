@@ -12,3 +12,7 @@
 .local/bin/dmenu
 .local/bin/batterymon
 .local/bin/hx
+
+.vim/plugged/*
+.vim/autoload/*
+.vim/viminfo
