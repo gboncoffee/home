@@ -1,4 +1,8 @@
 -- vim:fdm=marker
+--
+-- Gabriel's Nyanvim configs UwU
+--
+-- <3
 
 o = vim.o
 g = vim.g
@@ -117,10 +121,14 @@ map("n", "<Space>m", function()
 end)
 map("n", "<Space>h", t.help_tags)
 map("n", "<Space>/", function()
+    if not g.Grep_search then
+        g.Grep_search = ""
+    end
+    g.Grep_search = vim.fn.input("grep: ", g.Grep_search)
     t.grep_string({
         glob_pattern = "!*.git*",
         additional_args = { "--hidden" },
-        search = vim.fn.input("Grep > ")
+        search = g.Grep_search,
     })
 end)
 -- others
