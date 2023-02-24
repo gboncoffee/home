@@ -16,6 +16,7 @@ require "paq" {
     "nvim-telescope/telescope.nvim",
     "ThePrimeagen/harpoon",
     "tpope/vim-fugitive",
+    "preservim/vim-markdown",
     "echasnovski/mini.nvim",
     "gboncoffee/lf.lua",
     "gboncoffee/run.lua",
@@ -64,6 +65,7 @@ o.foldmethod    = "syntax"
 
 g.Licenses_name = "Gabriel G. de Brito"
 g.Licenses_mail = "gabrielgbrito@icloud.com"
+g.vim_markdown_folding_disable = 1
 -- }}}
 
 -- telescope setup {{{
@@ -151,7 +153,7 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("FileType", {
     group    = filetype_settings,
     pattern  = { "qf", "fugitive", "git", "gitcommit", "help" },
-    command  = "nnoremap <buffer> q :bd<CR>"
+    command  = "setlocal nofoldenable | nnoremap <buffer> q :bd<CR>"
 })
 vim.api.nvim_create_autocmd("Filetype", {
     group    = filetype_settings,
