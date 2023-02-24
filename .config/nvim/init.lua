@@ -65,7 +65,6 @@ o.foldmethod    = "syntax"
 
 g.Licenses_name = "Gabriel G. de Brito"
 g.Licenses_mail = "gabrielgbrito@icloud.com"
-g.vim_markdown_folding_disable = 1
 -- }}}
 
 -- telescope setup {{{
@@ -159,6 +158,11 @@ vim.api.nvim_create_autocmd("Filetype", {
     group    = filetype_settings,
     pattern  = "rust",
     command  = "inoremap <buffer> ' '"
+})
+vim.api.nvim_create_autocmd("Filetype", {
+    group    = filetype_settings,
+    pattern  = "markdown",
+    command  = "setlocal nofoldenable"
 })
 vim.api.nvim_create_autocmd("FileType", {
     group    = filetype_settings,
