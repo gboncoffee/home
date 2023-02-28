@@ -14,7 +14,6 @@ require "paq" {
     "Mofiqul/dracula.nvim",
     "nvim-lua/plenary.nvim",
     "nvim-telescope/telescope.nvim",
-    "ThePrimeagen/harpoon",
     "tpope/vim-fugitive",
     "preservim/vim-markdown",
     "echasnovski/mini.nvim",
@@ -90,6 +89,7 @@ require "mini.surround".setup()
 require "mini.pairs".setup()
 require "mini.completion".setup()
 require "mini.move".setup()
+require "mini.tabline".setup()
 -- }}}
 
 -- mappings {{{
@@ -110,12 +110,8 @@ map("n", "<Space>ch",   ":Run ghci<CR>")
 map("n", "<Space>cs",   ":Run pulsemixer<CR>")
 map("n", "<Space>cm",   ":Run ncmpcpp<CR>")
 map("n", "<Space>ct",   ":Run htop<CR>")
--- harpoon/telescope
+-- telescope
 t = require "telescope.builtin"
-map("n", "<Space><Tab>", require "harpoon.ui".toggle_quick_menu)
-map("n", "<Space>w",     require "harpoon.mark".add_file)
-map("n", "<Tab>",        require "harpoon.ui".nav_next)
-map("n", "<S-Tab>",      require "harpoon.ui".nav_prev)
 map("n", "<Space>f", t.find_files)
 map("n", "<Space>m", function()
     t.man_pages({sections = {"ALL"}})
@@ -135,6 +131,8 @@ end)
 -- others
 map("n", "<Space>g", ":G<CR>")
 map("n", "<Space>n", ":LfNoChangeCwd<CR>")
+map("n", "<Tab>", ":bn<CR>")
+map("n", "<S-Tab>", ":bp<CR>")
 -- keep things in the middle
 map("n", "<C-d>",    "<C-d>zz")
 map("n", "<C-u>",    "<C-u>zz")
