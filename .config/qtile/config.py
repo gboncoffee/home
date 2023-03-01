@@ -27,6 +27,7 @@ def move_floating_window(window, x=0, y=0):
 
 @hook.subscribe.startup_once
 def autostart():
+    subprocess.Popen(["emacs", "--daemon"])
     subprocess.Popen(["picom"])
     subprocess.Popen(["mpd"])
     subprocess.Popen(["/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"])
@@ -67,6 +68,7 @@ keys = [
     Key([mod], "Tab", lazy.next_layout()),
 
     Key([mod], "return", lazy.spawn(terminal)),
+    Key([mod], "e", lazy.spawn("emacsclient -c -a emacs")),
     Key([mod], "n", lazy.spawn(browser)),
     Key([mod], "m", lazy.spawn(f"{terminal} --class music-panel,music-panel -e ncmpcpp")),
     Key([mod], "s", lazy.spawn(f"{terminal} --class pulse-panel,pulse-panel -e pulsemixer")),
