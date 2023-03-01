@@ -6,7 +6,7 @@ window:
     columns: 110
     lines: 30
 
-  opacity: 0.95
+  # opacity: 0.95
 
   title: Alacritty
   dynamic_title: true

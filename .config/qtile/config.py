@@ -246,7 +246,6 @@ screens = [
             ],
             28,
             background=colors["bg"],
-            opacity=0.95,
         )
     )
 ]
