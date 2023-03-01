@@ -17,7 +17,6 @@ HISTSIZE=1000
 SAVEHIST=1000
 setopt autocd beep notify
 unsetopt extendedglob nomatch
-bindkey -v
 # End of lines configured by zsh-newuser-install
 
 #
@@ -31,18 +30,13 @@ zmodload zsh/complist
 # scroll suggestions backwards with Shift-Tab
 bindkey -M menuselect '^[[Z' reverse-menu-complete
 # history search
-bindkey -M viins '^j' history-search-forward
-bindkey -M viins '^k' history-search-backward
-# readline on Vi mode
-bindkey -M viins '^a' beginning-of-line
-bindkey -M viins '^e' end-of-line
-bindkey -M viins '^d' delete-char
-bindkey -M viins '^f' forward-char
-bindkey -M viins '^b' backward-char
-bindkey -M viins '^w' backward-kill-word
-# fix Ctrl-C
-bindkey -M vicmd '^c' self-insert
-bindkey -M visual '^c' self-insert
+bindkey '^j' history-search-forward
+bindkey '^k' history-search-backward
+# proper readline
+bindkey '^a' beginning-of-line
+bindkey '^e' end-of-line
+bindkey '^f' forward-char
+bindkey '^b' backward-char
 
 # prompt
 PROMPT='%F{magenta}%m%f:%B%F{blue}%2~%f%b λ '
