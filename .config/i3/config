@@ -21,6 +21,7 @@ set $terminal alacritty
 
 floating_modifier Mod1
 tiling_drag modifier titlebar
+for_window [class="^floating$"] floating enable
 
 bindsym Mod4+e exec emacsclient -c -a emacs
 bindsym Mod4+f exec "emacsclient -c -e '(deer)'"
@@ -28,10 +29,10 @@ bindsym Mod4+n exec "$BROWSER"
 
 # terminal
 bindsym Mod4+Return exec "$TERMINAL"
-bindsym Mod4+m exec "$TERMINAL -e ncmpcpp"
-bindsym Mod4+s exec "$TERMINAL -e pulsemixer"
-bindsym Mod4+c exec "$TERMINAL -e julia"
-bindsym Mod4+t exec "$TERMINAL -e htop"
+bindsym Mod4+m exec "$TERMINAL --class=floating --title=Music -e ncmpcpp"
+bindsym Mod4+s exec "$TERMINAL --class=floating --title=Mixer -e pulsemixer"
+bindsym Mod4+c exec "$TERMINAL --class=floating --title=Julia -e julia"
+bindsym Mod4+t exec "$TERMINAL --class=floating -e htop"
 
 bindsym Mod4+p exec "screenshotter"
 bindsym Mod4+Shift+p exec "screenshotter select"
