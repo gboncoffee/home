@@ -2,8 +2,7 @@
  */
 * {
     background: #282a36;
+    background-dark: #21222c;
     foreground: #f8f8f2;
     primary:    #ff79c6;
-    secondary:  #8be9fd;
-    width: 1000;
 }

@@ -7,13 +7,9 @@ element-text, element-icon , mode-switcher {
 }
 
 window {
-    border: 2px;
     border-color: @primary;
     background-color: @background;
-    /* anchor: north; */
-    /* location: north; */
-    width: 600px;
-    height: 50%;
+    width: 50%;
 }
 
 mainbox {
@@ -22,26 +18,25 @@ mainbox {
 
 inputbar {
     children: [entry];
-    background-color: @background;
 }
 
 entry {
     text-color: @foreground;
-    background-color: @background;
-    border: 10px 0px 0px 10px;
+    background-color: @background-dark;
+    blink: false;
 }
 
 listview {
-    border: 10px 0px 0px 10px;
-    columns: 2;
-    lines: 7;
+    columns: 3;
+    lines: 10;
     background-color: @background;
+    border: 2px;
+    border-color: @primary;
 }
 
 element {
     background-color: @background;
     text-color: @foreground;
-    border: 0px 10px 0px 0px;
 }
 
 element selected {
