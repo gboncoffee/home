@@ -22,6 +22,7 @@ set $terminal alacritty
 floating_modifier Mod1
 tiling_drag modifier titlebar
 for_window [class="^floating$"] floating enable
+for_window [class="^feh$"] floating enable
 
 bindsym Mod4+e exec emacsclient -c -a emacs
 bindsym Mod4+f exec "emacsclient -c -e '(deer)'"
