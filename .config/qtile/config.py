@@ -27,9 +27,7 @@ def move_floating_window(window, x=0, y=0):
 
 @hook.subscribe.startup_once
 def autostart():
-    subprocess.Popen(["emacs", "--daemon"])
     subprocess.Popen(["picom"])
-    subprocess.Popen(["mpd"])
     subprocess.Popen(["/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"])
     subprocess.Popen(["unclutter", "--timeout", "--jitter", "--start-hidden"])
     subprocess.Popen(["luabatmon"])
