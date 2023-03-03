@@ -52,7 +52,6 @@ export TERMINAL=alacritty
 export CC=clang
 
 # sensible defaults
-export LC_COLLATE="C"
 export QT_QPA_PLATFORMTHEME=gtk2
 export GTK_THEME=Dracula
 export WORDCHARS=""
