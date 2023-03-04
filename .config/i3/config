@@ -3,6 +3,7 @@
 #
 
 font pango:CaskaydiaCove Nerd Font Mono 12
+
 exec --no-startup-id picom
 exec --no-startup-id luabatmon
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -19,7 +20,7 @@ set $right l
 
 set $terminal alacritty
 
-floating_modifier Mod1
+floating_modifier Mod4
 tiling_drag modifier titlebar
 for_window [class="^floating$"] floating enable
 for_window [class="^feh$"] floating enable
@@ -76,18 +77,15 @@ bindsym Mod4+Shift+f fullscreen toggle
 
 # change container layout
 bindsym Mod4+Tab layout toggle tabbed splitv splith
+bindsym Mod4+Shift+s split vertical
+bindsym Mod4+Shift+v split horizontal
+bindsym Mod4+Shift+a layout default
 
 # toggle tiling / floating
 bindsym Mod4+Shift+t floating toggle
 
 # change focus between tiling / floating windows
 bindsym Mod4+space focus mode_toggle
-
-# focus the parent container
-bindsym Mod4+Shift+a focus parent
-
-# focus the child container
-bindsym Mod4+Shift+d focus child
 
 # move the currently focused window to the scratchpad
 bindsym Mod4+Shift+0 move scratchpad
@@ -139,6 +137,8 @@ mode "resize" {
         bindsym $down       resize grow height 10 px or 10 ppt
         bindsym $up         resize shrink height 10 px or 10 ppt
         bindsym $right      resize grow width 10 px or 10 ppt
+	bindsym s           resize grow height 5px or 5ppt
+	bindsym v           resize grow width 5px or 5ppt
 
         bindsym Return mode "default"
         bindsym Escape mode "default"
@@ -149,6 +149,7 @@ bindsym Mod4+Shift+r mode "resize"
 
 workspace_layout tabbed
 hide_edge_borders vertical
+for_window [all] title_window_icon yes
 
 client.focused #ff79c6 #ff79c6 #282a36 #ff79c6 #ff79c6
 client.focused_inactive #8be9fd #8be9fd #282a36 #8be9fd #8be9fd
