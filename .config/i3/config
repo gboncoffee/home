@@ -26,7 +26,6 @@ for_window [class="^floating$"] floating enable
 for_window [class="^feh$"] floating enable
 
 bindsym Mod4+e exec emacsclient -c -a emacs
-bindsym Mod4+f exec "emacsclient -c -e '(deer)'"
 bindsym Mod4+n exec "$BROWSER"
 
 # terminal
