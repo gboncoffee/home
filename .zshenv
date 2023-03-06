@@ -12,15 +12,6 @@ export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export HISTFILE="$XDG_DATA_HOME/zsh/histfile"
 export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
 export LESSHISTFILE="-"
-export FZF_DEFAULT_COMMAND='rg --glob "!*.git*" --hidden --files'
-export FZF_DEFAULT_OPTS="
---no-info
---preview
-'highlight -O ansi {} 2> /dev/null || head --bytes=1000000 {}'
---color=dark
---color=fg:-1,bg:-1,hl:#5fff87,fg+:-1,bg+:-1,hl+:#ffaf5f
---color=info:#af87ff,prompt:#5fff87,pointer:#ff87d7,marker:#ff87d7,spinner:#ff87d7
-"
 # tex
 export TEXMFHOME="$XDG_DATA_HOME/tex/texmf"
 export TEXMFVAR="$XDG_DATA_HOME/tex/textmf-var"

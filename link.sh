@@ -11,3 +11,4 @@ ln -sf $PWD/.local/share/* ~/.local/share
 ln -sf $PWD/.xprofile ~/.xprofile
 ln -sf $PWD/.zshenv ~/.zshenv
 ln -sf $PWD/.ghci ~/.ghci
+ln -sf $PWD/.icons ~/.icons
