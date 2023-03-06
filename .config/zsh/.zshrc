@@ -55,6 +55,11 @@ alias convert-to-web='ffmpeg -i out.mp4 -c:v libx264 -crf 20 -preset slow -vf fo
 # other
 alias fuck='sudo $(fc -ln -1)'
 
+function setxbg {
+    ln -sf $(pwd)/$1 ~/.config/wallpaper
+    feh --no-fehbg --bg-fill ~/.config/wallpaper
+}
+
 # print exit value if != 0
 setopt PRINT_EXIT_VALUE
 
