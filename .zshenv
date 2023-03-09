@@ -46,5 +46,5 @@ export CC=clang
 export QT_QPA_PLATFORMTHEME=gtk2
 export GTK_THEME=Dracula
 export WORDCHARS=""
-export PATH="$PATH:$HOME/.local/bin/:$HOME/opt/bin:$HOME/.local/share/cargo/bin/"
+export PATH="$HOME/.local/bin/:$HOME/opt/bin:$PATH"
 . "/home/gb/.local/share/cargo/env"
