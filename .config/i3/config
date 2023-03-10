@@ -166,6 +166,7 @@ client.placeholder #282a36 #282a36 #f8f8f2 #282a36 #21222c
 bar {
     status_command i3status
     separator_symbol " | "
+    position top
     colors {
         background #282a36
 	statusline #f8f8f2
