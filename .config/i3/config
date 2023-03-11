@@ -136,10 +136,10 @@ bindsym Mod4+Ctrl+r restart
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        bindsym $left       resize shrink width 10 px or 1 ppt
-        bindsym $down       resize grow height 10 px or 1 ppt
-        bindsym $up         resize shrink height 10 px or 1 ppt
-        bindsym $right      resize grow width 10 px or 1 ppt
+        bindsym $left       resize grow width 10 px or 1 ppt
+        bindsym $down       resize shrink height 10 px or 1 ppt
+        bindsym $up         resize grow height 10 px or 1 ppt
+        bindsym $right      resize shrink width 10 px or 1 ppt
 	bindsym s           resize grow height 5px or 1ppt
 	bindsym v           resize grow width 5px or 1ppt
 
@@ -155,7 +155,7 @@ default_orientation vertical
 default_border pixel 2
 default_floating_border normal 2
 for_window [all] title_window_icon yes
-hide_edge_borders both
+smart_borders on
 
 client.focused #ff79c6 #ff79c6 #282a36 #ff79c6 #ff79c6
 client.focused_inactive #8be9fd #8be9fd #282a36 #8be9fd #8be9fd
