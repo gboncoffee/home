@@ -49,17 +49,12 @@ PROMPT='%F{magenta}%m%f:%B%F{blue}%2~%f%b λ '
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias ip='ip -brief -color=auto'
-alias emacs='emacsclient -c -a emacs'
+alias cal='calcurse'
 # downloads and records
 alias music-dl='yt-dlp -i -x --audio-format mp3'
 alias convert-to-web='ffmpeg -i out.mp4 -c:v libx264 -crf 20 -preset slow -vf format=yuv420p -c:a aac -movflags +faststart output.mp4'
 # other
 alias fuck='sudo $(fc -ln -1)'
-
-function setxbg {
-    ln -sf $(pwd)/$1 ~/.config/wallpaper
-    feh --no-fehbg --bg-fill ~/.config/wallpaper
-}
 
 # print exit value if != 0
 setopt PRINT_EXIT_VALUE

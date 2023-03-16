@@ -75,12 +75,6 @@ hook global WinSetOption filetype=make %{
     hook -once -always window WinSetOption filetype=.* %{ remove-highlighter window/CompileHighlighsOk }
     hook -once -always window WinSetOption filetype=.* %{ remove-highlighter window/CompileHighlighsErr }
 }
-#
-# wiki
-#
-plug "TeddyDD/kakoune-wiki" config %{
-    wiki-setup %sh{ echo $HOME/doc/wiki }
-}
 
 #
 # keybinds and commands
