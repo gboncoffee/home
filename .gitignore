@@ -8,6 +8,7 @@
 .config/mpd/database
 .config/mpd/playlists
 .config/qtile/__pycache__/*
+.config/kak/plugins/*
 
 .local/bin/dmenu
 .local/bin/batterymon

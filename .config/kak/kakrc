@@ -1,0 +1,108 @@
+# plug bootstrap
+evaluate-commands %sh{
+    plugins="$kak_config/plugins"
+    mkdir -p "$plugins"
+    [ ! -e "$plugins/plug.kak" ] && git clone -q https://github.com/andreyorst/plug.kak.git "$plugins/plug.kak"
+    printf "%s\n" "source '$plugins/plug.kak/rc/plug.kak'"
+}
+plug "andreyorst/plug.kak" noload
+
+#
+# editor
+# 
+    
+# clipboard
+plug "lePerdu/kakboard" %{
+    hook global WinCreate .* %{ kakboard-enable }
+}
+
+# tab
+plug "andreyorst/smarttab.kak" defer smarttab %{
+    set-option global softtabstop 4
+    set-option global indentwidth 4
+} config %{
+    hook global WinSetOption filetype=(makefile) noexpandtab
+    hook global BufOpenFile .* expandtab
+    hook global BufNewFile  .* expandtab
+}
+
+# auto pairs
+plug "alexherbo2/auto-pairs.kak" config %{
+    hook global BufOpenFile .* enable-auto-pairs
+    hook global BufNewFile .* enable-auto-pairs
+}
+
+# others
+set-option global autowrap_column 80
+map global normal = '|fmt -w $kak_opt_autowrap_column<ret>'
+set-option global makecmd ''
+set-option global grepcmd 'rg --hidden --glob !.git/* --no-heading --line-number'
+
+#
+# fzf
+# 
+plug "andreyorst/fzf.kak" config %{
+    require-module fzf
+    require-module fzf-file
+} defer fzf %{
+    set-option global fzf_implementation "fzf %sh{echo $FZF_DEFAULT_OPTS}"
+}
+
+#
+# ui
+#
+
+add-highlighter global/ number-lines -relative
+add-highlighter global/ column 80 default,black
+add-highlighter global/ regex \b(TODO|FIXME|XXX|NOTE)\b 0:default+rb
+add-highlighter global/ show-matching
+
+colorscheme dracula
+set-face global StatusLine default,default
+set-face global LineNumbers comment
+set-face global BufferPadding comment
+set-face global PrimaryCursor default+r
+set-option global scrolloff 10,10 
+
+set-option global ui_options terminal_assistant=cat
+
+# better highlight in compile buffer when using cargo
+add-highlighter shared/CompileHighlighsOk regex \b(Compiling|Finished|Running|ok|Doc-tests) 0:green+b
+add-highlighter shared/CompileHighlighsErr regex \b(FAILED|error) 0:red+b
+hook global WinSetOption filetype=make %{
+    add-highlighter window/CompileHighlighsOk ref CompileHighlighsOk
+    add-highlighter window/CompileHighlighsErr ref CompileHighlighsErr
+    hook -once -always window WinSetOption filetype=.* %{ remove-highlighter window/CompileHighlighsOk }
+    hook -once -always window WinSetOption filetype=.* %{ remove-highlighter window/CompileHighlighsErr }
+}
+#
+# wiki
+#
+plug "TeddyDD/kakoune-wiki" config %{
+    wiki-setup %sh{ echo $HOME/doc/wiki }
+}
+
+#
+# keybinds and commands
+#
+
+map global normal <tab> ":bn<ret>"
+map global normal <s-tab> ":bp<ret>"
+
+declare-user-mode cmd
+map global -docstring "Open a terminal" cmd <ret> ":terminal zsh<ret>"
+map global -docstring "Compile" cmd b ":make <up>"
+map global -docstring "Check compilation log" cmd t ":buffer *make*<ret>"
+map global -docstring "Read a man page" cmd m ":terminal fman<ret>"
+map global -docstring "Find file" cmd f ":fzf -kak-cmd e<ret>"
+map global -docstring "Open file manager" cmd n ":terminal lf<ret>"
+map global -docstring "Open a new window" cmd w ":new<ret>"
+map global normal <space> ":enter-user-mode cmd<ret>"
+
+declare-user-mode term
+map global -docstring "Python" term p ":terminal python<ret>"
+map global -docstring "Lua" term l ":terminal lua<ret>"
+map global -docstring "Julia" term c ":terminal julia<ret>"
+map global -docstring "Haskell" term h ":terminal ghci<ret>"
+map global -docstring "JavaScript" term j ":terminal deno<ret>"
+map global -docstring "Open a repl" cmd c ":enter-user-mode term<ret>"

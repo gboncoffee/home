@@ -29,7 +29,6 @@ for_window [class="^QjackCtl"] floating enable
 for_window [class="^guitarix"] floating enable
 for_window [class="^Guitarix"] floating enable
 
-bindsym Mod4+e exec emacsclient -c -a emacs
 bindsym Mod4+n exec "$BROWSER"
 
 # terminal
