@@ -1,0 +1,92 @@
+# vim:foldmethod=marker
+#
+# Gabriel G. de Brito lf config ;)
+#
+# <3
+#
+# GOOD DEFAULTS {{{
+# basic
+set shell bash
+set shellopts '-eu'
+set ifs "\n"
+set incsearch
+
+# appearance
+set scrolloff 5
+set ratios 1:2:4
+set icons
+
+# previewer and etc
+set previewer ctpv
+set cleaner ctpvclear
+&ctpv -s $id
+&ctpvquit $id
+
+# why not?
+set hidden
+# }}}
+
+# FUNCTIONS {{{
+# define a custom 'open' command
+# This command is called when current file is not a directory. You may want to
+# use either file extensions and/or mime types here. Below uses an editor for
+# text files and a file opener for the rest.
+cmd open ${{
+    test -L $f && f=$(readlink -f $f)
+    case $(file --mime-type $f -b) in
+        text/*) $EDITOR $f;;
+        image/png) feh --scale-down $f &;;
+        image/j*) feh --scale-down $f &;;
+        image/xcf) gimp $f &;;
+        video/*) mpv --no-terminal $f &;;
+        audio/*) mpv --no-terminal $f &;;
+        */pdf) zathura $f &;;
+    esac
+}}
+
+# bulk-rename
+cmd bulk-rename ${{
+    old="$(mktemp)"
+    new="$(mktemp)"
+    if [ -n "$fs" ]; then
+        fs="$(basename $fs)"
+    else
+        fs="$(ls)"
+    fi
+    printf '%s\n' "$fs" >"$old"
+    printf '%s\n' "$fs" >"$new"
+    $EDITOR "$new"
+    [ "$(wc -l < "$new")" -ne "$(wc -l < "$old")" ] && exit
+    paste "$old" "$new" | while IFS= read -r names; do
+        src="$(printf '%s' "$names" | cut -f1)"
+        dst="$(printf '%s' "$names" | cut -f2)"
+        if [ "$src" = "$dst" ] || [ -e "$dst" ]; then
+            continue
+        fi
+        mv -- "$src" "$dst"
+    done
+    rm -- "$old" "$new"
+    lf -remote "send $id unselect"
+}}
+
+cmd mkdir %mkdir "$@"
+cmd touch %touch "$@"
+cmd wallpaper %ln -sf $f ~/.config/wallpaper; feh --no-fehbg --bg-fill $f
+# }}}
+
+# MAPS {{{
+# use enter for shell commands
+map <enter> shell
+
+# execute current file (must be executable)
+map x $$f
+map X !$f
+
+# general
+map <backspace2> push :delete<enter>
+map a set hidden!
+map R bulk-rename
+map m push :touch<space>
+map M push :mkdir<space>
+map b wallpaper
+# }}}

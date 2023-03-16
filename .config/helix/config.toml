@@ -1,0 +1,29 @@
+theme = "dracula"
+
+[editor]
+line-number  = "relative"
+scrolloff    = 10
+bufferline   = "multiple"
+color-modes  = true
+gutters      = [ "diff", "diagnostics", "spacer", "line-numbers", "spacer" ]
+idle-timeout = 0
+rulers       = [ 80 ]
+
+[editor.lsp]
+display-messages = true
+display-signature-help-docs = false
+
+[editor.file-picker]
+hidden = false
+
+[editor.statusline]
+left   = [ "mode", "file-type", "workspace-diagnostics" ]
+center = [ "file-name" ]
+right  = [ "position", "total-line-numbers" ]
+
+[keys.normal]
+tab     = ":bn"
+"S-tab" = ":bp"
+X       = "extend_line_above"
+"C-j"   = "copy_selection_on_next_line"
+"C-k"   = "copy_selection_on_prev_line"
