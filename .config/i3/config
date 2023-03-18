@@ -170,11 +170,11 @@ bar {
     position top
     colors {
         background #282a36
-	statusline #f8f8f2
-	separator #6272a4
-	focused_workspace #ff79c6 #ff79c6 #282a36
-	active_workspace #282a36 #282a36 #f8f8f2
-	inactive_workspace #282a36 #282a36 #f8f8f2
-	binding_mode #8be9fd #8be9fd #282a36
+        statusline #f8f8f2
+        separator #6272a4
+        focused_workspace #ff79c6 #ff79c6 #282a36
+        active_workspace #282a36 #282a36 #f8f8f2
+        inactive_workspace #282a36 #282a36 #f8f8f2
+        binding_mode #8be9fd #8be9fd #282a36
     }
 }

@@ -15,17 +15,11 @@ general {
     color_bad = "#ff5555"
 }
 
-order += "memory"
 order += "disk /"
 order += "cpu_temperature 0"
 order += "battery all"
 order += "volume master"
 order += "tztime local"
-
-memory {
-    format = "Chaos: %used"
-    memory_used_method = classical
-}
 
 disk "/" {
     format = "Animes: %used"
