@@ -28,6 +28,6 @@ general.firstdayofweek=monday
 general.multipledays=yes
 general.periodicsave=0
 general.systemevents=yes
-notification.command=notify-send 'Event notification' 
+notification.command=notify-send "Event notification" "$(calcurse --next)"
 notification.notifyall=all
 notification.warning=300
