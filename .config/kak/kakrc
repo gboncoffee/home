@@ -76,6 +76,46 @@ hook global WinSetOption filetype=make %{
     hook -once -always window WinSetOption filetype=.* %{ remove-highlighter window/CompileHighlighsErr }
 }
 
+# git
+plug "chambln/kakoune-kit" config %{
+    declare-user-mode commit
+    declare-user-mode push-pull
+    hook global WinDisplay "\*git\*" %{
+        git status
+    }
+    hook global WinSetOption filetype=git-status %{
+
+        map window -docstring 'Straight-forward' commit c ':git commit --verbose<ret>'
+        map window -docstring 'Amend' commit a ':git commit --amend<ret>'
+        map window normal -docstring 'Commit' c ':enter-user-mode commit<ret>'
+
+        map window -docstring 'Push' push-pull P ':echo %sh{git push} ; git status<ret>'
+        map window -docstring 'Force push' push-pull F ':echo %sh{git push --force} ; git status<ret>'
+        map window -docstring 'Pull' push-pull p ':echo %sh{git pull} ; git status<ret>'
+        map window -docstring 'Force pull' push-pull f ':echo %sh{git pull --force} ; git status<ret>'
+        map window normal -docstring 'Push/Pull' p ':enter-user-mode push-pull<ret>'
+
+        map window normal j "jgh"
+        map window normal k "kgh"
+        map window normal l ': git log --oneline --graph -- <c-x>f<ret>'
+        map window normal S ': git add . ; git status<ret>'
+        map window normal d 'wwwGl: git diff %val{selections}<ret>'
+        map window normal s 'wwwGl: git add %val{selections} ; git status<ret>'
+        map window normal u 'wwwGl: echo %sh{git restore --staged $kak_selections} ; git status<ret>'
+        map window normal x 'wwwGl: echo %sh{git restore $kak_selections} ; git status<ret>'
+        map window normal <ret> 'wwwGlgf'
+
+        map window normal q ': db<ret>'
+    }
+    hook global WinSetOption filetype=git-log %{
+        map window normal d     'ww: git diff %val{selections}<ret>'
+        map window normal <ret> 'ww: git show %val{selections}<ret>'
+        map window normal R     'ww: git reset %val{selections}'
+        map window normal o     'ww: git checkout %val{selections}'
+        map window normal r     'ww: terminal git revert %val{selections}'
+    }
+}
+
 #
 # keybinds and commands
 #
@@ -91,6 +131,7 @@ map global -docstring "Read a man page" cmd m ":terminal fman<ret>"
 map global -docstring "Find file" cmd f ":fzf -kak-cmd e<ret>"
 map global -docstring "Open file manager" cmd n ":terminal lf<ret>"
 map global -docstring "Open a new window" cmd w ":new<ret>"
+map global -docstring "Open Git status" cmd g ":git status<ret>"
 map global normal <space> ":enter-user-mode cmd<ret>"
 
 declare-user-mode term
