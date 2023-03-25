@@ -76,7 +76,9 @@ hook global WinSetOption filetype=make %{
     hook -once -always window WinSetOption filetype=.* %{ remove-highlighter window/CompileHighlighsErr }
 }
 
+#
 # git
+# 
 plug "chambln/kakoune-kit" config %{
     declare-user-mode commit
     declare-user-mode push-pull
@@ -99,7 +101,8 @@ plug "chambln/kakoune-kit" config %{
         map window normal k "kgh"
         map window normal l ': git log --oneline --graph -- <c-x>f<ret>'
         map window normal S ': git add . ; git status<ret>'
-        map window normal d 'wwwGl: git diff %val{selections}<ret>'
+        map window normal d ': git diff<ret>'
+        map window normal D ': git diff --staged<ret>'
         map window normal s 'wwwGl: git add %val{selections} ; git status<ret>'
         map window normal u 'wwwGl: echo %sh{git restore --staged $kak_selections} ; git status<ret>'
         map window normal x 'wwwGl: echo %sh{git restore $kak_selections} ; git status<ret>'
@@ -114,6 +117,13 @@ plug "chambln/kakoune-kit" config %{
         map window normal o     'ww: git checkout %val{selections}'
         map window normal r     'ww: terminal git revert %val{selections}'
     }
+}
+
+#
+# wiki
+#
+plug "TeddyDD/kakoune-wiki" config %{
+    wiki-setup %sh{ echo "$HOME/doc/wiki/" }
 }
 
 #
