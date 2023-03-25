@@ -38,6 +38,7 @@ bindsym Mod4+s exec "$TERMINAL -e pulsemixer"
 bindsym Mod4+c exec "$TERMINAL -e julia"
 bindsym Mod4+t exec "$TERMINAL -e htop"
 bindsym Mod4+f exec "$TERMINAL -e lf"
+bindsym Mod4+e exec "thunderbird"
 
 bindsym Mod4+p exec "screenshotter"
 bindsym Mod4+Shift+p exec "screenshotter select"
