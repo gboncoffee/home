@@ -9,7 +9,6 @@ exec --no-startup-id luabatmon
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id unclutter --timeout --jitter --start-hidden
 exec --no-startup-id dunst
-exec --no-startup-id calcurse --daemon
 exec --no-startup-id feh --no-fehbg --bg-fill ~/.config/wallpaper
 
 set $refresh_i3status killall -SIGUSR1 i3status
