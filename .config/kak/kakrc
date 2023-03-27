@@ -97,13 +97,16 @@ plug "chambln/kakoune-kit" config %{
         map window -docstring 'Force pull' push-pull f ':echo %sh{git pull --force} ; git status<ret>'
         map window normal -docstring 'Push/Pull' p ':enter-user-mode push-pull<ret>'
 
+        map window normal P ":<esc>"
+        map window normal i ":<esc>"
         map window normal j "jgh"
         map window normal k "kgh"
-        map window normal l ': git log --oneline --graph -- <c-x>f<ret>'
+        map window normal l ': git log --oneline --graph<ret>'
         map window normal S ': git add . ; git status<ret>'
         map window normal d ': git diff<ret>'
         map window normal D ': git diff --staged<ret>'
         map window normal s 'wwwGl: git add %val{selections} ; git status<ret>'
+        map window normal a 'wGl: git add %val{selections} ; git status<ret>'
         map window normal u 'wwwGl: echo %sh{git restore --staged $kak_selections} ; git status<ret>'
         map window normal x 'wwwGl: echo %sh{git restore $kak_selections} ; git status<ret>'
         map window normal <ret> 'wwwGlgf'
