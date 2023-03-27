@@ -47,7 +47,7 @@ export LESS_TERMCAP_us=$'\e[1;4;36m'
 
 # default programs
 export EDITOR=kak
-export BROWSER=chromium
+export BROWSER=firefox
 export TERMINAL=alacritty
 export CC=clang
 

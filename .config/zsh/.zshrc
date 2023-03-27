@@ -39,7 +39,7 @@ bindkey '^f' forward-char
 bindkey '^b' backward-char
 
 # prompt
-PROMPT='%F{magenta}%m%f:%B%F{blue}%2~%f%b λ '
+PROMPT='%F{magenta}%n%f@%F{cyan}%m%f:%B%F{blue}%2~%f%b$ '
 
 #
 # aliases
@@ -56,11 +56,16 @@ alias convert-to-web='ffmpeg -i out.mp4 -c:v libx264 -crf 20 -preset slow -vf fo
 # other
 alias fuck='sudo $(fc -ln -1)'
 
+function setxbg {
+    ln -sf $1 ~/.config/wallpaper
+    feh --no-fehbg --bg-fill ~/.config/wallpaper
+}
+
 # print exit value if != 0
 setopt PRINT_EXIT_VALUE
 
 # source plugins
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # jokes haha
 echo "Welcome to zsh, the unfriendly interactive shell"

@@ -1,16 +1,12 @@
 Wikipedia|https://www.wikipedia.org/
-Arch Wiki|https://wiki.archlinux.org/
-Arch Linux|https://archlinux.org/
 GitHub|https://github.com/
 gboncoffee|https://gboncoffee.github.io/
 Rust Docs|~/.local/share/rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc/rust/html/index.html
 Rust Std Docs|~/.local/share/rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc/rust/html/std/index.html
 Crates.io|https://crates.io/
-Mozilla Web Reference|https://developer.mozilla.org/en-US/docs/Web
 Lua Docs|~/opt/usr/doc/lua/manual/5.4/contents.html
 Python Docs|~/opt/usr/doc/python-3.11.2-docs-html/index.html
 GPT|https://chat.openai.com/chat
-Nerd Fonts Cheat Sheet|https://www.nerdfonts.com/cheat-sheet
 iCloud|https://www.icloud.com/
 YouTube|https://www.youtube.com/
 Twitch|https://www.twitch.tv
@@ -20,6 +16,5 @@ Google Translate|https://translate.google.com/?sl=pt&tl=en&op=translate
 Google Earth|https://earth.google.com/
 Reddit|https://www.reddit.com/
 Discord|https://discord.com/channels/@me
-Instagram|https://www.instagram.com/?theme=dark
 Telegram|https://web.telegram.org/k/
 WhatsApp|https://web.whatsapp.com/

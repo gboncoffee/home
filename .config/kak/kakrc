@@ -120,16 +120,10 @@ plug "chambln/kakoune-kit" config %{
 }
 
 #
-# wiki
-#
-plug "TeddyDD/kakoune-wiki" config %{
-    wiki-setup %sh{ echo "$HOME/doc/wiki/" }
-}
-
-#
 # keybinds and commands
 #
 
+map global normal , <space>
 map global normal <tab> ":bn<ret>"
 map global normal <s-tab> ":bp<ret>"
 
@@ -139,7 +133,7 @@ map global -docstring "Compile" cmd b ":make <up>"
 map global -docstring "Check compilation log" cmd t ":buffer *make*<ret>"
 map global -docstring "Read a man page" cmd m ":terminal fman<ret>"
 map global -docstring "Find file" cmd f ":fzf -kak-cmd e<ret>"
-map global -docstring "Open file manager" cmd n ":terminal lf<ret>"
+map global -docstring "Open file manager" cmd n ":terminal ranger<ret>"
 map global -docstring "Open a new window" cmd w ":new<ret>"
 map global -docstring "Open Git status" cmd g ":git status<ret>"
 map global normal <space> ":enter-user-mode cmd<ret>"

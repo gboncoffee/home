@@ -4,25 +4,25 @@
 # version 1.1.0
 # since Mar 19, 2022
 
-ACTIONS=("lock\nswitch to greeter\nlogout\nrestart\nshutdown")
-CHOICE="$(echo -e $ACTIONS | dmenu -p 'power ')"
+ACTIONS="lock\nswitch to greeter\nlogout\nrestart\nshutdown"
+CHOICE="$(echo $ACTIONS | dmenu -p 'power ')"
 
-if [ "$CHOICE" == "logout" ]
+if [ "$CHOICE" = "logout" ]
 then
-    killall -u $USER
+    i3-msg exit
 
-elif [ "$CHOICE" == "restart" ]
+elif [ "$CHOICE" = "restart" ]
 then
     systemctl reboot
 
-elif [ "$CHOICE" == "shutdown" ]
+elif [ "$CHOICE" = "shutdown" ]
 then
     systemctl poweroff
 
-elif [ "$CHOICE" == "switch to greeter" ]
+elif [ "$CHOICE" = "switch to greeter" ]
 then
     dm-tool switch-to-greeter
-elif [ "$CHOICE" == "lock" ]
+elif [ "$CHOICE" = "lock" ]
 then
     dm-tool lock
 fi

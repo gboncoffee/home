@@ -3,8 +3,8 @@
 # lists bluetooth paired devices in dmenu, allow to toggle the connection. if no
 # device is connected, power off bluetooth
 
-function keyword {
-    if [ "$1" == "1" ]
+keyword() {
+    if [ "$1" = "1" ]
     then
         echo "connected"
     else
@@ -12,11 +12,11 @@ function keyword {
     fi
 }
 
-function notify_sucess {
+notify_sucess() {
     notify-send "Bluetooth operated sucessfully" "Successfully $(keyword $1) to $2"
 }
 
-function notify_unsucess {
+notify_unsucess() {
     notify-send --urgency=critical "Bluetooth failed to operate" "Failed attempt to $(keyword $1) to $2"
 }
 
@@ -27,7 +27,7 @@ then
     bluetoothctl power on
     MAC="$(echo $CHOICE | awk '{print substr($1, 0)}')"
     DEV="$(echo $CHOICE | awk '{$1=""; print $0}' | sed 's/^ //')"
-    if [ "$(bluetoothctl info $MAC | grep 'Connected' | awk '{print substr($2, 0)}')" == "yes" ]
+    if [ "$(bluetoothctl info $MAC | grep 'Connected' | awk '{print substr($2, 0)}')" = "yes" ]
     then
         notify-send "Bluetooth disconnecting..." "Attempting to disconnect from $DEV..."
         bluetoothctl disconnect $MAC && notify_sucess 0 "$DEV" || notify_unsucess 0 "$DEV"
@@ -39,7 +39,7 @@ else
     exit
 fi
 
-if [ "$(bluetoothctl devices Connected)" == "" ]
+if [ "$(bluetoothctl devices Connected)" = "" ]
 then
     bluetoothctl power off
 fi

@@ -21,7 +21,6 @@ set $right l
 set $terminal alacritty
 
 floating_modifier Mod4
-tiling_drag modifier titlebar
 for_window [class="^floating$"] floating enable
 for_window [class="^feh$"] floating enable
 for_window [class="^qjackctl"] floating enable
@@ -37,7 +36,7 @@ bindsym Mod4+m exec "$TERMINAL -e ncmpcpp"
 bindsym Mod4+s exec "$TERMINAL -e pulsemixer"
 bindsym Mod4+c exec "$TERMINAL -e julia"
 bindsym Mod4+t exec "$TERMINAL -e htop"
-bindsym Mod4+f exec "$TERMINAL -e lf"
+bindsym Mod4+f exec "$TERMINAL -e ranger"
 bindsym Mod4+e exec "thunderbird"
 
 bindsym Mod4+p exec "screenshotter"
@@ -156,7 +155,6 @@ default_orientation vertical
 default_border pixel 2
 default_floating_border normal 2
 for_window [all] title_window_icon yes
-smart_borders on
 
 client.focused #ff79c6 #ff79c6 #282a36 #ff79c6 #ff79c6
 client.focused_inactive #8be9fd #8be9fd #282a36 #8be9fd #8be9fd

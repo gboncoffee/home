@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# load envvars
+[ -f ~/.zshenv ] && . ~/.zshenv
+
+# set keyboard
+setxkbmap -layout "us,br"
+setxkbmap -option "grp:shifts_toggle"
+setxkbmap -option "caps:swapescape"
