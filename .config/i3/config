@@ -39,8 +39,7 @@ bindsym Mod4+t exec "$TERMINAL -e htop"
 bindsym Mod4+f exec "$TERMINAL -e ranger"
 bindsym Mod4+e exec "thunderbird"
 
-bindsym Mod4+p exec "screenshotter"
-bindsym Mod4+Shift+p exec "screenshotter select"
+bindsym Mod4+p exec "gnome-screenshot -i"
 
 # dmenu/rofi
 bindsym Mod4+a exec --no-startup-id rofi -show run
