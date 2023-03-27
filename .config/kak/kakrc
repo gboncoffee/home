@@ -141,7 +141,6 @@ map global normal <space> ":enter-user-mode cmd<ret>"
 declare-user-mode term
 map global -docstring "Python" term p ":terminal python<ret>"
 map global -docstring "Lua" term l ":terminal lua<ret>"
-map global -docstring "Julia" term c ":terminal julia<ret>"
 map global -docstring "Haskell" term h ":terminal ghci<ret>"
-map global -docstring "JavaScript" term j ":terminal deno<ret>"
+map global -docstring "JavaScript" term j ":terminal nodejs<ret>"
 map global -docstring "Open a repl" cmd c ":enter-user-mode term<ret>"
