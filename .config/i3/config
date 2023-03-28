@@ -8,7 +8,6 @@ exec --no-startup-id picom
 exec --no-startup-id luabatmon
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id unclutter --timeout --jitter --start-hidden
-exec --no-startup-id dunst
 exec --no-startup-id feh --no-fehbg --bg-fill ~/.config/wallpaper
 
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -27,6 +26,8 @@ for_window [class="^qjackctl"] floating enable
 for_window [class="^QjackCtl"] floating enable
 for_window [class="^guitarix"] floating enable
 for_window [class="^Guitarix"] floating enable
+for_window [class="^dunst"] floating enable
+for_window [class="^Dunst"] floating enable
 
 bindsym Mod4+n exec "$BROWSER"
 
