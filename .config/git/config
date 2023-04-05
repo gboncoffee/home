@@ -9,3 +9,5 @@
 	defaultBranch = master
 [format]
 	pretty = oneline
+[receive]
+	denyCurrentBranch = warn
