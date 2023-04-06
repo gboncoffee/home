@@ -7,6 +7,9 @@ evaluate-commands %sh{
 }
 plug "andreyorst/plug.kak" noload
 
+# pascal support (comment out in recent Kakoune versions)
+source "%val{config}/pascal.kak"
+
 #
 # editor
 # 
