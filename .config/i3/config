@@ -155,8 +155,8 @@ bindsym Mod4+Shift+r mode "resize"
 workspace_layout default
 default_orientation vertical
 default_border pixel 2
-default_floating_border normal 2
 for_window [all] title_window_icon yes
+hide_edge_borders smart
 
 client.focused #ff79c6 #ff79c6 #282a36 #ff79c6 #ff79c6
 client.focused_inactive #8be9fd #8be9fd #282a36 #8be9fd #8be9fd
