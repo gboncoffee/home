@@ -1,4 +1,21 @@
-#!/usr/bin/sh
+# ~/.profile: executed by the command interpreter for login shells.
+# This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
+# exists.
+# see /usr/share/doc/bash/examples/startup-files for examples.
+# the files are located in the bash-doc package.
+
+# the default umask is set in /etc/profile; for setting the umask
+# for ssh logins, install and configure the libpam-umask package.
+umask 077
+
+# if running bash
+if [ -n "$BASH_VERSION" ]; then
+    # include .bashrc if it exists
+    if [ -f "$HOME/.bashrc" ]; then
+	. "$HOME/.bashrc"
+    fi
+fi
+
 #
 # moving configs away from ~
 #
@@ -8,8 +25,7 @@ export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-store"
 # shell and utils
-export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
-export HISTFILE="$XDG_DATA_HOME/zsh/histfile"
+export HISTFILE="$XDG_DATA_HOME/bash/histfile"
 export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
 export LESSHISTFILE="-"
 # fzf
@@ -36,15 +52,6 @@ export PYTHONSTARTUP="$XDG_CONFIG_HOME/pyrc.py"
 # julia
 export JULIA_DEPOT_PATH="$XDG_DATA_HOME/julia"
 
-# less
-export LESS_TERMCAP_mb=$'\e[1;34m'
-export LESS_TERMCAP_md=$'\e[1;34m'
-export LESS_TERMCAP_me=$'\e[0m'
-export LESS_TERMCAP_se=$'\e[0m'
-export LESS_TERMCAP_so=$'\e[01;33m'
-export LESS_TERMCAP_ue=$'\e[0m'
-export LESS_TERMCAP_us=$'\e[1;4;36m'
-
 # default programs
 export EDITOR=kak
 export BROWSER=firefox
@@ -57,3 +64,4 @@ export GTK_THEME=Dracula
 export WORDCHARS=""
 export PATH="$HOME/.local/bin/:$HOME/opt/bin:$PATH"
 . "/home/gb/.local/share/cargo/env"
+

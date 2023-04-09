@@ -38,9 +38,6 @@ font:
 
   size: 13.0
 
-shell:
-  program: /bin/zsh
-
 bell:
   duration: 0
 

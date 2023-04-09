@@ -10,6 +10,7 @@ ln -sf $PWD/.config/* ~/.config/
 ln -sf $PWD/.local/bin ~/.local/bin
 ln -sf $PWD/.local/share/* ~/.local/share
 ln -sf $PWD/.xprofile ~/.xprofile
-ln -sf $PWD/.zshenv ~/.zshenv
+ln -sf $PWD/.bashrc ~/.bashrc
+ln -sf $PWD/.profile ~/.profile
 ln -sf $PWD/.ghci ~/.ghci
 ln -sf $PWD/.icons/default/index.theme ~/.icons/default/index.theme

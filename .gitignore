@@ -2,17 +2,10 @@
 .config/ncmpcpp/*.log
 .config/gtk-2.0/gtkfilechooser.ini
 .config/gtk-3.0/bookmarks
-.config/zsh/.zcompdump
-.config/zsh/plugs
 .config/mpd/sticker.sql
 .config/mpd/database
 .config/mpd/playlists
-.config/qtile/__pycache__/*
 .config/kak/plugins/*
-
-.local/bin/dmenu
-.local/bin/batterymon
-.local/bin/hx
 
 .vim/plugged/*
 .vim/autoload/*
