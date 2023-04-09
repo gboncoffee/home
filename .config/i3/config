@@ -158,23 +158,23 @@ default_border pixel 2
 for_window [all] title_window_icon yes
 hide_edge_borders smart
 
-client.focused #ff79c6 #ff79c6 #282a36 #ff79c6 #ff79c6
-client.focused_inactive #8be9fd #8be9fd #282a36 #8be9fd #8be9fd
-client.unfocused #282a36 #282a36 #f8f8f2 #282a36 #282a36
-client.urgent #ff5555 #ff5555 #f8f8f2 #ff5555 #ff5555
-client.placeholder #282a36 #282a36 #f8f8f2 #282a36 #21222c
+client.focused #367bf0 #367bf0 #272a34 #367bf0 #367bf0
+client.focused_inactive #9755b3 #9755b3 #272a34 #9755b3 #9755b3
+client.unfocused #272a34 #272a34 #ffffff #272a34 #272a34
+client.urgent #d41919 #d41919 #ffffff #d41919 #d41919
+client.placeholder #272a34 #272a34 #ffffff #272a34 #198388
 
 bar {
     status_command i3status
     separator_symbol " | "
     position top
     colors {
-        background #282a36
-        statusline #f8f8f2
+        background #272a34
+        statusline #ffffff
         separator #6272a4
-        focused_workspace #ff79c6 #ff79c6 #282a36
-        active_workspace #282a36 #282a36 #f8f8f2
-        inactive_workspace #282a36 #282a36 #f8f8f2
-        binding_mode #8be9fd #8be9fd #282a36
+        focused_workspace #367bf0 #367bf0 #272a34
+        active_workspace #272a34 #272a34 #ffffff
+        inactive_workspace #272a34 #272a34 #ffffff
+        binding_mode #9755b3 #9755b3 #272a34
     }
 }

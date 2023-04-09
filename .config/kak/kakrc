@@ -60,14 +60,14 @@ add-highlighter global/ column 80 default,black
 add-highlighter global/ regex \b(TODO|FIXME|XXX|NOTE)\b 0:default+rb
 add-highlighter global/ show-matching
 
-colorscheme dracula
-set-face global StatusLine default,default
-set-face global LineNumbers comment
-set-face global BufferPadding comment
+set-face global comment cyan+bi
+set-face global LineNumbers cyan
+set-face global BufferPadding cyan
 set-face global PrimaryCursor default+r
 set-option global scrolloff 10,10 
 
 set-option global ui_options terminal_assistant=cat
+set-option global ui_options ncurses_assistant=cat
 
 # better highlight in compile buffer when using cargo
 add-highlighter shared/CompileHighlighsOk regex \b(Compiling|Finished|Running|ok|Doc-tests) 0:green+b

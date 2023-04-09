@@ -133,7 +133,7 @@ channels = mono
 # if supported, ncurses mode will be forced on if user defined colors are used.
 # default is to keep current terminal color
 ; background = default
-foreground = magenta
+foreground = blue
 
 # SDL only support hex code colors, these are the default:
 ; background = '#111111'

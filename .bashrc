@@ -116,3 +116,8 @@ fi
 
 bind '"\C-k":history-search-backward'
 bind '"\C-j":history-search-forward'
+
+function setxbg() {
+    ln -sf $1 $HOME/.config/wallpaper
+    feh --no-fehbg --bg-fill $HOME/.config/wallpaper
+}
