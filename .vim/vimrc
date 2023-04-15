@@ -1,103 +1,127 @@
-vim9script
-var data_dir = '~/.vim'
-if empty(glob(data_dir .. '/autoload/plug.vim'))
-    silent execute '!curl -fLo ' .. data_dir .. '/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-    autocmd VimEnter * PlugInstall --sync | source ~/.vim/vimrc
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+    silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
-# just the basics
-set viminfofile=~/.vim/viminfo
-filetype on
+
+" basics
 syntax on
-set nocompatible
-set clipboard^=unnamedplus
-set path+=**
-set hidden
-set conceallevel=2
-set ttimeoutlen=100
+filetype plugin on
 set background=dark
-set nu rnu
-runtime! ftplugin/man.vim
-nnoremap Y y$
-
-# PLUGINS SETUP {{{
-g:Run_run_before = 'sp | wincmd J'
-g:Run_compilewin_cur = 1
-g:Run_runwin_cur = 1
-# }}}
-
-# PLUGINS {{{
-plug#begin()
-    # absolutely needed
-    Plug 'gboncoffee/run.vim'
-    Plug 'tpope/vim-rsi'
-    Plug 'tpope/vim-fugitive'
-    # editing
-    Plug 'junegunn/vim-easy-align'
-    Plug 'tpope/vim-commentary'
-plug#end()
-# }}}
-
-# GREAT DEFAULTS {{{
-# appearance/visual helpers
-set nowrap
-set signcolumn=no
-set scrolloff=10
-set showcmd
+set clipboard=unnamedplus
+set hidden
+set wildmenu
+set incsearch
 set hlsearch
-# editor
-set splitbelow
-set splitright
-set foldmethod=marker
-set tw=80
-set ignorecase
+set path+=**
+
+" editor {{{
+"
 set tabstop=4
 set shiftwidth=4
 set expandtab
-# complete/search
-set wildmenu
-set wildmode=full
-set completeopt=menu
-set incsearch
-# }}}
+set tw=80
+set nowrap
+set nu rnu
+set scrolloff=10
+set foldmethod=marker
+" }}}
 
-# MAPPINGS {{{
-nnoremap <Space><Space> /<++><CR>4xi
+" plugins {{{
+call plug#begin()
+    Plug 'gboncoffee/run.vim'
+    Plug 'preservim/NERDTree'
+    Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-rsi'
+    Plug 'yegappan/grep'
+call plug#end()
+" }}}
 
-command! Mit  read ~/.vim/LICENSE
-command! Head source ~/.vim/header.vim
+" maps {{{
+"
+nnoremap <Tab>   :bn<CR>
+nnoremap <S-Tab> :bn<CR>
+nnoremap <C-l>   :nohl<CR>
 
-# buffers
-nnoremap <Tab>    :bn<CR>
-nnoremap <S-Tab>  :bp<CR>
-# run.vim
-nnoremap <Space>b :Compile<CR>
-nnoremap <Space>a :CompileAuto<CR>
-nnoremap <Space>r :CompileReset<CR>
-# run.vim :Run
-nnoremap <Space><CR> :Run<CR>
-nnoremap <Space>cp   :Run python<CR>
-nnoremap <Space>co   :Run coffee<CR>
-nnoremap <Space>cl   :Run lua<CR>
-nnoremap <Space>cc   :Run julia<CR>
-nnoremap <Space>cj   :Run node<CR>
-nnoremap <Space>ch   :Run ghci<CR>
-nnoremap <Space>cs   :Run htop<CR>
-nnoremap <Space>cm   :Run ncmpcpp<CR>
-# others
-nnoremap <Space>g  :G<CR>
-nnoremap <C-l>     :nohl<CR>
-nnoremap <C-d>     <C-d>zz
-nnoremap <C-u>     <C-u>zz
-# }}}
+nnoremap <Space><Enter> :Run<CR>
+nnoremap <Space>cp      :Run python<CR>
+nnoremap <Space>cj      :Run nodejs<CR>
+nnoremap <Space>ch      :Run ghci<CR>
+nnoremap <Space>cl      :Run lua<CR>
+nnoremap <Space>ct      :Run htop<CR>
+nnoremap <Space>cm      :Run ncmpcpp<CR>
 
-# AUTOCMDS {{{
-#
-augroup FiletypeSettings
+nnoremap <Space>b       :Compile<CR>
+nnoremap <Space>r       :Compile<CR>
+nnoremap <Space>a       :Compile<CR>
+
+nnoremap <Space>n :e .<CR>
+nnoremap <Space>g :Git<CR><C-w>o
+nnoremap <Space>/ :Rgrep<CR>
+nnoremap <Space>f :find<Space>
+" }}}
+
+" autocmds/functions {{{
+"
+function SetNumbersAndQ()
+    if index(['qf', 'fugitive', 'gitcommit', 'run-compiler', 'man', 'help', 'nerdtree'], &filetype) >= 0
+        set nonu nornu
+        nnoremap <buffer> q :bd<CR>
+    else
+        set nu rnu
+    endif
+endfunction
+augroup Autocmds
     autocmd!
-    autocmd FileType python,shell,sh set formatoptions-=t
-    autocmd FileType qf,fugitive,git,gitcommit,run-compiler nnoremap <buffer> q :bd<CR>
+    autocmd BufEnter * call SetNumbersAndQ()
+    autocmd FileType * call SetNumbersAndQ()
 augroup END
-# }}}
+" }}}
 
-hi LineNr ctermfg=blue
-hi Comment cterm=italic
+" colors {{{
+"
+hi Statement    ctermfg=Blue
+hi Comment      ctermfg=Blue cterm=italic,bold
+hi LineNrAbove  ctermfg=LightBlue
+hi LineNrBelow  ctermfg=LightBlue
+hi LineNr       ctermfg=Blue cterm=italic,bold
+hi Identifier   ctermfg=NONE cterm=NONE
+hi Visual       cterm=reverse
+hi Folded       ctermbg=Black ctermfg=LightBlue
+hi StatusLine   ctermfg=Black ctermbg=White
+hi StatusLineNC ctermfg=Black ctermbg=Grey
+hi VertSplit    ctermfg=Black ctermbg=White
+hi WildMenu     ctermbg=Blue
+hi CursorLine   cterm=NONE ctermbg=Black
+hi Search       ctermbg=Magenta ctermfg=Black
+" }}}
+
+" NERDTree {{{
+"
+let g:NERDTreeShowHidden=1
+let g:NERDTreeAutoCenter=1
+let g:NERDTreeAutoCenterThreshold=10
+let g:NERDTreeNaturalSort=1
+let g:NERDTreeSortHiddenFirst=1
+let g:NERDTreeChDirMode=2
+let g:NERDTreeHighlightCursorline=1
+let g:NERDTreeHijackNetrw=1
+let g:NERDTreeBookmarksFile="~/.vim/nerdtree_bookmarks"
+let g:NERDTreeShowLineNumbers=0
+let g:NERDTreeWinPos='right'
+let g:NERDTreeWinSize=30
+let g:NERDTreeMinimalUI=1
+let g:NERDTreeMinimalMenu=1
+let g:NERDTreeCascadeSingleChildDir=0
+let g:NERDTreeCreatePrefix='silent keepalt keepjumps'
+let g:NERDTreeQuitOnOpen=1
+
+let g:NERDTreeMapActivateNode='<Enter>'
+let g:NERDTreeMapPreview='<A-Enter>'
+let g:NERDTreeMapUpdir='h'
+let g:NERDTreeMapRefreshRoot='<C-r>'
+let g:NERDTreeMapToggleHidden='a'
+let g:NERDTreeMapQuit='q'
+let g:NERDTreeMapChangeRoot='l'
+let g:NERDTreeMapMenu='m'
+" }}}
