@@ -14,6 +14,7 @@ set wildmenu
 set incsearch
 set hlsearch
 set path+=**
+set dir="~/.vim/"
 
 " editor {{{
 "
