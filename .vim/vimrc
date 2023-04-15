@@ -15,6 +15,7 @@ set incsearch
 set hlsearch
 set path+=**
 set dir="~/.vim/"
+set conceallevel=2
 
 " editor {{{
 "
@@ -36,6 +37,7 @@ call plug#begin()
     Plug 'tpope/vim-rsi'
     Plug 'yegappan/grep'
     Plug 'jiangmiao/auto-pairs'
+    Plug 'lervag/vimtex'
 call plug#end()
 " }}}
 
@@ -83,19 +85,20 @@ augroup END
 " colors {{{
 "
 hi Statement    ctermfg=Blue
-hi Comment      ctermfg=Blue cterm=italic,bold
 hi LineNrAbove  ctermfg=LightBlue
 hi LineNrBelow  ctermfg=LightBlue
+hi Comment      ctermfg=Blue cterm=italic,bold
 hi LineNr       ctermfg=Blue cterm=italic,bold
 hi Identifier   ctermfg=NONE cterm=NONE
-hi Visual       cterm=reverse
-hi Folded       ctermbg=Black ctermfg=LightBlue
+hi Folded       ctermfg=LightBlue ctermbg=Black
 hi StatusLine   ctermfg=Black ctermbg=White
 hi StatusLineNC ctermfg=Black ctermbg=Grey
 hi VertSplit    ctermfg=Black ctermbg=White
 hi WildMenu     ctermbg=Blue
-hi CursorLine   cterm=NONE ctermbg=Black
-hi Search       ctermbg=Magenta ctermfg=Black
+hi Search       ctermbg=DarkMagenta ctermfg=Black
+hi Visual       ctermbg=DarkMagenta
+hi MatchParen   ctermbg=DarkMagenta
+hi CursorLine   ctermbg=Black cterm=NONE 
 " }}}
 
 " NERDTree {{{
