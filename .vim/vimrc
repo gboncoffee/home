@@ -16,6 +16,7 @@ set hlsearch
 set path+=**
 set dir="~/.vim/"
 set conceallevel=2
+runtime! ftplugin/man.vim
 
 " editor {{{
 "
