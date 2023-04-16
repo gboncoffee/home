@@ -4,7 +4,8 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-" basics
+" basics {{{
+"
 syntax on
 filetype plugin on
 set background=dark
@@ -16,7 +17,9 @@ set hlsearch
 set path+=**
 set dir="~/.vim/"
 set conceallevel=2
+set tw=79
 runtime! ftplugin/man.vim
+" }}}
 
 " editor {{{
 "
@@ -44,10 +47,6 @@ call plug#end()
 
 " maps {{{
 "
-nnoremap <Tab>   :bn<CR>
-nnoremap <S-Tab> :bp<CR>
-nnoremap <C-l>   :nohl<CR>
-
 nnoremap <Space><Enter> :Run<CR>
 nnoremap <Space>cp      :Run python<CR>
 nnoremap <Space>cj      :Run nodejs<CR>
@@ -64,22 +63,28 @@ nnoremap <Space>n :e .<CR>
 nnoremap <Space>g :Git<CR><C-w>o
 nnoremap <Space>/ :Rgrep<CR>
 nnoremap <Space>f :find<Space>
+nnoremap <Space>t :copen<CR>
+nnoremap <Tab>    :bn<CR>
+nnoremap <S-Tab>  :bp<CR>
+nnoremap <C-l>    :nohl<CR>
 " }}}
 
 " autocmds/functions {{{
 "
-function SetNumbersAndQ()
+function SetupBuffer()
     if index(['qf', 'fugitive', 'gitcommit', 'run-compiler', 'man', 'help', 'nerdtree'], &filetype) >= 0
         set nonu nornu
+        setlocal colorcolumn=
         nnoremap <buffer> q :bd<CR>
     else
         set nu rnu
+        setlocal colorcolumn=+1
     endif
 endfunction
 augroup Autocmds
     autocmd!
-    autocmd BufEnter * call SetNumbersAndQ()
-    autocmd FileType * call SetNumbersAndQ()
+    autocmd BufEnter * call SetupBuffer()
+    autocmd FileType * call SetupBuffer()
 augroup END
 " }}}
 
@@ -100,6 +105,7 @@ hi Search       ctermbg=DarkMagenta ctermfg=Black
 hi Visual       ctermbg=DarkMagenta
 hi MatchParen   ctermbg=DarkMagenta
 hi CursorLine   ctermbg=Black cterm=NONE 
+hi ColorColumn  ctermbg=Black
 " }}}
 
 " NERDTree {{{
