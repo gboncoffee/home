@@ -10,3 +10,4 @@
 .vim/plugged/*
 .vim/autoload/*
 .vim/viminfo
+.vim/nerdtree_bookmarks

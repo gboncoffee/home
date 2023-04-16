@@ -44,7 +44,7 @@ call plug#end()
 " maps {{{
 "
 nnoremap <Tab>   :bn<CR>
-nnoremap <S-Tab> :bn<CR>
+nnoremap <S-Tab> :bp<CR>
 nnoremap <C-l>   :nohl<CR>
 
 nnoremap <Space><Enter> :Run<CR>
