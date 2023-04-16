@@ -56,8 +56,8 @@ nnoremap <Space>ct      :Run htop<CR>
 nnoremap <Space>cm      :Run ncmpcpp<CR>
 
 nnoremap <Space>b       :Compile<CR>
-nnoremap <Space>r       :Compile<CR>
-nnoremap <Space>a       :Compile<CR>
+nnoremap <Space>r       :CompileReset<CR>
+nnoremap <Space>a       :CompileAuto<CR>
 
 nnoremap <Space>n :e .<CR>
 nnoremap <Space>g :Git<CR><C-w>o
