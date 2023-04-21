@@ -117,6 +117,10 @@ fi
 bind '"\C-k":history-search-backward'
 bind '"\C-j":history-search-forward'
 
+alias music-dl='yt-dlp -i -x --audio-format mp3'
+alias convert-to-web='ffmpeg -i out.mp4 -c:v libx264 -crf 20 -preset slow -vf format=yuv420p -c:a aac -movflags +faststart output.mp4'
+alias fuck='sudo $(fc -ln -1)'
+
 function setxbg() {
     ln -sf $1 $HOME/.config/wallpaper
     feh --no-fehbg --bg-fill $HOME/.config/wallpaper
