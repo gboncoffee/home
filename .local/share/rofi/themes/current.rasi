@@ -13,7 +13,7 @@ window {
 }
 
 mainbox {
-    background-color: @background;
+    background-color: @primary;
 }
 
 inputbar {
@@ -21,8 +21,9 @@ inputbar {
 }
 
 entry {
-    text-color: @foreground;
-    background-color: @background-dark;
+    placeholder: "Type...";
+    text-color: @background;
+    background-color: @primary;
     blink: false;
 }
 

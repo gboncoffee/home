@@ -1,8 +1,7 @@
 /* vim:filetype=css
  */
 * {
-    background: #272A34;
-    background-dark: #1F2229;
-    foreground: #FFFFFF;
-    primary:    #367bf0;
+    background: #1E1E2E;
+    foreground: #CDD6F4;
+    primary:    #F5C2E7;
 }

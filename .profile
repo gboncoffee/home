@@ -48,7 +48,7 @@ export CC=clang
 
 # sensible defaults
 export QT_QPA_PLATFORMTHEME=gtk2
-export GTK_THEME=Flat-Remix-GTK-Blue-Dark-Solid
+export GTK_THEME=Catppuccin-Mocha-Standard-Pink-Dark
 export PATH="$HOME/.local/bin/:$HOME/opt/bin:$PATH"
 . "/home/gb/.local/share/cargo/env"
 

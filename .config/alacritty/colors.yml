@@ -1,30 +1,78 @@
 colors:
-  primary:
-    background: '#272A34'
-    foreground: '#FFFFFF'
+    primary:
+        background: "#1E1E2E" # base
+        foreground: "#CDD6F4" # text
+        # Bright and dim foreground colors
+        dim_foreground: "#CDD6F4" # text
+        bright_foreground: "#CDD6F4" # text
 
-  cursor:
-    text: CellBackground
-    cursor: CellForeground
+    # Cursor colors
+    cursor:
+        text: "#1E1E2E" # base
+        cursor: "#F5E0DC" # rosewater
+    vi_mode_cursor:
+        text: "#1E1E2E" # base
+        cursor: "#B4BEFE" # lavender
 
-  normal:
-    black:   '#1F2229'
-    red:     '#D41919'
-    green:   '#5EBDAB'
-    yellow:  '#FEA44C'
-    blue:    '#367bf0'
-    magenta: '#9755b3'
-    cyan:    '#49AEE6'
-    white:   '#E6E6E6'
+    # Search colors
+    search:
+        matches:
+            foreground: "#1E1E2E" # base
+            background: "#A6ADC8" # subtext0
+        focused_match:
+            foreground: "#1E1E2E" # base
+            background: "#A6E3A1" # green
+        footer_bar:
+            foreground: "#1E1E2E" # base
+            background: "#A6ADC8" # subtext0
 
-  bright:
-    black:   '#198388'
-    red:     '#EC0101'
-    green:   '#47D4B9'
-    yellow:  '#FF8A18'
-    blue:    '#277FFF'
-    magenta: '#962ac3'
-    cyan:    '#05A1F7'
-    white:   '#FFFFFF'
+    # Keyboard regex hints
+    hints:
+        start:
+            foreground: "#1E1E2E" # base
+            background: "#F9E2AF" # yellow
+        end:
+            foreground: "#1E1E2E" # base
+            background: "#A6ADC8" # subtext0
 
-  transparent_background_colors: true
+    # Selection colors
+    selection:
+        text: "#1E1E2E" # base
+        background: "#F5E0DC" # rosewater
+
+    # Normal colors
+    normal:
+        black: "#45475A" # surface1
+        red: "#F38BA8" # red
+        green: "#A6E3A1" # green
+        yellow: "#F9E2AF" # yellow
+        blue: "#89B4FA" # blue
+        magenta: "#F5C2E7" # pink
+        cyan: "#94E2D5" # teal
+        white: "#BAC2DE" # subtext1
+
+    # Bright colors
+    bright:
+        black: "#585B70" # surface2
+        red: "#F38BA8" # red
+        green: "#A6E3A1" # green
+        yellow: "#F9E2AF" # yellow
+        blue: "#89B4FA" # blue
+        magenta: "#F5C2E7" # pink
+        cyan: "#94E2D5" # teal
+        white: "#A6ADC8" # subtext0
+
+    # Dim colors
+    dim:
+        black: "#45475A" # surface1
+        red: "#F38BA8" # red
+        green: "#A6E3A1" # green
+        yellow: "#F9E2AF" # yellow
+        blue: "#89B4FA" # blue
+        magenta: "#F5C2E7" # pink
+        cyan: "#94E2D5" # teal
+        white: "#BAC2DE" # subtext1
+
+    indexed_colors:
+        - { index: 16, color: "#FAB387" }
+        - { index: 17, color: "#F5E0DC" }

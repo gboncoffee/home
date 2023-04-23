@@ -158,23 +158,23 @@ default_border normal 2
 for_window [all] title_window_icon yes
 hide_edge_borders smart
 
-client.focused #367bf0 #367bf0 #272a34 #367bf0 #367bf0
-client.focused_inactive #9755b3 #9755b3 #272a34 #9755b3 #9755b3
-client.unfocused #272a34 #272a34 #ffffff #272a34 #272a34
-client.urgent #d41919 #d41919 #ffffff #d41919 #d41919
-client.placeholder #272a34 #272a34 #ffffff #272a34 #198388
+client.focused #F5C2E7 #F5C2E7 #1E1E2E #F5C2E7 #F5C2E7
+client.focused_inactive #94E2D5 #94E2D5 #1E1E2E #94E2D5 #94E2D5
+client.unfocused #1E1E2E #1E1E2E #CDD6F4 #1E1E2E #1E1E2E
+client.urgent #F38BA8 #F38BA8 #CDD6F4 #F38BA8 #F38BA8
+client.placeholder #1E1E2E #1E1E2E #CDD6F4 #1E1E2E #198388
 
 bar {
     status_command i3status
     separator_symbol " | "
     position bottom
     colors {
-        background #272a34
-        statusline #ffffff
+        background #1E1E2E
+        statusline #CDD6F4
         separator #6272a4
-        focused_workspace #367bf0 #367bf0 #272a34
-        active_workspace #272a34 #272a34 #ffffff
-        inactive_workspace #272a34 #272a34 #ffffff
-        binding_mode #9755b3 #9755b3 #272a34
+        focused_workspace #F5C2E7 #F5C2E7 #1E1E2E
+        active_workspace #1E1E2E #1E1E2E #CDD6F4
+        inactive_workspace #1E1E2E #1E1E2E #CDD6F4
+        binding_mode #94E2D5 #94E2D5 #1E1E2E
     }
 }
