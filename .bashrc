@@ -126,4 +126,5 @@ function setxbg() {
     feh --no-fehbg --bg-fill $HOME/.config/wallpaper
 }
 
-echo '( .-.)'
+echo '/\_/\'
+echo '=^.^='
