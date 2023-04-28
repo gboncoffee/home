@@ -44,7 +44,6 @@ export PYTHONSTARTUP="$XDG_CONFIG_HOME/pyrc.py"
 export EDITOR=vim
 export BROWSER=firefox
 export TERMINAL=alacritty
-export CC=clang
 
 # sensible defaults
 export QT_QPA_PLATFORMTHEME=gtk2
