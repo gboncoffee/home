@@ -8,14 +8,6 @@
 # for ssh logins, install and configure the libpam-umask package.
 umask 077
 
-# if running bash
-if [ -n "$BASH_VERSION" ]; then
-    # include .bashrc if it exists
-    if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
-    fi
-fi
-
 #
 # moving configs away from ~
 #
@@ -48,6 +40,5 @@ export TERMINAL=alacritty
 # sensible defaults
 export QT_QPA_PLATFORMTHEME=gtk2
 export GTK_THEME=Catppuccin-Mocha-Standard-Pink-Dark
-export PATH="$HOME/.local/bin/:$HOME/opt/bin:$PATH"
-. "/home/gb/.local/share/cargo/env"
+export PATH="$HOME/.local/bin/:$HOME/opt/bin:$PATH:$HOME/.local/share/cargo/bin"
 

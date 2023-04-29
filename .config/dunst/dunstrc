@@ -21,8 +21,6 @@
 
     ### Geometry ###
 
-    geometry = 400x400-0
-
     # Position the notification in the top right corner
     origin = top-right
 

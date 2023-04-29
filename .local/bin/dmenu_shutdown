@@ -5,7 +5,7 @@
 # since Mar 19, 2022
 
 ACTIONS="lock\nswitch to greeter\nlogout\nrestart\nshutdown"
-CHOICE="$(echo $ACTIONS | dmenu -p 'power ')"
+CHOICE="$(echo -e $ACTIONS | dmenu -p 'power ')"
 
 if [ "$CHOICE" = "logout" ]
 then
