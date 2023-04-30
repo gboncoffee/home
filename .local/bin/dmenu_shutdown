@@ -10,7 +10,7 @@ CHOICE="$(echo -e $ACTIONS | dmenu -p 'power ')"
 if [ "$CHOICE" = "logout" ]
 then
     kill $(pgrep luabatmon)
-    i3-msg exit
+    swaymsg exit
 
 elif [ "$CHOICE" = "restart" ]
 then
