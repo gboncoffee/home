@@ -42,8 +42,8 @@ alias convert-to-web='ffmpeg -i out.mp4 -c:v libx264 -crf 20 -preset slow -vf fo
 alias fuck='sudo $(fc -ln -1)'
 
 function setwaybg() {
-    ln -sf $1 $HOME/.config/wallpaper
-    swaybg -i $HOME/.config/wallpaper -m fill
+    ln -sf "$(realpath $1)" $HOME/.config/wallpaper
+    swaymsg output '*' bg /home/gb/.config/wallpaper fill
 }
 
 echo '/\_/\'
