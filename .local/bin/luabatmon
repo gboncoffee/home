@@ -1,11 +1,5 @@
 #!/usr/bin/luajit
 
--- 
--- author Gabriel G. de Brito gabrielgbrito@icloud.com
--- version 1.0.0
--- since Nov 02, 2022
--- 
-
 --
 -- Copyright (c) 2022 Gabriel G. de Brito
 -- 

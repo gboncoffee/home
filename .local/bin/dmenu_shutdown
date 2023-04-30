@@ -1,9 +1,5 @@
 #!/usr/bin/sh
 
-# author Gabriel G. de Brito gabrielgbrito@icloud.com
-# version 1.1.0
-# since Mar 19, 2022
-
 ACTIONS="lock\nsuspend\nlogout\nrestart\nshutdown"
 CHOICE="$(echo -e $ACTIONS | dmenu -p 'power ')"
 WAYLOCK_ARGS="-fork-on-lock -init-color 0x1E1E2E -input-color 0xF5C2E7 -fail-color 0xF38BA8"
