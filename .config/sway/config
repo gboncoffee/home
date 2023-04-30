@@ -44,7 +44,7 @@ bindsym $mod+Shift+p exec "grimshot --notify save area ~/desk/screenshot-$(date 
 # dmenu/wofi
 bindsym $mod+a exec wofi --show run
 bindsym $mod+q exec dmenu_shutdown
-bindsym $mod+Ctrl+p exec passmenu --type
+bindsym $mod+Ctrl+p exec passmenu
 bindsym $mod+b exec dmenu_web
 bindsym $mod+Ctrl+b exec dmenu_bluetooth
 
