@@ -8,6 +8,12 @@
 # for ssh logins, install and configure the libpam-umask package.
 umask 077
 
+if [ -n "$BASH_VERSION" ]; then
+    if [ -f "$HOME/.bashrc" ]; then
+        . "$HOME/.bashrc"
+    fi
+fi
+
 #
 # moving configs away from ~
 #
