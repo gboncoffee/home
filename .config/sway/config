@@ -35,7 +35,7 @@ bindsym $mod+m exec "$term -e ncmpcpp"
 bindsym $mod+s exec "$term -e pulsemixer"
 bindsym $mod+c exec "$term -e python"
 bindsym $mod+t exec "$term -e htop"
-bindsym $mod+f exec "$term -e ranger"
+bindsym $mod+f exec "$term -e lf"
 bindsym $mod+e exec "thunderbird"
 
 bindsym $mod+p exec "grimshot --notify save screen ~/desk/screenshot-$(date +%s).png"
