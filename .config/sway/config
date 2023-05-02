@@ -27,6 +27,8 @@ font pango:CaskaydiaCove Nerd Font Mono 12
 exec luabatmon
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
+floating_modifier $mod
+
 bindsym $mod+n exec "firefox"
 
 # terminal
@@ -66,6 +68,8 @@ bindsym $mod+$left focus left
 bindsym $mod+$down focus down
 bindsym $mod+$up focus up
 bindsym $mod+$right focus right
+bindsym $mod+Ctrl+a focus parent
+bindsym $mod+Ctrl+s focus child
 
 # move focused window
 bindsym $mod+Shift+$left move left
@@ -147,30 +151,32 @@ mode "resize" {
 
 bindsym $mod+Shift+r mode "resize"
 
+bindgesture swipe:4:left workspace prev
+bindgesture swipe:4:right workspace next
+
+bindgesture swipe:3:left focus left
+bindgesture swipe:3:down focus down
+bindgesture swipe:3:up focus up
+bindgesture swipe:3:right focus right
+
+bindgesture pinch:3:counterclockwise move left
+bindgesture pinch:3:clockwise move right
+bindgesture pinch:4:counterclockwise move up
+bindgesture pinch:4:clockwise move down
+
 workspace_layout tabbed
 default_orientation vertical
 default_border normal 2
-hide_edge_borders smart
+gaps inner 4
+gaps outer 2
 
-client.focused #F5C2E7 #F5C2E7 #1E1E2E #F5C2E7 #F5C2E7
-client.focused_inactive #94E2D5 #94E2D5 #1E1E2E #94E2D5 #94E2D5
-client.unfocused #1E1E2E #1E1E2E #CDD6F4 #1E1E2E #1E1E2E
-client.urgent #F38BA8 #F38BA8 #CDD6F4 #F38BA8 #F38BA8
-client.placeholder #1E1E2E #1E1E2E #CDD6F4 #1E1E2E #198388
+client.focused #F5C2E7 #F5C2E7 #1E1E2E
+client.focused_inactive #89B4FA #89B4FA #1E1E2E
+client.unfocused #1E1E2E #1E1E2E #CDD6F4
+client.urgent #F38BA8 #F38BA8 #CDD6F4
 
 bar {
-    status_command i3status
-    separator_symbol " | "
-    position bottom
-    colors {
-        background #1E1E2E
-        statusline #CDD6F4
-        separator #6272a4
-        focused_workspace #F5C2E7 #F5C2E7 #1E1E2E
-        active_workspace #1E1E2E #1E1E2E #CDD6F4
-        inactive_workspace #1E1E2E #1E1E2E #CDD6F4
-        binding_mode #94E2D5 #94E2D5 #1E1E2E
-    }
+    swaybar_command waybar
 }
 
 include /etc/sway/config.d/*

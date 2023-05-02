@@ -1,0 +1,44 @@
+{
+    "position": "bottom",
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": ["mpd"],
+    "modules-right": ["temperature", "sway/language", "pulseaudio", "battery", "clock"],
+    "height": 26,
+    "margin-bottom": 4,
+    "margin-left": 4,
+    "margin-right": 4,
+    "spacing": 5,
+    // "fixed-center": true,
+    "mpd": {
+        "format": "{stateIcon} {artist} :: {title} 󰎈",
+        "format-stopped": "Nothing playing 󰽻",
+        "state-icons": {
+            "paused": "",
+            "playing": "󰏤"
+        },
+    },
+    "temperature": {
+        "critical-threshold": 50,
+        "format-critical": "{icon} Coffee: {temperatureC}°C Too hot!",
+        "format": "{icon} Coffee: {temperatureC}°C",
+        "format-icons": ["", ""]
+    },
+    "sway/language": {
+        "format": " {shortDescription}"
+    },
+    "pulseaudio": {
+        "format": " {volume}%",
+        "format-muted": " mut",
+    },
+    "battery": {
+        "states": {
+            "critical": 20,
+        },
+        "format": "{icon} {capacity}%",
+        "format-icons": ["󰁺", "󰁼", "󰁾", "󰂀", "󰁹"]
+    },
+    "clock": {
+        "format": "󰃰 {:%a %b %d, %H:%M}",
+        "tooltip-format": "{:%A - %B %d, %Y - %H:%M}",
+    }
+}
