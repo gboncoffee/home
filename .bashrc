@@ -41,6 +41,9 @@ alias music-dl='yt-dlp -i -x --audio-format mp3'
 alias convert-to-web='ffmpeg -i out.mp4 -c:v libx264 -crf 20 -preset slow -vf format=yuv420p -c:a aac -movflags +faststart output.mp4'
 alias fuck='sudo $(fc -ln -1)'
 
+# if on kitty, create the alias for ssh
+[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
+
 function setwaybg() {
     ln -sf "$(realpath $1)" $HOME/.config/wallpaper
     swaymsg output '*' bg /home/gb/.config/wallpaper fill
