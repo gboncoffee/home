@@ -38,8 +38,8 @@ cmd open ${{
     test -L $f && f=$(readlink -f $f)
     case $(file --mime-type $f -b) in
         text/*) $EDITOR $f;;
-        image/png) feh --scale-down $f &;;
-        image/j*) feh --scale-down $f &;;
+        image/png) imv $f &;;
+        image/j*) imv $f &;;
         image/xcf) gimp $f &;;
         video/*) mpv --no-terminal $f &;;
         audio/*) mpv --no-terminal $f &;;
