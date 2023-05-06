@@ -94,9 +94,9 @@ map M push :mkdir<space>
 map b wallpaper
 
 # "bookmarks"
-map gp :cd ~/pics<enter>
-map gs :cd ~/src<enter>
-map gd :cd ~/docs<enter>
-map gb :cd ~/dls<enter>
-map gl :cd ~/lib<enter>
+map gp :cd ~/pics <enter>
+map gs :cd ~/src <enter>
+map gd :cd ~/doc <enter>
+map gb :cd ~/dls <enter>
+map gl :cd ~/lib <enter>
 # }}}
