@@ -4,10 +4,6 @@
     "modules-center": ["mpd"],
     "modules-right": ["temperature", "sway/language", "pulseaudio", "battery", "clock"],
     "height": 26,
-    "margin-bottom": 4,
-    "margin-left": 4,
-    "margin-right": 4,
-    "spacing": 5,
     // "fixed-center": true,
     "mpd": {
         "format": "{stateIcon} {artist} :: {title} 󰎈",

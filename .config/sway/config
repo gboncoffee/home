@@ -22,7 +22,7 @@ input type:pointer {
     pointer_accel 0.7
 }
 
-font pango:CaskaydiaCove Nerd Font Mono 12
+font pango:CaskaydiaCove Nerd Font 12
 
 exec luabatmon
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -167,8 +167,7 @@ bindgesture pinch:4:clockwise move down
 workspace_layout tabbed
 default_orientation vertical
 default_border normal 2
-gaps inner 4
-gaps outer 2
+hide_edge_borders both
 
 client.focused #F5C2E7 #F5C2E7 #1E1E2E
 client.focused_inactive #89B4FA #89B4FA #1E1E2E

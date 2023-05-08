@@ -2,16 +2,14 @@
     border: none;
     border-radius: 0;
     font-family: CaskaydiaCove Nerd Font;
-    font-size: 13pt;
+    font-size: 14pt;
 }
 
 window#waybar {
-    color: #1e1e1e;
-    background-color: rgba(0x1E, 0x1E, 0x2E, 0x00);
+    color: rgba(0x1e, 0x1e, 0x1e, 0x00);
 }
 
 #workspaces button {
-    margin: 0px 4px 0px 0px;
     background-color: #1E1E2E;
     padding: 0px;
     color: #CDD6F4;
