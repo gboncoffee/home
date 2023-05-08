@@ -48,3 +48,5 @@ export QT_QPA_PLATFORMTHEME=gtk2
 export GTK_THEME=Catppuccin-Mocha-Standard-Pink-Dark
 export PATH="$HOME/.local/bin/:$HOME/opt/bin:$PATH:$HOME/.local/share/cargo/bin"
 
+# fuck this language
+export _JAVA_AWT_WM_NONREPARENTING=1
