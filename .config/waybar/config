@@ -17,7 +17,7 @@
         "critical-threshold": 50,
         "format-critical": "{icon} Coffee: {temperatureC}°C Too hot!",
         "format": "{icon} Coffee: {temperatureC}°C",
-        "format-icons": ["", ""]
+        "format-icons": [""]
     },
     "sway/language": {
         "format": " {shortDescription}"
