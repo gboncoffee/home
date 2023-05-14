@@ -2,12 +2,21 @@
 
 ACTIONS="lock\nsuspend\nlogout\nrestart\nshutdown"
 CHOICE="$(echo -e $ACTIONS | dmenu -p 'power ')"
-WAYLOCK_ARGS="-fork-on-lock -init-color 0x1E1E2E -input-color 0xF5C2E7 -fail-color 0xF38BA8"
+I3LOCK_ARGS="-c 1E1E2EFF \
+             --ring-color=1E1E2EFF \
+             --inside-color=1E1E2EFF \
+             --insidever-color=A6E3A1FF \
+             --ringver-color=A6E3A1FF \
+             --keyhl-color=A6E3A1FF \
+             --insidewrong-color=F38BA8FF \
+             --ringwrong-color=F38BA8FF \
+             --bshl-color=F38BA8FF \
+             --line-uses-inside"
 
 if [ "$CHOICE" = "logout" ]
 then
     kill $(pgrep luabatmon)
-    swaymsg exit
+    i3-msg exit
 
 elif [ "$CHOICE" = "restart" ]
 then
@@ -19,9 +28,9 @@ then
 
 elif [ "$CHOICE" = "suspend" ]
 then
-    waylock $WAYLOCK_ARGS
+    i3lock $I3LOCK_ARGS
     systemctl suspend
 elif [ "$CHOICE" = "lock" ]
 then
-    waylock $WAYLOCK_ARGS
+    i3lock $I3LOCK_ARGS
 fi

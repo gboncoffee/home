@@ -1,0 +1,13 @@
+/* vim:filetype=css 
+ * 
+ */
+configuration {
+    modi: "run";
+    font: "CaskaydiaCove Nerd Font 18";
+    terminal: "alacritty";
+    case-sensitive: false;
+    sidebar-mode: false;
+    max-history-size: 25;
+}
+
+@theme "current"
