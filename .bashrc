@@ -9,7 +9,15 @@ HISTFILESIZE=2000
 shopt -s checkwinsize
 
 # fancy prompt
-PS1='\033[01;35m\]\h\[\033[33m\]:\[\033[01;34m\]\w\[\033[00;32m\]\$ \[\033[00m\]'
+reset=$(tput sgr0)
+bold=$(tput bold)
+cyan=$(tput setaf 6)
+white=$(tput setaf 7)
+magenta=$(tput setaf 5)
+yellow=$(tput setaf 3)
+blue=$(tput setaf 4)
+green=$(tput setaf 2)
+PS1="\\[$cyan\\]\\u\\[$bold\\]\\[$white\\]@\\[$reset\\]\\[$magenta\\]\\h\\[$bold\\]\\[$yellow\\] :: \\[$blue\\]\\w \\[$green\\]λ\\[$reset\\] "
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -43,11 +51,6 @@ alias fuck='sudo $(fc -ln -1)'
 
 # if on kitty, create the alias for ssh
 [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
-
-function setwaybg() {
-    ln -sf "$(realpath $1)" $HOME/.config/wallpaper
-    swaymsg output '*' bg /home/gb/.config/wallpaper fill
-}
 
 echo '/\_/\'
 echo '=^.^='
