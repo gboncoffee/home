@@ -3,7 +3,7 @@
  */
 configuration {
     modi: "run";
-    font: "CaskaydiaCove Nerd Font 18";
+    font: "CaskaydiaCove Nerd Font 22";
     terminal: "alacritty";
     case-sensitive: false;
     sidebar-mode: false;
