@@ -74,7 +74,7 @@ cmd bulk-rename ${{
 
 cmd mkdir %mkdir "$@"
 cmd touch %touch "$@"
-cmd wallpaper %ln -sf $f ~/.config/wallpaper; swaymsg output '*' bg /home/gb/.config/wallpaper fill
+cmd wallpaper %ln -sf $f ~/.config/wallpaper; feh --no-fehbg --bg-fill $f
 # }}}
 
 # MAPS {{{
@@ -99,4 +99,5 @@ map gs :cd ~/src <enter>
 map gd :cd ~/doc <enter>
 map gb :cd ~/dls <enter>
 map gl :cd ~/lib <enter>
+map gv :cd ~/vids <enter>
 # }}}
