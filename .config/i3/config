@@ -41,7 +41,6 @@ bindsym Mod4+c exec "$TERMINAL -e python"
 bindsym Mod4+t exec "$TERMINAL -e htop"
 bindsym Mod4+f exec "$TERMINAL -e lf"
 bindsym Mod4+e exec "thunderbird"
-bindsym Mod4+v exec "gvim"
 
 bindsym Mod4+p exec "gnome-screenshot -i"
 
