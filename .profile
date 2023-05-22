@@ -37,6 +37,8 @@ export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 # python
 export PYTHONSTARTUP="$XDG_CONFIG_HOME/pyrc.py"
+# go
+export GOPATH="$XDG_DATA_HOME/go"
 
 # default programs
 export EDITOR=vim
