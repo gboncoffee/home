@@ -17,7 +17,7 @@ set incsearch
 # appearance
 set scrolloff 5
 set ratios 1:2:4
-set icons
+# set icons
 
 # previewer and etc
 set previewer ctpv
