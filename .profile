@@ -46,6 +46,6 @@ export BROWSER=firefox
 export TERMINAL=kitty
 
 # sensible defaults
-export QT_QPA_PLATFORMTHEME=gtk2
+export GTK_USE_PORTAL=1
 export GTK_THEME=Catppuccin-Mocha-Standard-Pink-Dark
 export PATH="$HOME/.local/bin/:$HOME/opt/bin:$PATH:$HOME/.local/share/cargo/bin"

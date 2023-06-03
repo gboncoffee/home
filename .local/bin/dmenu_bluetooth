@@ -20,7 +20,7 @@ notify_unsucess() {
     notify-send --urgency=critical "Bluetooth failed to operate" "Failed attempt to $(keyword $1) to $2"
 }
 
-CHOICE="$(bluetoothctl devices | awk '{$1=""; print $0}' | sed 's/^ //' | dmenu -p 'bluetooth ')"
+CHOICE="$(bluetoothctl devices | awk '{$1=""; print $0}' | sed 's/^ //' | dmenu -p '   Bluetooth ')"
 
 if [ "$CHOICE" != "" ]
 then
