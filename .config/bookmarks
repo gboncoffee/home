@@ -1,23 +1,25 @@
-Wikipedia|https://www.wikipedia.org/
-Arch Wiki|https://wiki.archlinux.org/
-Arch Linux|https://archlinux.org/
-GitHub|https://github.com/
-gboncoffee|https://gboncoffee.github.io/
-Rust Docs|~/.local/share/rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc/rust/html/index.html
-Rust Std Docs|~/.local/share/rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc/rust/html/std/index.html
-Crates.io|https://crates.io/
-Lua Docs|~/opt/usr/doc/lua/manual/5.4/contents.html
-Python Docs|~/opt/usr/doc/python-3.11.2-docs-html/index.html
-GPT|https://chat.openai.com/chat
-iCloud|https://www.icloud.com/
-YouTube|https://www.youtube.com/
-Twitch|https://www.twitch.tv
-Google|https://www.google.com
-Google Translate|https://translate.google.com/?sl=pt&tl=en&op=translate
-Google Earth|https://earth.google.com/
-Reddit|https://www.reddit.com/
-Discord|https://discord.com/channels/@me
-Twitter|https://twitter.com/home
-Instagram|https://www.instagram.com/
-Telegram|https://web.telegram.org/k/
-WhatsApp|https://web.whatsapp.com/
+󰖬 Wikipedia|https://www.wikipedia.org/
+ Arch Wiki|https://wiki.archlinux.org/
+ Arch Linux|https://archlinux.org/
+ GitHub|https://github.com/
+󰿻 gboncoffee|https://gboncoffee.github.io/
+ Rust Docs|~/.local/share/rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc/rust/html/index.html
+ Crates.io|https://crates.io/
+ Lua Docs|~/opt/usr/doc/lua/manual/5.4/contents.html
+ Python Docs|~/opt/usr/doc/python-3.11.2-docs-html/index.html
+ Go Docs|https://go.dev/doc/
+󰈹 Mozilla Web Docs|https://developer.mozilla.org/en-US/docs/Web
+󰹻 GPT|https://chat.openai.com/chat
+ Vjudge|https://vjudge.net/
+ iCloud|https://www.icloud.com/
+ YouTube|https://www.youtube.com/
+ Twitch|https://www.twitch.tv
+ Google|https://www.google.com
+󰗊 Google Translate|https://translate.google.com/?sl=pt&tl=en&op=translate
+󰇧 Google Earth|https://earth.google.com/
+ Reddit|https://www.reddit.com/
+󰙯 Discord|https://discord.com/channels/@me
+ Twitter|https://twitter.com/home
+ Instagram|https://www.instagram.com/
+ Telegram|https://web.telegram.org/k/
+ WhatsApp|https://web.whatsapp.com/
