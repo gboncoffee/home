@@ -55,6 +55,7 @@ bindsym Mod4+f exec "$TERMINAL -e lf"
 bindsym Mod4+e exec "thunderbird"
 
 bindsym Mod4+p exec "spectacle"
+bindsym Mod4+Ctrl+c exec "dunstctl close"
 
 # dmenu/rofi
 bindsym Mod4+a exec --no-startup-id rofi -show drun
