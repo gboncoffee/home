@@ -85,6 +85,9 @@ def_key "8"
 def_key "9"
   show_clock
 
+def_key "0"
+  show_lyrics
+
 def_key "escape"
   reset_search_engine
 
@@ -159,6 +162,9 @@ def_key "e"
 
 def_key "e"
   edit_playlist_name
+
+def_key "e"
+  edit_lyrics
 
 def_key "i"
   show_song_info
