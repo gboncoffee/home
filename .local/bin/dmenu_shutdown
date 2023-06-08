@@ -1,22 +1,11 @@
 #!/usr/bin/sh
 
 ACTIONS="lock\nsuspend\nlogout\nrestart\nshutdown"
-CHOICE="$(echo -e $ACTIONS | dmenu -p 'power ')"
-I3LOCK_ARGS="-c 1E1E2EFF \
-             --ring-color=1E1E2EFF \
-             --inside-color=1E1E2EFF \
-             --insidever-color=A6E3A1FF \
-             --ringver-color=A6E3A1FF \
-             --keyhl-color=A6E3A1FF \
-             --insidewrong-color=F38BA8FF \
-             --ringwrong-color=F38BA8FF \
-             --bshl-color=F38BA8FF \
-             --line-uses-inside"
+CHOICE="$(echo -e $ACTIONS | dmenu -p 'session')"
 
 if [ "$CHOICE" = "logout" ]
 then
-    kill $(pgrep luabatmon)
-    i3-msg exit
+    killall -u $USER
 
 elif [ "$CHOICE" = "restart" ]
 then
@@ -28,9 +17,8 @@ then
 
 elif [ "$CHOICE" = "suspend" ]
 then
-    i3lock $I3LOCK_ARGS
-    systemctl suspend
+    slock systemctl suspend
 elif [ "$CHOICE" = "lock" ]
 then
-    i3lock $I3LOCK_ARGS
+    slock
 fi
