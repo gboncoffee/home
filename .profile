@@ -47,5 +47,6 @@ export TERMINAL=kitty
 
 # sensible defaults
 export GTK_USE_PORTAL=1
+export QT_QPA_PLATFORMTHEME=qt6ct
 export GTK_THEME=Catppuccin-Mocha-Standard-Pink-Dark
 export PATH="$HOME/.local/bin/:$HOME/opt/bin:$PATH:$HOME/.local/share/cargo/bin"
