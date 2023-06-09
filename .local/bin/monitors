@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/bin/env bash
 
 # dmenu menu to:
 # - enable second display as mirrored

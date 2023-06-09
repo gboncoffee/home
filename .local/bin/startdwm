@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/bin/env/bash
 
 while true; do
     dwm

@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/bin/env/bash
 
 PAGE="$(cat ~/.config/bookmarks | awk -F '|' '{print substr($1, 0)}' | dmenu -i -p 'web')"
 if [ "$PAGE" != "" ] 
