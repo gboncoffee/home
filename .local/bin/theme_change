@@ -1,0 +1,35 @@
+#!/bin/env bash
+
+#
+# Changes my stuff to light/dark mode. Of course only works at my own desktop!
+#
+# Change the following variable to set where it should look for suckless
+# sources:
+SOURCEDIR="$HOME/src"
+
+if [ "$(readlink ~/.config/gtk-2.0/gtkrc-2.0)" = "dark" ]; then
+    CHANGETO=light
+else
+    CHANGETO=dark
+fi
+
+cd $SOURCEDIR/dwm
+ln -sf "$CHANGETO.h" colors.h
+make -B
+
+cd $SOURCEDIR/dmenu
+ln -sf "$CHANGETO.h" colors.h
+make -B
+
+cd $SOURCEDIR/st
+ln -sf "$CHANGETO.h" colors.h
+make -B
+
+cd $HOME/.config/gtk-2.0
+ln -sf "$CHANGETO" gtkrc-2.0
+
+cd $HOME/.config/gtk-3.0
+ln -sf "$CHANGETO.ini" settings.ini
+
+# only works because I have dwm running in a loop
+killall dwm

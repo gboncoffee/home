@@ -14,3 +14,6 @@
 
 .config/gtk-2.0/gtkrc-2.0
 .config/gtk-3.0/settings.ini
+
+.config/Kvantum/Catppuccin*
+.config/Kvantum/kvantum.kvconfig
