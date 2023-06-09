@@ -34,5 +34,19 @@ ln -sf "$CHANGETO.ini" settings.ini
 cd $HOME/.config/Kvantum
 ln -sf "$CHANGETO.kvconfig" kvantum.kvconfig
 
+# the gtk4 theme must be set "manually"
+GTK4_CONFIG="$HOME/.config/gtk-4.0"
+if [ "$CHANGETO" = "dark" ]; then
+    THEME="/usr/share/themes/Catppuccin-Mocha-Standard-Pink-Dark/gtk-4.0"
+else
+    THEME="/usr/share/themes/Catppuccin-Latte-Standard-Pink-Light/gtk-4.0"
+fi
+rm "$GTK4_CONFIG/assets"
+rm "$GTK4_CONFIG/gtk.css"
+rm "$GTK4_CONFIG/gtk-dark.css"
+ln -sf "$THEME/assets" "$GTK4_CONFIG/assets"
+ln -sf "$THEME/gtk.css" "$GTK4_CONFIG/gtk.css"
+ln -sf "$THEME/gtk-dark.css" "$GTK4_CONFIG/gtk-dark.css"
+
 # only works because I have dwm running in a loop
 killall dwm
