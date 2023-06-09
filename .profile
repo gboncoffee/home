@@ -43,7 +43,7 @@ export GOPATH="$XDG_DATA_HOME/go"
 # default programs
 export EDITOR=vim
 export BROWSER=firefox
-export TERMINAL=kitty
+export TERMINAL=st
 
 # sensible defaults
 export GTK_USE_PORTAL=1
