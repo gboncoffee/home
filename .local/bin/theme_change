@@ -31,5 +31,8 @@ ln -sf "$CHANGETO" gtkrc-2.0
 cd $HOME/.config/gtk-3.0
 ln -sf "$CHANGETO.ini" settings.ini
 
+cd $HOME/.config/Kvantum
+ln -sf "$CHANGETO.kvconfig" kvantum.kvconfig
+
 # only works because I have dwm running in a loop
 killall dwm
