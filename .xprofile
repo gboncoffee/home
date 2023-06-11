@@ -7,3 +7,6 @@
 setxkbmap -layout "us,br"
 setxkbmap -option "grp:shifts_toggle"
 setxkbmap -option "caps:swapescape"
+
+# enable touch in touchpad
+xinput set-prop 14 345 1

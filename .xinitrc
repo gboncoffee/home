@@ -30,10 +30,12 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
+export XDG_CURRENT_DESKTOP=LXQt
+
 slstatus &
 picom &
 luabatmon &
-/usr/lib/polkit-kde-authentication-agent-1 &
+lxqt-policykit-agent &
 unclutter --timeout --jitter --start-hidden &
 feh --no-fehbg --bg-fill ~/.config/wallpaper &
 
