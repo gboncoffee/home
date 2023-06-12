@@ -1,0 +1,4 @@
+#!/bin/env bash
+
+ln -sf $(realpath $1) $HOME/.config/wallpaper
+feh --no-fehbg --bg-fill ~/.config/wallpaper
