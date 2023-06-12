@@ -17,7 +17,7 @@ set incsearch
 # appearance
 set scrolloff 5
 set ratios 1:2:4
-# set icons
+set icons
 
 # previewer and etc
 set previewer ctpv
@@ -36,15 +36,7 @@ set hidden
 # text files and a file opener for the rest.
 cmd open ${{
     test -L $f && f=$(readlink -f $f)
-    case $(file --mime-type $f -b) in
-        text/*) $EDITOR $f;;
-        image/png) feh $f &;;
-        image/j*) feh $f &;;
-        image/xcf) gimp $f &;;
-        video/*) mpv --no-terminal $f &;;
-        audio/*) mpv --no-terminal $f &;;
-        */pdf) zathura $f &;;
-    esac
+    xdg-open $f 2> /dev/null &
 }}
 
 # bulk-rename
