@@ -45,6 +45,14 @@ export EDITOR=vim
 export BROWSER=firefox
 export TERMINAL=st
 
+# fuck this language. Sun Microsystems and Oracle I FUCKING HATE YOU FOR
+# CREATING THE POST-MODERN CYBERPUNK REALITY. I FUCKING HATE YOU ALL!!!!!!!
+#
+# sorry Bill Joy, you're actually a cool guy ;)
+export _JAVA_AWT_WM_NONREPARENTING=1
+# this makes Java use GTK, system fonts and antialiasing
+export JDK_JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
+
 # sensible defaults
 export GTK_USE_PORTAL=1
 export GTK_THEME=Catppuccin-Mocha-Standard-Pink-Dark
