@@ -55,6 +55,6 @@ export JDK_JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -D
 
 # sensible defaults
 export GTK_USE_PORTAL=1
-export GTK_THEME=Catppuccin-Mocha-Standard-Pink-Dark
+export GTK_THEME=Yaru-magenta-dark
 export QT_QPA_PLATFORMTHEME=qt6ct
 export PATH="$HOME/.local/bin/:$HOME/opt/bin:$PATH:$HOME/.local/share/cargo/bin"
