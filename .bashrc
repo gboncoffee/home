@@ -16,8 +16,8 @@ magenta=$(tput setaf 5)
 yellow=$(tput setaf 3)
 blue=$(tput setaf 4)
 green=$(tput setaf 2)
-red=$(tput setaf 1)
-PS1="\\[$red\\]\\u\\[$bold\\]\\[$white\\]@\\[$reset\\]\\[$magenta\\]\\h\\[$bold\\]\\[$green\\] :: \\[$blue\\]\\w \\[$yellow\\]λ\\[$reset\\] "
+cyan=$(tput setaf 6)
+PS1="\\[$cyan\\]\\u\\[$bold\\]\\[$white\\]@\\[$reset\\]\\[$magenta\\]\\h\\[$bold\\]\\[$green\\] :: \\[$blue\\]\\w \\[$yellow\\]λ\\[$reset\\] "
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
