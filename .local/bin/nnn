@@ -3,7 +3,7 @@
 # I got this just because setting everything in .profile would be terrible
 
 export NNN_TERMINAL=st
-export NNN_OPTS='HEedu'
+export NNN_OPTS='HEeduC'
 export NNN_BMS="d:$HOME/doc;b:$HOME/dls/;p:$HOME/pics;v:$HOME/vids;s:$HOME/src;l:$HOME/lib"
 export NNN_PLUG='u:getplugs;b:!setxbg $nnn'
 
