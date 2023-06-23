@@ -17,7 +17,7 @@ yellow=$(tput setaf 3)
 blue=$(tput setaf 4)
 green=$(tput setaf 2)
 cyan=$(tput setaf 6)
-PS1="\\[$cyan\\]\\u\\[$bold\\]\\[$white\\]@\\[$reset\\]\\[$magenta\\]\\h\\[$bold\\]\\[$green\\] :: \\[$blue\\]\\w \\[$yellow\\]λ\\[$reset\\] "
+PS1="\\[$cyan\\]\\u\\[$bold\\]\\[$white\\]@\\[$reset\\]\\[$magenta\\]\\h\\[$bold\\]\\[$green\\] :: \\[$blue\\]\\w\n\\[$yellow\\]λ\\[$reset\\] "
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -56,5 +56,5 @@ alias ocaml='rlwrap ocaml'
 # if on kitty, create the alias for ssh
 [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
 
-echo '/\_/\'
-echo '=^.^='
+echo "$blue/\\${magenta}_$blue/\\"
+echo "$green=$cyan^$yellow.$cyan^$green="
