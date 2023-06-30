@@ -10,3 +10,5 @@ setxkbmap -option "caps:swapescape"
 
 # enable touch in touchpad
 xinput set-prop 14 345 1
+
+export XDG_CURRENT_DESKTOP=LXQt
