@@ -29,7 +29,7 @@ myBorderWidth        = 3
 myModMask            = mod4Mask
 myWorkspaces         = ["dev","web","pdf","mat","sys","vid","mail","net","chat"]
 myNormalBorderColor  = myBg
-myFocusedBorderColor = myPink
+myFocusedBorderColor = myBlue
 
 myFocusFollowsMouse :: Bool
 myFocusFollowsMouse = True
