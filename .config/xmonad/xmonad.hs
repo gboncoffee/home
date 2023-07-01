@@ -12,22 +12,31 @@ import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ShowWName
 import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.DynamicLog
 
 import XMonad.Layout.NoBorders
 import XMonad.Layout.Spacing
+import XMonad.Layout.Renamed
 
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
 
-myPink = "#ff79c6"
-myBlue = "#bd93f9"
-myBg   = "#282a36"
-myFg   = "#f8f8f2"
+import qualified XMonad.DBus as D
+
+myPink   = "#ff79c6"
+myBlue   = "#bd93f9"
+myCyan   = "#8be9fd"
+myRed    = "#ff5555"
+myGray   = "#44475a"
+myYellow = "#f1fa8c"
+myGreen  = "#50fa7b"
+myBg     = "#282a36"
+myFg     = "#f8f8f2"
 
 myTerminal           = "st"
 myBorderWidth        = 3
 myModMask            = mod4Mask
-myWorkspaces         = ["dev","web","pdf","mat","sys","vid","mail","net","chat"]
+myWorkspaces         = ["dev","web","doc","mat","sys","vid","mail","net","chat"]
 myNormalBorderColor  = myBg
 myFocusedBorderColor = myBlue
 
@@ -39,7 +48,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- applications
     [ ((modm, xK_Return), spawn $ XMonad.terminal conf)
     , ((modm, xK_n),      spawn "firefox")
-    , ((modm, xK_t),      spawn "thunderbird")
+    , ((modm, xK_e),      spawn "thunderbird")
     , ((modm, xK_c),      spawn $ myTerminal ++ " -c floating -e python")
     , ((modm, xK_s),      spawn $ myTerminal ++ " -c floating -e pulsemixer")
     , ((modm, xK_m),      spawn $ myTerminal ++ " -c floating -e ncmpcpp")
@@ -117,12 +126,10 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
                                        >> windows W.shiftMaster))
     ]
 
-myLayout = avoidStruts $ smartBorders $ smartSpacing 7 $ tiled ||| Full
+myLayout = avoidStruts $ renamed [CutWordsLeft 1] $ smartBorders $ smartSpacing 7 $ tiled ||| full
   where
-    tiled   = Tall nmaster delta ratio
-    nmaster = 1
-    ratio   = 1/2
-    delta   = 3/100
+    tiled   = renamed [Replace "[]="] $ Tall 1 (3/100) (1/2)
+    full    = renamed [Replace "[M]"] $ Full
 
 myManageHook = composeAll
     [ className =? "MPlayer"        --> doCenterFloat
@@ -134,8 +141,21 @@ myManageHook = composeAll
 
 myEventHook = mempty
 
+myDbus dbus = def
+    { ppOutput = D.send dbus
+    , ppCurrent = wrap ("%{F" ++ myCyan ++ "}[") "]%{F-}"
+    , ppVisible = wrap ("%{F" ++ myCyan ++ "}[") "]%{F-}"
+    , ppUrgent = wrap ("%{F" ++ myRed ++ "} ") " %{F-}"
+    , ppHidden = wrap " " " "
+    , ppHiddenNoWindows = wrap ("%{F" ++ myGray ++ "} ") " %{F-}"
+    , ppWsSep = ""
+    , ppSep = " "
+    , ppLayout = wrap ("%{F" ++ myPink ++ "}") "%{F-}"
+    , ppTitle = (wrap ("%{B" ++ myBlue ++ "}%{F" ++ myBg ++ "} ") " %{F-}%{B-}") . shorten 65
+    }
+
 myLogHook = showWNameLogHook def
-          { swn_font    = "xft:CaskaydiaCove Nerd Font-32"
+          { swn_font    = "xft:CaskaydiaCove Nerd Font-38"
           , swn_bgcolor = myBg
           , swn_color   = myFg
           , swn_fade    = (2/3) 
@@ -147,10 +167,12 @@ myStartupHook = do
     spawnOnce "lxqt-policykit-agent"
     spawnOnce "unclutter --timeout --jitter --start-hidden"
     spawnOnce "feh --no-fehbg --bg-fill ~/.config/wallpaper"
+    spawnOnce "polybar"
 
-main = xmonad $ docks . ewmhFullscreen . ewmh $ defaults
-
-defaults = def
+main = do
+    dbus <- D.connect
+    D.requestAccess dbus
+    xmonad $ docks . ewmhFullscreen . ewmh $ def
          { terminal           = myTerminal
          , focusFollowsMouse  = myFocusFollowsMouse
          , borderWidth        = myBorderWidth
@@ -165,6 +187,6 @@ defaults = def
          , layoutHook         = myLayout
          , manageHook         = myManageHook
          , handleEventHook    = myEventHook
-         , logHook            = myLogHook
+         , logHook            = myLogHook <+> dynamicLogWithPP (myDbus dbus)
          , startupHook        = myStartupHook
          }
