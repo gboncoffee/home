@@ -3,6 +3,7 @@ import Data.Monoid
 import System.Exit
 
 import XMonad.Util.SpawnOnce
+import XMonad.Util.Cursor
 
 import XMonad.Actions.CycleRecentWS
 import XMonad.Actions.DwmPromote
@@ -168,6 +169,7 @@ myStartupHook = do
     spawnOnce "unclutter --timeout --jitter --start-hidden"
     spawnOnce "feh --no-fehbg --bg-fill ~/.config/wallpaper"
     spawnOnce "polybar"
+    setDefaultCursor xC_left_ptr
 
 main = do
     dbus <- D.connect
