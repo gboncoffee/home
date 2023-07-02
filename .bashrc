@@ -52,6 +52,8 @@ alias convert-to-web='ffmpeg -i out.mp4 -c:v libx264 -crf 20 -preset slow -vf fo
 alias fuck='sudo $(fc -ln -1)'
 alias n=nnn
 alias ocaml='rlwrap ocaml'
+alias sbcl='rlwrap sbcl'
+alias find=fd
 
 # if on kitty, create the alias for ssh
 [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
