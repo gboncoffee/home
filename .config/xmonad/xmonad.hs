@@ -166,7 +166,7 @@ myStartupHook = do
     spawnOnce "picom"
     spawnOnce "luabatmon"
     spawnOnce "lxqt-policykit-agent"
-    spawnOnce "unclutter --timeout --jitter --start-hidden"
+    spawnOnce "unclutter --timeout --jitter --start-hidden --noevents"
     spawnOnce "feh --no-fehbg --bg-fill ~/.config/wallpaper"
     spawnOnce "polybar"
     setDefaultCursor xC_left_ptr
