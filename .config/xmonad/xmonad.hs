@@ -16,6 +16,7 @@ import XMonad.Hooks.ManageDocks
 
 import XMonad.Layout.NoBorders
 import XMonad.Layout.Tabbed
+import XMonad.Layout.ResizableTile
 
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
@@ -87,12 +88,14 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask, xK_k),      windows W.swapUp)
 
     -- layout
-    , ((modm,               xK_h),     sendMessage Shrink)
-    , ((modm,               xK_l),     sendMessage Expand)
-    , ((modm,               xK_space), sendMessage NextLayout)
-    , ((modm .|. shiftMask, xK_h),     sendMessage (IncMasterN 1))
-    , ((modm .|. shiftMask, xK_l),     sendMessage (IncMasterN (-1)))
-    , ((modm .|. shiftMask, xK_b),     sendMessage ToggleStruts)
+    , ((modm,                 xK_h),     sendMessage Shrink)
+    , ((modm,                 xK_l),     sendMessage Expand)
+    , ((modm,                 xK_space), sendMessage NextLayout)
+    , ((modm .|. shiftMask,   xK_h),     sendMessage (IncMasterN 1))
+    , ((modm .|. shiftMask,   xK_l),     sendMessage (IncMasterN (-1)))
+    , ((modm .|. shiftMask,   xK_b),     sendMessage ToggleStruts)
+    , ((modm .|. controlMask, xK_k),     sendMessage MirrorExpand)
+    , ((modm .|. controlMask, xK_j),     sendMessage MirrorShrink)
 
     -- float keys
     , ((modm,               xK_Left),  withFocused $ keysMoveWindow ((-10), 0))
@@ -125,9 +128,9 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
                                        >> windows W.shiftMaster))
     ]
 
-myLayout = avoidStruts $ smartBorders $ tiled ||| tab
+myLayout = avoidStruts $ smartBorders $ tiled ||| Mirror tiled ||| tab
   where
-    tiled  = Tall 1 (3/100) (1/2)
+    tiled  = ResizableTall 1 (3/100) (1/2) []
     tab    = tabbed shrinkText $ def
            { activeColor         = myBlue
            , activeBorderColor   = myBlue
