@@ -131,7 +131,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 myLayout = avoidStruts $ smartBorders $ tiled ||| Mirror tiled ||| tab
   where
     tiled  = ResizableTall 1 (3/100) (1/2) []
-    tab    = tabbed shrinkText $ def
+    tab    = tabbedBottom shrinkText $ def
            { activeColor         = myBlue
            , activeBorderColor   = myBlue
            , activeTextColor     = myBg
