@@ -41,7 +41,7 @@ export PYTHONSTARTUP="$XDG_CONFIG_HOME/pyrc.py"
 export GOPATH="$XDG_DATA_HOME/go"
 
 # default programs
-export EDITOR=vim
+export EDITOR=nvim-qt
 export BROWSER=firefox
 export TERMINAL=st
 

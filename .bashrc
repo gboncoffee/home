@@ -54,6 +54,7 @@ alias n=nnn
 alias ocaml='rlwrap ocaml'
 alias sbcl='rlwrap sbcl'
 alias find=fd
+alias nvim=nvim-qt
 
 # if on kitty, create the alias for ssh
 [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
