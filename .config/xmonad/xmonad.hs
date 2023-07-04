@@ -13,16 +13,12 @@ import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ShowWName
 import XMonad.Hooks.ManageDocks
-import XMonad.Hooks.DynamicLog
 
 import XMonad.Layout.NoBorders
-import XMonad.Layout.Spacing
-import XMonad.Layout.Renamed
+import XMonad.Layout.Tabbed
 
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
-
-import qualified XMonad.DBus as D
 
 myPink   = "#ff79c6"
 myBlue   = "#bd93f9"
@@ -33,6 +29,8 @@ myYellow = "#f1fa8c"
 myGreen  = "#50fa7b"
 myBg     = "#282a36"
 myFg     = "#f8f8f2"
+
+myFont = "xft:CaskaydiaCove Nerd Font-"
 
 myTerminal           = "st"
 myBorderWidth        = 3
@@ -127,10 +125,22 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
                                        >> windows W.shiftMaster))
     ]
 
-myLayout = avoidStruts $ renamed [CutWordsLeft 1] $ smartBorders $ smartSpacing 7 $ tiled ||| full
+myLayout = avoidStruts $ smartBorders $ tiled ||| tab
   where
-    tiled   = renamed [Replace "[]="] $ Tall 1 (3/100) (1/2)
-    full    = renamed [Replace "[M]"] $ Full
+    tiled  = Tall 1 (3/100) (1/2)
+    tab    = tabbed shrinkText $ def
+           { activeColor         = myBlue
+           , activeBorderColor   = myBlue
+           , activeTextColor     = myBg
+           , inactiveColor       = myBg
+           , inactiveBorderColor = myBg
+           , inactiveTextColor   = myFg
+           , urgentColor         = myRed
+           , urgentBorderColor   = myRed
+           , urgentTextColor     = myFg
+           , fontName            = myFont ++ "15"
+           , decoHeight          = 27
+           }
 
 myManageHook = composeAll
     [ className =? "MPlayer"        --> doCenterFloat
@@ -142,21 +152,8 @@ myManageHook = composeAll
 
 myEventHook = mempty
 
-myDbus dbus = def
-    { ppOutput = D.send dbus
-    , ppCurrent = wrap ("%{F" ++ myCyan ++ "}[") "]%{F-}"
-    , ppVisible = wrap ("%{F" ++ myCyan ++ "}[") "]%{F-}"
-    , ppUrgent = wrap ("%{F" ++ myRed ++ "} ") " %{F-}"
-    , ppHidden = wrap " " " "
-    , ppHiddenNoWindows = wrap ("%{F" ++ myGray ++ "} ") " %{F-}"
-    , ppWsSep = ""
-    , ppSep = " "
-    , ppLayout = wrap ("%{F" ++ myPink ++ "}") "%{F-}"
-    , ppTitle = (wrap ("%{B" ++ myBlue ++ "}%{F" ++ myBg ++ "} ") " %{F-}%{B-}") . shorten 65
-    }
-
 myLogHook = showWNameLogHook def
-          { swn_font    = "xft:CaskaydiaCove Nerd Font-38"
+          { swn_font    = myFont ++ "38"
           , swn_bgcolor = myBg
           , swn_color   = myFg
           , swn_fade    = (2/3) 
@@ -171,10 +168,7 @@ myStartupHook = do
     spawnOnce "polybar"
     setDefaultCursor xC_left_ptr
 
-main = do
-    dbus <- D.connect
-    D.requestAccess dbus
-    xmonad $ docks . ewmhFullscreen . ewmh $ def
+main = xmonad $ docks . ewmhFullscreen . ewmh $ def
          { terminal           = myTerminal
          , focusFollowsMouse  = myFocusFollowsMouse
          , borderWidth        = myBorderWidth
@@ -189,6 +183,6 @@ main = do
          , layoutHook         = myLayout
          , manageHook         = myManageHook
          , handleEventHook    = myEventHook
-         , logHook            = myLogHook <+> dynamicLogWithPP (myDbus dbus)
+         , logHook            = myLogHook
          , startupHook        = myStartupHook
          }
