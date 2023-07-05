@@ -4,8 +4,7 @@
 [ -f ~/.profile ] && . ~/.profile
 
 # set keyboard
-setxkbmap -layout "us,br"
-setxkbmap -option "grp:shifts_toggle"
+setxkbmap -layout "us(altgr-intl)"
 setxkbmap -option "caps:swapescape"
 
 # enable touch in touchpad
