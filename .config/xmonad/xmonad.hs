@@ -47,7 +47,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- applications
     [ ((modm, xK_Return), spawn $ XMonad.terminal conf)
-    , ((modm, xK_n),      spawn "firefox")
+    , ((modm, xK_n),      spawn "$BROWSER")
     , ((modm, xK_e),      spawn "thunderbird")
     , ((modm, xK_c),      spawn $ myTerminal ++ " -c floating -e python")
     , ((modm, xK_s),      spawn $ myTerminal ++ " -c floating -e pulsemixer")
@@ -62,7 +62,6 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,                 xK_b), spawn "dmenu_web")
     , ((modm .|. controlMask, xK_b), spawn "dmenu_bluetooth")
     , ((modm .|. controlMask, xK_d), spawn "monitors")
-    , ((modm .|. controlMask, xK_p), spawn "passmenu")
     , ((modm,                 xK_q), spawn "dmenu_shutdown")
 
     -- audio
@@ -170,6 +169,7 @@ myStartupHook = do
     spawnOnce "feh --no-fehbg --bg-fill ~/.config/wallpaper"
     spawnOnce "polybar"
     setDefaultCursor xC_left_ptr
+    spawn "xsetroot -cursor_name left_ptr"
 
 main = xmonad $ docks . ewmhFullscreen . ewmh $ def
          { terminal           = myTerminal

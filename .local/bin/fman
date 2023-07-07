@@ -1,2 +1,0 @@
-#/usr/bin/bash
-man $(man -k . | fzf --prompt='man> ' --no-preview | tr -d \(\) | awk '{printf "%s.%s", $1, $2}')

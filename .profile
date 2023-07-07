@@ -42,7 +42,7 @@ export GOPATH="$XDG_DATA_HOME/go"
 
 # default programs
 export EDITOR=nvim-qt
-export BROWSER=firefox
+export BROWSER=chromium
 export TERMINAL=st
 
 # fuck this language. Sun Microsystems and Oracle I FUCKING HATE YOU FOR
@@ -56,5 +56,6 @@ export JDK_JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -D
 # sensible defaults
 export GTK_USE_PORTAL=1
 export GTK_THEME=Dracula
-export QT_QPA_PLATFORMTHEME=qt6ct
+export QT_QPA_PLATFORMTHEME=qt5ct
+export QT_STYLE_OVERRIDE=kvantum
 export PATH="$HOME/.local/bin/:$HOME/opt/bin:$PATH:$HOME/.local/share/cargo/bin"

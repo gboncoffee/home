@@ -14,7 +14,6 @@ audio_output {
 visualizer_data_source = "/tmp/mpd.fifo"
 visualizer_output_name = "Visualizer"
 visualizer_in_stereo = "yes"
-visualizer_type = "spectrum"
 visualizer_autoscale = "yes"
 visualizer_spectrum_smooth_look = "yes"
 visualizer_color = "magenta"

@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 # lists bluetooth paired devices in dmenu, allow to toggle the connection. if no
 # device is connected, power off bluetooth

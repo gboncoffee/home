@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 # I got this just because setting everything in .profile would be terrible
 
@@ -7,4 +7,4 @@ export NNN_OPTS='EeduC'
 export NNN_BMS="d:$HOME/doc;b:$HOME/dls/;p:$HOME/pics;v:$HOME/vids;s:$HOME/src;l:$HOME/lib"
 export NNN_PLUG='u:getplugs;b:!setxbg $nnn'
 
-/usr/bin/nnn -T vt $@
+~/.nix-profile/bin/nnn -T vt $@

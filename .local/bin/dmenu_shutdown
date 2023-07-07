@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 ACTIONS="lock\nsuspend\nlogout\nrestart\nshutdown"
 CHOICE="$(echo -e $ACTIONS | dmenu -p 'session')"
@@ -18,6 +18,7 @@ then
 elif [ "$CHOICE" = "suspend" ]
 then
     slock systemctl suspend
+
 elif [ "$CHOICE" = "lock" ]
 then
     slock

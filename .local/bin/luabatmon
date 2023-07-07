@@ -1,4 +1,4 @@
-#!/usr/bin/luajit
+#!/usr/bin/env luajit
 
 --
 -- Copyright (c) 2022 Gabriel G. de Brito

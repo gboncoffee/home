@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 FILE=$(realpath "$1")
 echo $FILE
