@@ -4,13 +4,13 @@ NixOS|https://nixos.org/
 GitHub|https://github.com/
 gboncoffee|https://gboncoffee.github.io/
 Rust Docs|~/.local/share/rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc/rust/html/index.html
-Crates.io|https://crates.io/
+crates.io|https://crates.io/
 Lua Docs|~/opt/usr/doc/lua/manual/5.4/contents.html
 Python Docs|~/opt/usr/doc/python-3.11.2-docs-html/index.html
 Go Docs|https://go.dev/doc/
+pkg.go|https://pkg.go.dev/
 Mozilla Web Docs|https://developer.mozilla.org/en-US/docs/Web
 GPT|https://chat.openai.com/chat
-Suckless|https://suckless.org
 iCloud|https://www.icloud.com/
 YouTube|https://www.youtube.com/
 Twitch|https://www.twitch.tv
