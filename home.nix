@@ -29,6 +29,8 @@
     pulsemixer
     dunst
     libnotify
+    fd
+    ripgrep
   ];
 
   home.file = {
@@ -44,6 +46,7 @@
     ".local/bin/setxbg".source = ./.local/bin/setxbg;
     ".local/bin/nnn".source = ./.local/bin/nnn;
     ".config/bookmarks".source = ./.config/bookmarks;
+    ".config/chromium-flags.conf".source = ./.config/chromium-flags.conf;
     ".config/pyrc.py".source = ./.config/pyrc.py;
     ".config/user-dirs.locale".source = ./.config/user-dirs.locale;
     ".config/user-dirs.dirs".source = ./.config/user-dirs.dirs;
