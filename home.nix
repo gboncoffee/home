@@ -31,6 +31,8 @@
     libnotify
     fd
     ripgrep
+    mpdscribble
+    pcmanfm-qt
   ];
 
   home.file = {
