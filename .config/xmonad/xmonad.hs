@@ -17,6 +17,7 @@ import XMonad.Hooks.ManageDocks
 import XMonad.Layout.Spacing
 import XMonad.Layout.Tabbed
 import XMonad.Layout.ResizableTile
+import XMonad.Layout.NoBorders
 
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
@@ -127,7 +128,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
                                        >> windows W.shiftMaster))
     ]
 
-myLayout = avoidStruts $ tiled ||| Mirror tiled ||| tab
+myLayout = avoidStruts $ lessBorders OnlyScreenFloat $ tiled ||| Mirror tiled ||| tab
   where
     tiled  = spacingWithEdge 3 $ ResizableTall 1 (3/100) (1/2) []
     tab    = tabbedBottom shrinkText $ def
@@ -145,12 +146,13 @@ myLayout = avoidStruts $ tiled ||| Mirror tiled ||| tab
            }
 
 myManageHook = composeAll
-    [ className =? "MPlayer"        --> doCenterFloat
-    , className =? "vlc"            --> doCenterFloat
+    [ className =? "MPlayer"        --> doFullFloat
     , className =? "Gimp"           --> doCenterFloat
     , className =? "floating"       --> doCenterFloat
     , resource  =? "desktop_window" --> doIgnore
-    , resource  =? "kdesktop"       --> doIgnore ]
+    , resource  =? "kdesktop"       --> doIgnore
+    , isFullscreen                  --> doFullFloat
+    ]
 
 myEventHook = mempty
 
