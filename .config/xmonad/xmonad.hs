@@ -34,7 +34,7 @@ myFg     = "#f8f8f2"
 
 myFont = "xft:monospace-"
 
-myTerminal           = "st"
+myTerminal           = "alacritty"
 myBorderWidth        = 3
 myModMask            = mod4Mask
 myWorkspaces         = ["dev","web","doc","mat","sys","vid","mail","net","chat"]
@@ -50,9 +50,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     [ ((modm, xK_Return), spawn $ XMonad.terminal conf)
     , ((modm, xK_n),      spawn "$BROWSER")
     , ((modm, xK_e),      spawn "thunderbird")
-    , ((modm, xK_c),      spawn $ myTerminal ++ " -c floating -e python")
-    , ((modm, xK_s),      spawn $ myTerminal ++ " -c floating -e pulsemixer")
-    , ((modm, xK_m),      spawn $ myTerminal ++ " -c floating -e ncmpcpp")
+    , ((modm, xK_c),      spawn $ myTerminal ++ " --class floating -e python")
+    , ((modm, xK_s),      spawn $ myTerminal ++ " --class floating -e pulsemixer")
+    , ((modm, xK_m),      spawn $ myTerminal ++ " --class floating -e ncmpcpp")
     , ((modm, xK_f),      spawn $ myTerminal ++ " -e nnn")
 
     , ((modm,                 xK_p), spawn "flameshot gui")

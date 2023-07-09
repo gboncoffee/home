@@ -43,7 +43,7 @@ export GOPATH="$XDG_DATA_HOME/go"
 # default programs
 export EDITOR=nvim
 export BROWSER=chromium
-export TERMINAL=st
+export TERMINAL=alacritty
 
 # fuck this language. Sun Microsystems and Oracle I FUCKING HATE YOU FOR
 # CREATING THE POST-MODERN CYBERPUNK REALITY. I FUCKING HATE YOU ALL!!!!!!!

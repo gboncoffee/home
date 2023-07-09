@@ -52,6 +52,7 @@
     ".config/pyrc.py".source = ./.config/pyrc.py;
     ".config/user-dirs.locale".source = ./.config/user-dirs.locale;
     ".config/user-dirs.dirs".source = ./.config/user-dirs.dirs;
+    ".config/alacritty/alacritty.yml".source = ./.config/alacritty/alacritty.yml;
     ".config/cava/config".source = ./.config/cava/config;
     ".config/dunst/dunstrc".source = ./.config/dunst/dunstrc;
     ".config/git/config".source = ./.config/git/config;
