@@ -14,7 +14,7 @@ import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ShowWName
 import XMonad.Hooks.ManageDocks
 
-import XMonad.Layout.NoBorders
+import XMonad.Layout.Spacing
 import XMonad.Layout.Tabbed
 import XMonad.Layout.ResizableTile
 
@@ -31,7 +31,7 @@ myGreen  = "#50fa7b"
 myBg     = "#282a36"
 myFg     = "#f8f8f2"
 
-myFont = "xft:CaskaydiaCove Nerd Font-"
+myFont = "xft:monospace-"
 
 myTerminal           = "st"
 myBorderWidth        = 3
@@ -127,9 +127,9 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
                                        >> windows W.shiftMaster))
     ]
 
-myLayout = avoidStruts $ smartBorders $ tiled ||| Mirror tiled ||| tab
+myLayout = avoidStruts $ tiled ||| Mirror tiled ||| tab
   where
-    tiled  = ResizableTall 1 (3/100) (1/2) []
+    tiled  = spacingWithEdge 3 $ ResizableTall 1 (3/100) (1/2) []
     tab    = tabbedBottom shrinkText $ def
            { activeColor         = myBlue
            , activeBorderColor   = myBlue
@@ -140,7 +140,7 @@ myLayout = avoidStruts $ smartBorders $ tiled ||| Mirror tiled ||| tab
            , urgentColor         = myRed
            , urgentBorderColor   = myRed
            , urgentTextColor     = myFg
-           , fontName            = myFont ++ "15"
+           , fontName            = myFont ++ "16"
            , decoHeight          = 27
            }
 
@@ -155,7 +155,7 @@ myManageHook = composeAll
 myEventHook = mempty
 
 myLogHook = showWNameLogHook def
-          { swn_font    = myFont ++ "38"
+          { swn_font    = myFont ++ "42"
           , swn_bgcolor = myBg
           , swn_color   = myFg
           , swn_fade    = (2/3) 
