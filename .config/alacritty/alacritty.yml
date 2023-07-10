@@ -26,6 +26,7 @@ key_bindings:
   - { key: Minus,  mods: Control,       action: DecreaseFontSize }
   - { key: 0,      mods: Control,       action: ResetFontSize }
   - { key: Return, mods: Control,       action: SpawnNewInstance }
+  - { key: F11,                         action: ToggleFullscreen }
 
 # dracula colors
 colors:
