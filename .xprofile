@@ -2,13 +2,3 @@
 
 # load envvars
 [ -f ~/.profile ] && . ~/.profile
-
-# set keyboard
-setxkbmap -layout "us(altgr-intl)"
-setxkbmap -option "caps:swapescape"
-
-# tries to fix cursor
-xsetroot -cursor_name left_ptr
-
-# enable touch in touchpad
-xinput set-prop 14 345 1
