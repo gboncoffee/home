@@ -19,11 +19,10 @@
     opam
     ocaml
     gh
+    ghc
     # not dev
     fd
     ripgrep
-    mpd
-    cantata
   ];
 
   home.file = {
