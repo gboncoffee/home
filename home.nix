@@ -20,6 +20,8 @@
     ocaml
     gh
     ghc
+    gotools
+    luajit
     # not dev
     fd
     ripgrep

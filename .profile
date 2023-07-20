@@ -17,11 +17,11 @@ fi
 export PYTHONSTARTUP="$XDG_CONFIG_HOME/pyrc.py"
 export EDITOR=nvim
 export BROWSER=chromium
-export TERMINAL=alacritty
+export TERMINAL=tilix
 
 # this makes Java use GTK, system fonts and antialiasing
 export JDK_JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 
 # sensible defaults
-export GTK_THEME=Dracula
+QT_QPA_PLATFORMTHEME=gnome
 export PATH="$PATH:$HOME/.cargo/bin"
