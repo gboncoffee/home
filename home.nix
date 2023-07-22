@@ -15,7 +15,8 @@
     nodejs
     clang
     rustup
-    sbcl
+    clisp
+    racket
     opam
     ocaml
     gh
