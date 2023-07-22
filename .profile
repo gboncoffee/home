@@ -14,14 +14,12 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-export PYTHONSTARTUP="$XDG_CONFIG_HOME/pyrc.py"
-export EDITOR=nvim
+export PYTHONSTARTUP="$HOME/.config/pyrc.py"
+export EDITOR=vim
 export BROWSER=chromium
 export TERMINAL=tilix
 
 # this makes Java use GTK, system fonts and antialiasing
 export JDK_JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 
-# sensible defaults
-QT_QPA_PLATFORMTHEME=gnome
-export PATH="$PATH:$HOME/.cargo/bin"
+export PATH="$PATH:$HOME/.cargo/bin:$GOROOT/bin"

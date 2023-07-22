@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-FILE=$(realpath "$1")
-echo $FILE
-rm "$HOME/.config/wallpaper"
-ln -sf "$FILE" "$HOME/.config/wallpaper"
-feh --no-fehbg --bg-fill ~/.config/wallpaper
