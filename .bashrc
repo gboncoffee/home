@@ -8,17 +8,6 @@ HISTSIZE=1000
 HISTFILESIZE=2000
 shopt -s checkwinsize
 
-# fancy prompt
-reset=$(tput sgr0)
-bold=$(tput bold)
-white=$(tput setaf 7)
-magenta=$(tput setaf 5)
-yellow=$(tput setaf 3)
-blue=$(tput setaf 4)
-green=$(tput setaf 2)
-cyan=$(tput setaf 6)
-PS1="\\[$cyan\\]\\u\\[$bold\\]\\[$white\\]@\\[$reset\\]\\[$magenta\\]\\h\\[$bold\\]\\[$green\\] :: \\[$blue\\]\\w\n\\[$yellow\\]λ\\[$reset\\] "
-
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -56,5 +45,5 @@ alias find=fd
 # if on kitty, create the alias for ssh
 [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
 
-echo "$blue/\\${magenta}_$blue/\\"
-echo "$green=$cyan^$yellow.$cyan^$green="
+echo "/\\_/\\"
+echo "=^.^="

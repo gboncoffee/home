@@ -23,6 +23,7 @@
     ghc
     gotools
     luajit
+    stylish-haskell
     # not dev
     fd
     ripgrep
@@ -37,10 +38,10 @@
     ".config/git/config".source = ./.config/git/config;
     ".config/htop/htoprc".source = ./.config/htop/htoprc;
     ".config/tmux/tmux.conf".source = ./.config/tmux/tmux.conf;
-  };
-
-  xresources.properties = {
-    "Xcursor.theme" = "Dracula-cursors";
+    ".config/alacritty/alacritty.yml".source = ./.config/alacritty/alacritty.yml;
+    ".config/i3/config".source = ./.config/i3/config;
+    ".config/i3status/config".source = ./.config/i3status/config;
+    ".local/bin/rofi-power-menu".source = ./.local/bin/rofi-power-menu;
   };
 
   programs.home-manager.enable = true;
