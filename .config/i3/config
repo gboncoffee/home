@@ -29,7 +29,10 @@ bindsym $mod+n exec chromium
 bindsym $mod+f exec thunar
 
 # start thunderbird email client
-bindsym $mod+e thunderbird
+bindsym $mod+e exec thunderbird
+
+# start rhythmbox music player
+bindsym $mod+m exec rhythmbox
 
 # take a screenshot
 bindsym $mod+p exec flameshot gui

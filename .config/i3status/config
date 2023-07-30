@@ -19,6 +19,7 @@ battery 1 {
         format = "%status %percentage"
 	format_percentage = "%.00f%s"
 	low_threshold = 20
+	last_full_capacity = true
 }
 
 tztime local {
