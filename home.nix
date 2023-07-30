@@ -19,6 +19,9 @@
     racket
     opam
     ocaml
+    jdk
+    erlang
+    elixir
     gh
     ghc
     gotools
