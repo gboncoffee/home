@@ -27,6 +27,7 @@
     gotools
     luajit
     stylish-haskell
+    onefetch
     # not dev
     fd
     ripgrep
