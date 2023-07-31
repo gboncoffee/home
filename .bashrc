@@ -33,6 +33,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
+PS1="\n\[\033[1;32m\][\[\e]0;\u@\h: \w\a\]\u@\h:\w]\$\[\033[0m\] "
+
 alias music-dl='yt-dlp -i -x --audio-format mp3'
 alias convert-to-web='ffmpeg -i out.mp4 -c:v libx264 -crf 20 -preset slow -vf format=yuv420p -c:a aac -movflags +faststart output.mp4'
 alias fuck='sudo $(fc -ln -1)'
