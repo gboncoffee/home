@@ -16,27 +16,35 @@ colors:
     background: '0x002b36'
     foreground: '0x93a1a1'
 
+# colors:
+  # Default colors
+  primary:
+    background: '0x000000'
+    foreground: '0xffffff'
+
   # Normal colors
   normal:
-    black:   '0x002b36'
-    red:     '0xdc322f'
-    green:   '0x859900'
-    yellow:  '0xb58900'
-    blue:    '0x268bd2'
-    magenta: '0x6c71c4'
-    cyan:    '0x2aa198'
-    white:   '0x93a1a1'
+    black:   '0x000000'
+    red:     '0xcc0000'
+    green:   '0x4e9a06'
+    yellow:  '0xc4a000'
+    blue:    '0x3465a4'
+    magenta: '0x75507b'
+    cyan:    '0x06989a'
+    white:   '0xd3d7cf'
 
   # Bright colors
   bright:
-    black:   '0x657b83'
-    red:     '0xdc322f'
-    green:   '0x859900'
-    yellow:  '0xb58900'
-    blue:    '0x268bd2'
-    magenta: '0x6c71c4'
-    cyan:    '0x2aa198'
-    white:   '0xfdf6e3'
+    black:   '0x555753'
+    red:     '0xef2929'
+    green:   '0x8ae234'
+    yellow:  '0xfce94f'
+    blue:    '0x729fcf'
+    magenta: '0xad7fa8'
+    cyan:    '0x34e2e2'
+    white:   '0xeeeeec'
+
+draw_bold_text_with_bright_colors: true
 
 selection:
   save_to_clipboard: true
