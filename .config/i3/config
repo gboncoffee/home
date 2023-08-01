@@ -31,8 +31,8 @@ bindsym $mod+f exec thunar
 # start thunderbird email client
 bindsym $mod+e exec thunderbird
 
-# start rhythmbox music player
-bindsym $mod+m exec rhythmbox
+# start cantata music player
+bindsym $mod+m exec cantata
 
 # take a screenshot
 bindsym $mod+p exec flameshot gui
