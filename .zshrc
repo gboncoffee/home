@@ -21,6 +21,10 @@ setopt autocd notify
 bindkey -e
 # End of lines configured by zsh-newuser-install
 
+# sane word chars (sorry but bash does then the right way)
+autoload -U select-word-style
+select-word-style bash
+
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
