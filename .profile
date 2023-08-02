@@ -19,8 +19,6 @@ export EDITOR=vim
 export BROWSER=chromium
 export TERMINAL=alacritty
 
-export QT_QPA_PLATFORMTHEME=qt5ct
-
 # this makes Java use GTK, system fonts and antialiasing
 export JDK_JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 

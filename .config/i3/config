@@ -32,7 +32,7 @@ bindsym $mod+f exec thunar
 bindsym $mod+e exec thunderbird
 
 # start cantata music player
-bindsym $mod+m exec cantata
+bindsym $mod+m exec quodlibet
 
 # take a screenshot
 bindsym $mod+p exec flameshot gui
