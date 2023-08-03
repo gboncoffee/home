@@ -5,8 +5,7 @@
 --
 
 sleep = function(sec)
-    local s = os.clock()
-    while os.clock() - s < sec do end
+    os.execute("sleep " .. sec)
 end
 
 -- BATTERY_PATH = ""
