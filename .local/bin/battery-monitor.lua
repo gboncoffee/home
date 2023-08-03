@@ -103,5 +103,5 @@ state = {
 
 while true do
     state = update_and_notify(state)
-    sleep(1)
+    sleep(10)
 end
