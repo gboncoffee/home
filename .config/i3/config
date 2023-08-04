@@ -35,6 +35,9 @@ bindsym $mod+e exec thunderbird
 # start cantata music player
 bindsym $mod+m exec quodlibet
 
+# start emacs
+bindsym $mod+v exec emacs
+
 # take a screenshot
 bindsym $mod+p exec flameshot gui
 
