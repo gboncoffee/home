@@ -7,6 +7,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id battery-monitor.lua
+exec --no-startup-id emacs --daemon
 
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 1
@@ -36,7 +37,7 @@ bindsym $mod+e exec thunderbird
 bindsym $mod+m exec quodlibet
 
 # start emacs
-bindsym $mod+v exec emacs
+bindsym $mod+v exec emacsclient -c
 
 # take a screenshot
 bindsym $mod+p exec flameshot gui
