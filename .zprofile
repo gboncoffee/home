@@ -1,5 +1,5 @@
 export PYTHONSTARTUP="$HOME/.config/pyrc.py"
-export EDITOR=vim
+export EDITOR="emacsclient -c -a emacs"
 export BROWSER=chromium
 export TERMINAL=alacritty
 
