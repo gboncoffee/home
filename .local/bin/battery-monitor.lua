@@ -57,6 +57,10 @@ disconnected = function()
     notify_send("Charger disconnected.", "The computer is now on battery power.")
 end
 
+full = function()
+    notify_send("Battery in full capacity.", "You can disconnect the charger now.")
+end
+
 update_and_notify = function(state)
     local newstate = {
         state = getstate(),
@@ -64,8 +68,6 @@ update_and_notify = function(state)
         notc = state.notc,
     }
     local capac = getcapac()
-
-    print("Status: " .. newstate.state .. " Capacity: " .. capac)
 
     if (newstate.state == state.state) then
         if (not state.notf) and ((capac + 0) <= 20) then
@@ -81,10 +83,11 @@ update_and_notify = function(state)
             connected()
             newstate.notf = true
             newstate.notc = true
-            newstate.state = "Charging"
-        else
+        elseif (newstate.state == "Full") then
+            full()
+            newstate.notfull = true
+        elseif (newstate.state == "Discharging") then
             disconnected()
-            newstate.state = "Discharging"
             newstate.notf = false
             newstate.notc = false
         end
