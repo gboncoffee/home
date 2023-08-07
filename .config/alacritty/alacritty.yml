@@ -15,34 +15,31 @@ selection:
 mouse:
   hide_when_typing: true
 
-# Colors (Paper Theme from https://github.com/eendroroy/alacritty-theme)
+# acme theme (plan9 from bell labs)
 colors:
-  # Default colors
   primary:
-    background: '#F2EEDE'
+    background: '#ffffea'
     foreground: '#000000'
 
-  # Normal colors
   normal:
     black:   '#000000'
-    red:     '#CC3E28'
-    green:   '#216609'
-    yellow:  '#B58900'
-    blue:    '#1E6FCC'
-    magenta: '#5C21A5'
-    cyan:    '#158C86'
-    white:   '#AAAAAA'
+    red:     '#880000'
+    green:   '#005500'
+    yellow:  '#663311'
+    blue:    '#004488'
+    magenta: '#770077'
+    cyan:    '#007777'
+    white:   '#eeeecc'
 
-  # Bright colors
   bright:
-    black:   '#555555'
-    red:     '#CC3E28'
-    green:   '#216609'
-    yellow:  '#B58900'
-    blue:    '#1E6FCC'
-    magenta: '#5C21A5'
-    cyan:    '#158C86'
-    white:   '#AAAAAA'
+    black:   '#eaeaea'
+    red:     '#ffeaea'
+    green:   '#eaffea'
+    yellow:  '#eeee9e'
+    blue:    '#cceeff'
+    magenta: '#ffeaff'
+    cyan:    '#eaffff'
+    white:   '#ffffea'
 
 # `- { key: V, mods: Control|Shift, action: Paste }`
 #   - ToggleViMode

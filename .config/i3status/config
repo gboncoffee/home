@@ -9,9 +9,9 @@
 general {
         colors = true
         interval = 1
-	color_good = "#216609"
-	color_degraded = "#B58900"
-	color_bad = "#CC3E28"
+	color_good = "#005500"
+	color_degraded = "#663311"
+	color_bad = "#880000"
 }
 
 order += "cpu_temperature 0"
