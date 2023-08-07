@@ -1,12 +1,12 @@
 set $mod Mod4
 
-font pango:UbuntuMono Nerd Font Mono 18
+font pango:UbuntuMono Nerd Font Mono 16
 
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id pa-applet
-#exec --no-startup-id nitrogen --restore
+exec --no-startup-id nitrogen --restore
 exec --no-startup-id battery-monitor.lua
 exec --no-startup-id emacs --daemon
 exec --no-startup-id unclutter --ignore-scrolling --start-hidden
@@ -144,27 +144,9 @@ mode "resize" {
 bindsym $mod+Shift+r mode "resize"
 
 workspace_layout tabbed
-default_border normal 4
-
-# class                 border  backgr. text    indicator child_border
-client.focused          #158c86 #1e6fcc #f2eede #216609   #1e6fcc
-client.focused_inactive #aaaaaa #aaaaaa #000000 #aaaaaa   #aaaaaa
-client.unfocused        #aaaaaa #f2eede #000000 #aaaaaa   #f2eede
-client.urgent           #cc3e28 #cc3e28 #f2eede #cc3e28   #cc3e28
-client.placeholder      #000000 #0c0c0c #f2eede #000000   #0c0c0c
-
-client.background       #f2eede
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
         status_command i3status
-	colors {
-	       background #f2eede
-	       statusline #000000
-	       separator #aaaaaa
-	       focused_workspace #158c86 #1e6fcc #f2eede
-	       active_workspace #aaaaaa #aaaaaa #000000
-	       urgent_workspace #cc3e28 #cc3e28 #f2eede
-	}
 }
