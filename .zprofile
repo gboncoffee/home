@@ -1,7 +1,7 @@
 export PYTHONSTARTUP="$HOME/.config/pyrc.py"
 export EDITOR="emacsclient -c -a emacs"
 export BROWSER=chromium
-export TERMINAL=alacritty
+export TERMINAL=st
 
 export QT_QPA_PLATFORMTHEME=qt5ct
 

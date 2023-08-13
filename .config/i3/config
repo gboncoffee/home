@@ -32,7 +32,7 @@ bindsym $mod+f exec thunar
 # start thunderbird email client
 bindsym $mod+e exec thunderbird
 
-# start cantata music player
+# start quodlibet music player
 bindsym $mod+m exec quodlibet
 
 # start emacs
