@@ -36,7 +36,6 @@ nm-applet &
 blueman-applet &
 pa-applet &
 xfce4-power-manager &
-#exec --no-startup-id nitrogen --restore
 pgrep slstatus || slstatus &
 emacs --daemon &
 quodlibet --start-hidden &
