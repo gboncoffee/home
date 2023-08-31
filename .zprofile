@@ -5,8 +5,7 @@ export TERMINAL=st
 
 export QT_QPA_PLATFORMTHEME=qt5ct
 
-# this makes Java use GTK, system fonts and antialiasing. and fix issues with WM
-export JDK_JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
+# fixes stuff with Java and the window manager
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 export PATH="$PATH:$HOME/.cargo/bin:$HOME/go/bin:$HOME/.local/bin:$HOME/.luarocks/bin:$HOME/opt/bin"
