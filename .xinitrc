@@ -39,4 +39,5 @@ xfce4-power-manager &
 pgrep slstatus || slstatus &
 emacs --daemon &
 quodlibet --start-hidden &
+unclutter --ignore-scrolling --start-hidden &
 exec dwm
