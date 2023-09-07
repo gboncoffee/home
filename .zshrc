@@ -40,7 +40,7 @@ fi
 
 setopt print_exit_value
 NEWLINE=$'\n'
-PROMPT="${NEWLINE}%B%n@%m:%F{blue}%~%b%f$ "
+PROMPT="${NEWLINE}%B%F{green}[%n@%m:%~$]%f%b "
 
 alias music-dl='yt-dlp -i -x --audio-format mp3'
 alias convert-to-web='ffmpeg -i out.mp4 -c:v libx264 -crf 20 -preset slow -vf format=yuv420p -c:a aac -movflags +faststart output.mp4'
