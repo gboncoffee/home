@@ -35,8 +35,8 @@ fi
 nm-applet &
 blueman-applet &
 pa-applet &
-xfce4-power-manager &
 pgrep slstatus || slstatus &
+pgrep -f battery-monitor.lua || battery-monitor.lua &
 emacs --daemon &
 quodlibet --start-hidden &
 unclutter --ignore-scrolling --start-hidden &

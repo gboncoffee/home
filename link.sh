@@ -10,4 +10,6 @@ ln -sf $PWD/.xprofile ~/.xprofile
 ln -sf $PWD/.xinitrc ~/.xinitrc
 ln -sf $PWD/.bashrc ~/.bashrc
 ln -sf $PWD/.profile ~/.profile
+ln -sf $PWD/.zprofile ~/.zprofile
+ln -sf $PWD/.zshrc ~/.zshrc
 ln -sf $PWD/.ghci ~/.ghci
