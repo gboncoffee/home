@@ -13,3 +13,4 @@ ln -sf $PWD/.profile ~/.profile
 ln -sf $PWD/.zprofile ~/.zprofile
 ln -sf $PWD/.zshrc ~/.zshrc
 ln -sf $PWD/.ghci ~/.ghci
+ln -sf $PWD/.vim ~/.vim

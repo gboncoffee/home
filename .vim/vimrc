@@ -1,0 +1,52 @@
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+	silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" basics
+syntax on
+filetype plugin on
+set background=dark
+set clipboard=unnamedplus
+set title
+set hidden
+set wildmenu
+set incsearch
+set hlsearch
+set showcmd
+set ignorecase
+set smartcase
+set autoindent
+set smartindent
+set path+=**
+set dir="~/.vim/"
+set conceallevel=2
+set rnu nu
+runtime! ftplugin/man.vim
+
+" plugins
+call plug#begin()
+Plug 'gboncoffee/run.vim'
+Plug 'gboncoffee/cybercafe-vim-theme'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+call plug#end()
+
+" editor
+set tw=80
+set nowrap
+
+" maps
+nnoremap <Space>l :cnext<CR>
+nnoremap <Space>h :cprev<CR>
+nnoremap <Space>b :Compile<CR>
+nnoremap <Space>r :CompileReset<CR>
+nnoremap <Space>t :Run<CR>
+
+nnoremap <Space>t :copen<CR>
+nnoremap <Tab>    :bn<CR>
+nnoremap <S-Tab>  :bp<CR>
+nnoremap <C-l>    :nohl<CR>
+
+colorscheme cybercafe
