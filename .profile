@@ -32,5 +32,4 @@ export GOROOT="$HOME/.local/share/go"
 
 export BROWSER=chromium
 export EDITOR=vim
-export PYTHONSTARTUP="$HOME/.config/pyrc.py"
 export PATH="$HOME/opt/bin:$HOME/.local/bin:$PATH"
