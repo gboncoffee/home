@@ -40,13 +40,13 @@ fi
 
 setopt print_exit_value
 NEWLINE=$'\n'
+
 PROMPT="${NEWLINE}%B%F{green}[%n@%m:%~$]%f%b "
 
 alias music-dl='yt-dlp -i -x --audio-format mp3'
 alias convert-to-web='ffmpeg -i out.mp4 -c:v libx264 -crf 20 -preset slow -vf format=yuv420p -c:a aac -movflags +faststart output.mp4'
 alias fuck='sudo $(fc -ln -1)'
 alias ocaml='rlwrap ocaml'
-alias emacs='emacsclient -c'
 
 # if on kitty, create the alias for ssh
 [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"

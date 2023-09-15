@@ -1,12 +1,15 @@
-Xft.dpi:        96
-Xft.antialias:  true
-Xft.hinting:    true
-Xft.hintstyle:  hintfull
+Xft.antialias: true
+Xft.hinting: true
+Xft.hintstyle: hintfull
+Xft.rgba: rgb
 
 XClock.Clock.Face: "Monospace-24"
 XClock.Clock.analog: false
-XClock.Clock.Foreground: #f8f8f8
+XClock.Clock.Foreground: #ffffff
 XClock.Clock.update: 10
 
 *background: #303030
-*foreground: #f8f8f8
+*foreground: #ffffff
+
+Emacs.font: Monospace-22
+Emacs.geometry: 80x24
