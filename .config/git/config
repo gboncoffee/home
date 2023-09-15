@@ -2,7 +2,7 @@
 	email = gabrielgbrito@icloud.com
 	name = Gabriel G. de Brito
 [core]
-	editor = emacsclient -c -a emacs
+	editor = mg
 [advice]
 	addEmptyPathspec = false
 [init]
