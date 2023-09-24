@@ -11,5 +11,4 @@ XClock.Clock.update: 10
 *background: #303030
 *foreground: #ffffff
 
-Emacs.font: Monospace-22
 Emacs.geometry: 80x24
