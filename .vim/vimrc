@@ -20,6 +20,7 @@ set smartcase
 set autoindent
 set smartindent
 set path+=**
+set scrolloff=10
 set dir="~/.vim/"
 set conceallevel=2
 set rnu nu
@@ -42,7 +43,7 @@ nnoremap <Space>l :cnext<CR>
 nnoremap <Space>h :cprev<CR>
 nnoremap <Space>b :Compile<CR>
 nnoremap <Space>r :CompileReset<CR>
-nnoremap <Space>t :Run<CR>
+nnoremap <Space>a :caddbuffer<CR>
 
 nnoremap <Space>t :copen<CR>
 nnoremap <Tab>    :bn<CR>
