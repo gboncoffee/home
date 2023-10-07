@@ -2,7 +2,7 @@
 	email = gabrielgbrito@icloud.com
 	name = Gabriel G. de Brito
 [core]
-	editor = nano
+	editor = vim
 [advice]
 	addEmptyPathspec = false
 [init]

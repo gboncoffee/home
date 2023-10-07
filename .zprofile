@@ -1,8 +1,8 @@
-export EDITOR="emacsclient -c -a emacs"
+export EDITOR=vim
 export BROWSER=chromium
 export TERMINAL=st
 
-export QT_QPA_PLATFORMTHEME=qt5ct
+export GTK_USE_PORTAL=1
 
 # fixes stuff with Java and the window manager
 export _JAVA_AWT_WM_NONREPARENTING=1
