@@ -18,7 +18,6 @@ set path+=**
 set scrolloff=10
 set colorcolumn=+1
 set dir="~/.vim/"
-set rnu nu
 
 " plugins
 call plug#begin()
@@ -32,3 +31,4 @@ set tw=80
 set nowrap
 
 colorscheme cybercafe
+syntax off
