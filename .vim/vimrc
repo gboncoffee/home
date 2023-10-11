@@ -30,5 +30,6 @@ call plug#end()
 set tw=80
 set nowrap
 
+let g:cybercafe_soft=1
 colorscheme cybercafe
 syntax off
