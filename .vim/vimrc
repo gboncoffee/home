@@ -30,6 +30,8 @@ call plug#end()
 set tw=80
 set nowrap
 
+" languages
+autocmd FileType lua setlocal expandtab shiftwidth=4
+
 let g:cybercafe_soft=1
 colorscheme cybercafe
-syntax off
