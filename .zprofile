@@ -1,7 +1,3 @@
-export EDITOR=vim
-export BROWSER=chromium
-export TERMINAL=st
-
 export GTK_USE_PORTAL=1
 
 # fixes stuff with Java and the window manager
