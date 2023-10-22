@@ -1,0 +1,16 @@
+autoindent true
+font Monospace:size=22
+foreground #f8f8f8
+background #202020
+border #cccccc
+bind * Up command lineup
+bind * Down command linedown
+bind * Left command charleft
+bind * Right command charright
+bind C e command eol
+bind C a command bol
+bind C s command write
+bind C n command look
+bind C z command send u
+bind C BackSpace command delword
+bind C w command delword
