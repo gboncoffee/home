@@ -24,6 +24,8 @@ if [ -x /usr/bin/dircolors ]; then
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
+
+    alias ip='ip --color=auto'
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -37,8 +39,16 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# default bash prompt instead of Debian one
-PS1="\n\[\033[1;32m\][\[\e]0;\u@\h: \w\a\]\u@\h:\w]\$\[\033[0m\] "
+green="\[$(tput setaf 10)\]"
+blue="\[$(tput setaf 12)\]"
+bold="\[$(tput bold)\]"
+reset="\[$(tput sgr0)\]"
+export PS1="\n$bold$green\u@\h $blue\w $reset"
+
+alias music-dl='yt-dlp -i -x --audio-format mp3'
+alias convert-to-web='ffmpeg -i out.mp4 -c:v libx264 -crf 20 -preset slow -vf format=yuv420p -c:a aac -movflags +faststart output.mp4'
+alias fuck='sudo $(fc -ln -1)'
+alias ocaml='rlwrap ocaml'
 
 # if on kitty, create the alias for ssh
 [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"

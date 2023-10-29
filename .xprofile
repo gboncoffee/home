@@ -1,4 +1,4 @@
 #!/bin/sh
 
 # load envvars
-[ -f ~/.zprofile ] && . ~/.zprofile
+[ -f ~/.profile ] && . ~/.profile

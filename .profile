@@ -26,10 +26,11 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-# adding local Go install
-export PATH="$PATH:$HOME/.local/share/go/bin"
-export GOROOT="$HOME/.local/share/go"
+if [ "$XDG_CURRENT_DESKTOP" == "KDE" ] ; then
+    export GTK_USE_PORTAL=1
+fi
 
-export BROWSER=chromium
-export EDITOR=vim
-export PATH="$HOME/opt/bin:$HOME/.local/bin:$PATH"
+PATH="$PATH:$HOME/.cargo/bin:$HOME/go/bin:$HOME/.luarocks/bin:$HOME/opt/bin"
+
+# opam configuration
+test -r $HOME/.opam/opam-init/init.sh && . $HOME/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
