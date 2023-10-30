@@ -32,23 +32,32 @@ fi
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
 if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
+    if [ -f /usr/share/bash-completion/bash_completion ]; then
+	. /usr/share/bash-completion/bash_completion
+    elif [ -f /etc/bash_completion ]; then
+	. /etc/bash_completion
+    fi
 fi
 
+# show exit code if non-zero (zsh feature I like)
+show_code () {
+    local err=$?
+    if [ $err -ne 0 ]; then
+	echo -e "\n$(tput setaf 1)$(tput bold)bash exit: $err$(tput sgr0)"
+    else
+	echo -e ""
+    fi
+}
+export PROMPT_COMMAND=show_code
+
+# prompt
 green="\[$(tput setaf 10)\]"
 blue="\[$(tput setaf 12)\]"
 bold="\[$(tput bold)\]"
 reset="\[$(tput sgr0)\]"
-export PS1="\n$bold$green\u@\h $blue\w $reset"
+export PS1="$bold$green\u@\h $blue\w $reset"
 
 alias music-dl='yt-dlp -i -x --audio-format mp3'
 alias convert-to-web='ffmpeg -i out.mp4 -c:v libx264 -crf 20 -preset slow -vf format=yuv420p -c:a aac -movflags +faststart output.mp4'
 alias fuck='sudo $(fc -ln -1)'
 alias ocaml='rlwrap ocaml'
-
-# if on kitty, create the alias for ssh
-[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
