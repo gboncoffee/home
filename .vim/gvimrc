@@ -1,3 +1,6 @@
-set guifont=Monospace\ 24
+set guifont=Hack\ 24
 set guioptions-=T
+set guioptions-=m
+set guioptions-=r
+set guioptions-=L
 set guicursor+=a:blinkon0

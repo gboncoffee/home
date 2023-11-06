@@ -30,7 +30,4 @@ if [ "$XDG_CURRENT_DESKTOP" == "KDE" ] ; then
     export GTK_USE_PORTAL=1
 fi
 
-PATH="$PATH:$HOME/.cargo/bin:$HOME/go/bin:$HOME/.luarocks/bin:$HOME/opt/bin"
-
-# opam configuration
-test -r $HOME/.opam/opam-init/init.sh && . $HOME/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
+PATH="$PATH:$HOME/.cargo/bin:$HOME/go/bin:$HOME/opt/bin"
