@@ -1,0 +1,24 @@
+set autoindent
+set breaklonglines
+set cutfromcursor
+set fill 80
+set guidestripe 81
+set historylog
+set jumpyscrolling
+set locking
+#set minibar
+#set nohelp
+set mouse
+set multibuffer
+set smarthome
+set zap
+
+bind ^Z suspend main
+bind ^H chopwordleft main
+bind M-K comment main
+unbind M-J main
+unbind M-T main
+
+# disables all syntax, just keeping the trailing whitespace
+syntax "nothing" "."
+color ,red "[[:space:]]+$"
