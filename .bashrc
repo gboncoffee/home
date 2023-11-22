@@ -50,13 +50,6 @@ show_code () {
 }
 export PROMPT_COMMAND=show_code
 
-# prompt
-green="\[$(tput setaf 10)\]"
-blue="\[$(tput setaf 12)\]"
-bold="\[$(tput bold)\]"
-reset="\[$(tput sgr0)\]"
-export PS1="$bold$green\u@\h $blue\w $reset"
-
 alias music-dl='yt-dlp -i -x --audio-format mp3'
 alias convert-to-web='ffmpeg -i out.mp4 -c:v libx264 -crf 20 -preset slow -vf format=yuv420p -c:a aac -movflags +faststart output.mp4'
 alias fuck='sudo $(fc -ln -1)'
