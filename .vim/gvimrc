@@ -1,4 +1,4 @@
-set guifont=Iosevka\ Medium\ 20
+set guifont=Iosevka\ Medium\ 24
 set guioptions-=T
 set guioptions-=m
 set guioptions-=r

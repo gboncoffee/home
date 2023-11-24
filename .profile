@@ -26,9 +26,5 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-if [ "$XDG_CURRENT_DESKTOP" == "KDE" ] ; then
-    export GTK_USE_PORTAL=1
-fi
-
 export EDITOR=nano
 PATH="$PATH:$HOME/.cargo/bin:$HOME/go/bin:$HOME/opt/bin"
