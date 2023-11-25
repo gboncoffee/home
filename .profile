@@ -34,4 +34,4 @@ if [ -d "$HOME/opt/plan9" ]; then
 fi
 
 export EDITOR=nano
-PATH="$PATH:$HOME/.cargo/bin:$HOME/go/bin:$HOME/opt/bin"
+PATH="$HOME/opt/bin:$PATH:$HOME/.cargo/bin:$HOME/go/bin"
