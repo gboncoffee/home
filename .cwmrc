@@ -11,12 +11,16 @@ color menufg "#000000"
 fontname "Iosevka Medium:size=20"
 
 htile 65
-gap 50 0 0 0
+gap 44 0 0 0
 ignore xclock
 ignore panel
 
 command term st
 command lock slock
+command terminal st
+command browser firefox
+command music quodlibet
+command fm Thunar
 
 unbind-key all
 
@@ -50,3 +54,6 @@ bind-key 4C-r restart
 bind-mouse 4-1 window-move
 bind-mouse 4-3 window-resize
 bind-mouse 4-2 window-lower
+bind-mouse 4S-2 window-close
+bind-mouse 4S-1 window-hide
+bind-mouse 4S-3 window-maximize
