@@ -26,5 +26,12 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+# set PATH so it includes the plan 9 installation if it exists
+if [ -d "$HOME/opt/plan9" ]; then
+    PLAN9="$HOME/opt/plan9"
+    PATH="$PATH:$HOME/opt/plan9/bin"
+    export PLAN9
+fi
+
 export EDITOR=nano
 PATH="$PATH:$HOME/.cargo/bin:$HOME/go/bin:$HOME/opt/bin"

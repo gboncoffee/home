@@ -1,0 +1,52 @@
+borderwidth 5
+
+color inactiveborder "#000000"
+color activeborder "#880000"
+color urgencyborder "#eeee00"
+color font "#000000"
+color selfont "#ffffeb"
+color menubg "#ffffeb"
+color menufg "#000000"
+
+fontname "Iosevka Medium:size=20"
+
+htile 65
+gap 50 0 0 0
+ignore xclock
+ignore panel
+
+command term st
+command lock slock
+
+unbind-key all
+
+bind-key 4-Return terminal
+bind-key 4-a menu-exec
+bind-key 4-s menu-window
+bind-key 4-Tab window-cycle
+bind-key 4S-Tab window-rcycle
+
+bind-key 4-w window-close
+bind-key 4-h window-hide
+bind-key 4-f window-maximize
+bind-key 4S-u window-htile
+bind-key 4S-i window-vtile
+bind-key 4-u window-hmaximize
+bind-key 4-i window-vmaximize
+
+bind-key 4-Up window-move-up-big
+bind-key 4-Down window-move-down-big
+bind-key 4-Left window-move-left-big
+bind-key 4-Right window-move-right-big
+bind-key 4S-Up window-resize-up
+bind-key 4S-Down window-resize-down
+bind-key 4S-Left window-resize-left
+bind-key 4S-Right window-resize-right
+
+bind-key 4C-l lock
+bind-key 4C-q quit
+bind-key 4C-r restart
+
+bind-mouse 4-1 window-move
+bind-mouse 4-3 window-resize
+bind-mouse 4-2 window-lower
