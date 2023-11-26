@@ -10,4 +10,5 @@ if [ "$XDG_SESSION_DESKTOP" = "cwm" ]; then
     xsetroot -gray
     xclock -digital -strftime "%a %b %d, %H:%M" -geometry +0+0 &
     [ -f ~/.xprofile ] && . ~/.xprofile
+    setxkbmap -layout us -variant altgr-intl
 fi
