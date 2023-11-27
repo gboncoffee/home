@@ -13,11 +13,10 @@ while true; do
     sleep 1
 done &
 
-xsetroot -gray
+nitrogen --restore
 xsettingsd &
-[ -f ~/.xprofile ] && . ~/.xprofile
 setxkbmap -layout us -variant altgr-intl
 
 export GTK_USE_PORTAL=1
 
-exec dwm
+exec dbus-run-session -- dwm
