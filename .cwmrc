@@ -33,6 +33,7 @@ bind-key 4S-Tab window-rcycle
 bind-key 4-w window-close
 bind-key 4-h window-hide
 bind-key 4-f window-maximize
+bind-key 4S-f window-fullscreen
 bind-key 4S-u window-htile
 bind-key 4S-i window-vtile
 bind-key 4-u window-hmaximize
