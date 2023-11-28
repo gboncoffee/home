@@ -1,11 +1,11 @@
 borderwidth 5
 
-color inactiveborder "#000000"
-color activeborder "#880000"
-color urgencyborder "#eeee00"
+color inactiveborder "#ffffff"
+color activeborder "#000000"
+color urgencyborder "#880000"
 color font "#000000"
-color selfont "#ffffeb"
-color menubg "#ffffeb"
+color selfont "#ffffff"
+color menubg "#ffffff"
 color menufg "#000000"
 
 fontname "Iosevka Medium:size=20"
@@ -18,6 +18,8 @@ ignore panel
 command term st
 command lock slock
 command terminal st
+command 9env 9env
+command acme 9env acme
 command browser firefox
 command music quodlibet
 command fm Thunar
