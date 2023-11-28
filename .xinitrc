@@ -9,7 +9,7 @@ fi
 # status bar
 BAT=/sys/class/power_supply/BAT1
 while true; do
-    xsetroot -name "BAT $(cat $BAT/capacity) $(date +'%a %b %d, %H:%M')"
+    xsetroot -name " BAT $(cat $BAT/capacity) $(date +'%a %b %d, %H:%M')"
     sleep 1
 done &
 
