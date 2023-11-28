@@ -15,7 +15,7 @@ done &
 
 nitrogen --restore
 xsettingsd &
-setxkbmap -layout us -variant altgr-intl
+setxkbmap -option keypad:pointerkeys -layout us -variant altgr-intl
 
 export GTK_USE_PORTAL=1
 

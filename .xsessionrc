@@ -1,14 +1,14 @@
 #!/bin/sh
 
 if [ "$XDG_SESSION_DESKTOP" = "cwm" ]; then
-    trayer --edge top --align right --widthtype request --tint 0xffffeb --transparent true --alpha 0 --height 44 &
+    trayer --edge top --align right --widthtype request --tint 0xffffff --transparent true --alpha 0 --height 44 &
     nm-applet &
     pnmixer &
     xfce4-power-manager &
     xsettingsd &
     quodlibet --start-hidden &
-    xsetroot -gray
+    nitrogen --restore
     xclock -digital -strftime "%a %b %d, %H:%M" -geometry +0+0 &
     [ -f ~/.xprofile ] && . ~/.xprofile
-    setxkbmap -layout us -variant altgr-intl
+    setxkbmap -option keypad:pointerkeys -layout us -variant altgr-intl
 fi
