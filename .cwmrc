@@ -24,6 +24,12 @@ command browser firefox
 command music quodlibet
 command fm Thunar
 
+autogroup 2 Firefox-esr
+autogroup 2 Navigator
+autogroup 1 st-256color
+autogroup 1 acme
+autogroup 1 9term
+
 unbind-key all
 
 bind-key 4-Return terminal
