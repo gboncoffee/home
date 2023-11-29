@@ -1,0 +1,13 @@
+#!/usr/bin/env rc
+
+SHELL=rc
+MANPATH=$HOME/opt/plan9/man:$HOME/opt/share/man:/usr/local/man:/usr/local/share/man:/usr/share/man
+
+fn cd { builtin cd $1 && awd $sysname }
+
+tabstop=8
+
+vfont='/mnt/font/GoMedium/18a/font'
+mfont='/mnt/font/GoMono/22a/font'
+
+9 acme -a -f $vfont -F $mfont

@@ -1,0 +1,6 @@
+#!/usr/bin/env rc
+
+MANPATH=$HOME/opt/plan9/man:$HOME/opt/share/man:/usr/local/man:/usr/local/share/man:/usr/share/man
+SHELL=rc
+
+9 9term
