@@ -8,18 +8,18 @@ color selfont "#ffffff"
 color menubg "#ffffff"
 color menufg "#000000"
 
-fontname "Iosevka Medium:size=20"
+fontname "GoMedium:size=22"
 
 htile 65
-gap 44 0 0 0
+gap 0 0 0 150
 ignore xclock
 ignore panel
 
 command term st
 command lock slock
 command terminal st
-command 9env 9env
-command acme 9env acme
+command 9term 9term.rc
+command acme acme.rc
 command browser firefox
 command music quodlibet
 command fm Thunar

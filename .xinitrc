@@ -15,6 +15,7 @@ done &
 
 nitrogen --restore
 xsettingsd &
+plan9start.rc
 setxkbmap -option keypad:pointerkeys -layout us -variant altgr-intl
 
 export GTK_USE_PORTAL=1

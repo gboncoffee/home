@@ -26,11 +26,13 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-# set PATH so it includes the plan 9 installation if it exists
+# set PATH so it includes the plan 9 installation if it exists, and set Plan 9
+# configuration
 if [ -d "$HOME/opt/plan9" ]; then
     PLAN9="$HOME/opt/plan9"
     PATH="$PATH:$HOME/opt/plan9/bin"
     export PLAN9
+    export font='/mnt/font/GoMono/22a/font'
 fi
 
 export EDITOR=nano

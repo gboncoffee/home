@@ -1,14 +1,18 @@
 #!/bin/sh
 
+[ -f ~/.xprofile ] && . ~/.xprofile
+plan9start.rc
+
 if [ "$XDG_SESSION_DESKTOP" = "cwm" ]; then
-    trayer --edge top --align right --widthtype request --tint 0xffffff --transparent true --alpha 0 --height 44 &
+    trayer --edge top --align right --widthtype pixel --width 150 --height 40 --tint 0xffffff --transparent true --alpha 0 &
     nm-applet &
     pnmixer &
     xfce4-power-manager &
     xsettingsd &
     quodlibet --start-hidden &
     nitrogen --restore
-    xclock -digital -strftime "%a %b %d, %H:%M" -geometry +0+0 &
-    [ -f ~/.xprofile ] && . ~/.xprofile
+    xclock -digital -strftime '%F' -geometry 150x50+1770+40 &
+    xclock -digital -strftime '  %H  %M' -geometry 150x50+1770+90 &
+    xclock -geometry 150x150+1770+140 &
     setxkbmap -option keypad:pointerkeys -layout us -variant altgr-intl
 fi
