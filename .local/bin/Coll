@@ -1,0 +1,6 @@
+#!/usr/bin/env rc
+
+newline='
+'
+
+tr $newline ' ' | fmt -w80

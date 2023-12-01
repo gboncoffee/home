@@ -8,10 +8,10 @@ color selfont "#ffffff"
 color menubg "#ffffff"
 color menufg "#000000"
 
-fontname "GoMedium:size=22"
+fontname "sans:size=22"
 
 htile 65
-gap 0 0 0 150
+gap 40 0 0 0
 ignore xclock
 ignore panel
 

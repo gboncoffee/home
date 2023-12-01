@@ -2,5 +2,6 @@
 
 MANPATH=$HOME/opt/plan9/man:$HOME/opt/share/man:/usr/local/man:/usr/local/share/man:/usr/share/man
 SHELL=rc
+PAGER=nobs
 
 9 9term
