@@ -13,7 +13,7 @@ while true; do
     sleep 1
 done &
 
-nitrogen --restore
+xsetroot -solid '#757373'
 xsettingsd &
 plan9start.rc
 setxkbmap -option keypad:pointerkeys -layout us -variant altgr-intl

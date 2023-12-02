@@ -8,7 +8,7 @@ color selfont "#ffffff"
 color menubg "#ffffff"
 color menufg "#000000"
 
-fontname "sans:size=22"
+fontname "Roboto Condensed:size=22"
 
 htile 65
 gap 40 0 0 0
@@ -23,6 +23,7 @@ command acme acme.rc
 command browser firefox
 command music quodlibet
 command fm Thunar
+command mail thunderbird
 
 autogroup 2 Firefox-esr
 autogroup 2 Navigator

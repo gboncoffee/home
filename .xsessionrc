@@ -10,7 +10,8 @@ if [ "$XDG_SESSION_DESKTOP" = "cwm" ]; then
     xfce4-power-manager &
     xsettingsd &
     quodlibet --start-hidden &
-    nitrogen --restore
+    #nitrogen --restore
+    xsetroot -solid '#757373'
     xclock -digital -strftime '%F %H:%M' -geometry x40+0+0 &
     setxkbmap -option keypad:pointerkeys -layout us -variant altgr-intl
 fi

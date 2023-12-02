@@ -32,7 +32,7 @@ if [ -d "$HOME/opt/plan9" ]; then
     PLAN9="$HOME/opt/plan9"
     PATH="$PATH:$HOME/opt/plan9/bin"
     export PLAN9
-    export font='/mnt/font/NotoSansMono-Regular/22a/font'
+    export font='/mnt/font/Iosevka-Medium/22a/font'
 fi
 
 export EDITOR=nano
