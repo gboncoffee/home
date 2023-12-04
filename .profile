@@ -37,4 +37,3 @@ fi
 
 export EDITOR=nano
 PATH="$HOME/opt/bin:$PATH:$HOME/.cargo/bin:$HOME/go/bin"
-. "$HOME/.cargo/env"
