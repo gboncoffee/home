@@ -1,0 +1,46 @@
+# i3status configuration file.
+# see "man i3status" for documentation.
+
+# It is important that this file is edited as UTF-8.
+# The following line should contain a sharp s:
+# ß
+# If the above line is not correctly displayed, fix your editor first!
+
+general {
+        colors = true
+        color_good = "#008800"
+        color_degraded = "#888800"
+        color_bad = "#880000"
+        interval = 5
+}
+
+order += "cpu_temperature 0"
+order += "disk /"
+order += "battery all"
+order += "tztime local"
+
+cpu_temperature 0 {
+	format = "Coffee: %degrees °C"
+	max_threshold = 50
+	format_above_threshold = "Coffee temperature: %degrees °C too hot!"
+}
+
+disk "/" {
+	format = "Anime folder: %used"
+}
+
+battery all {
+	integer_battery_capacity = true
+	last_full_capacity = true
+	threshold_type = percentage
+	low_threshold = 20
+	status_chr = "↑"
+	status_bat = "↓"
+	status_unk = "?"
+	status_full = "="
+        format = "Caffeine stocks: %status %percentage"
+}
+
+tztime local {
+        format = "%Y-%m-%d %H:%M"
+}
