@@ -35,5 +35,6 @@ if [ -d "$HOME/opt/plan9" ]; then
     export font='/mnt/font/Iosevka-Medium/22a/font'
 fi
 
+export QT_QPA_PLATFORMTHEME=qt5ct
 export EDITOR=nano
 PATH="$HOME/opt/bin:$PATH:$HOME/.cargo/bin:$HOME/go/bin"

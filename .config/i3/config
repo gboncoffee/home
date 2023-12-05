@@ -4,7 +4,6 @@ font pango:Iosevka Medium 16
 
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
-exec --no-startup-id quodlibet --start-hidden
 exec --no-startup-id pnmixer
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id xsettingsd
@@ -21,14 +20,14 @@ tiling_drag modifier titlebar
 # start programs
 bindsym $mod+Return exec st
 bindsym $mod+b exec firefox
-bindsym $mod+m exec quodlibet
+bindsym $mod+m exec strawberry
 bindsym $mod+g exec acme.rc
 
 # kill focused window
 bindsym $mod+w kill
 
 # start dmenu (a program launcher)
-bindsym $mod+a exec --no-startup-id dmenu_run -fn 'Iosevka Medium:size=16'
+bindsym $mod+a exec --no-startup-id dmenu_run
 
 # change focus only with cursor keys
 bindsym $mod+Left focus left
@@ -136,7 +135,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-for_window [class="Quodlibet"] floating enable
 default_border normal 5px
 gaps inner 5px
 workspace_layout tabbed

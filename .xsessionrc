@@ -9,7 +9,6 @@ if [ "$XDG_SESSION_DESKTOP" = "cwm" ]; then
     pnmixer &
     xfce4-power-manager &
     xsettingsd &
-    quodlibet --start-hidden &
     nitrogen --restore
     #xsetroot -solid '#757373'
     xclock -digital -strftime '%F %H:%M' -geometry x40+0+0 &
