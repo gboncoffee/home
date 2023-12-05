@@ -1,10 +1,5 @@
-let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
-if empty(glob(data_dir . '/autoload/plug.vim'))
-	silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
 " basics
+syntax on
 set clipboard=unnamedplus
 set incsearch
 set hlsearch
@@ -14,23 +9,9 @@ set ignorecase
 set smartcase
 set autoindent
 set path+=**
-set scrolloff=10
 set colorcolumn=+1
 set dir="~/.vim/"
-
-" plugins
-call plug#begin()
-Plug 'gboncoffee/cybercafe-vim-theme'
-Plug 'tpope/vim-commentary'
-Plug 'editorconfig/editorconfig-vim'
-call plug#end()
-
-" editor
 set tw=80
-set nowrap
 
 " languages
 autocmd FileType lua setlocal expandtab shiftwidth=4
-
-let g:cybercafe_light=1
-colorscheme cybercafe
