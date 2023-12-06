@@ -146,7 +146,7 @@ workspace_layout tabbed
 # green:     #448444
 # <colorclass>          border  bg      text    indic   child_border
 client.focused          #000000 #eaffff #000000 #000000 #000000
-client.focused_inactive #000000 #448444 #000000 #000000 #000000
+client.focused_inactive #000000 #448444 #ffffff #000000 #000000
 client.unfocused        #000000 #ffffeb #000000 #000000 #000000
 client.urgent           #ffffff #880000 #ffffff #ffffff #000000
 client.placeholder      #000000 #ffffeb #000000 #000000 #000000

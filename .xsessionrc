@@ -13,4 +13,7 @@ if [ "$XDG_SESSION_DESKTOP" = "cwm" ]; then
     #xsetroot -solid '#757373'
     xclock -digital -strftime '%F %H:%M' -geometry x40+0+0 &
     setxkbmap -option keypad:pointerkeys -layout us -variant altgr-intl
+elif [ "$XDG_SESSION_DESKTOP" = "awesome" ]; then
+    xsettingsd &
+    setxkbmap -option keypad:pointerkeys -layout us -variant altgr-intl
 fi
