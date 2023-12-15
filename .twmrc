@@ -1,0 +1,96 @@
+NoGrabServer
+DecorateTransients
+DontMoveOff
+ShowIconManager
+
+TitleFont "terminus-iso8859-9-bold-24"
+ResizeFont "terminus-iso8859-9-bold-24"
+MenuFont "terminus-iso8859-9-bold-24"
+IconFont "terminus-iso8859-9-bold-24"
+IconManagerFont "terminus-iso8859-9-bold-24"
+
+Color
+{
+    BorderColor "#000000"
+    DefaultBackground "#ffffff"
+    DefaultForeground "#000000"
+    TitleBackground "#ffffff"
+    TitleForeground "#000000"
+    MenuBackground "#ffffff"
+    MenuForeground "#448444"
+    MenuBorderColor "#eaffff"
+    MenuTitleBackground "#eaffff"
+    MenuTitleForeground "#000000"
+    IconBackground "#ffffff"
+    IconForeground "#000000"
+    IconBorderColor "#000000"
+    IconManagerBackground "#eaffff"
+    IconManagerForeground "#000000"
+}
+
+AutoRaise
+{
+	"TWM Icon Manager"
+	"xclock"
+	"panel"
+}
+
+NoTitle {"TWM Icon Manager" "xclock" "panel"}
+
+MoveDelta 3
+Function "move-or-lower" { f.move f.deltastop f.lower }
+Function "move-or-raise" { f.move f.deltastop f.raise }
+Function "move-or-iconify" { f.move f.deltastop f.iconify }
+
+Button1 = : root : f.menu "main"
+Button3 = : root : f.menu "windowops"
+
+Button1 = m : window|icon : f.function "move-or-lower"
+Button2 = m : window|icon : f.iconify
+Button3 = m : window|icon : f.function "move-or-raise"
+
+Button1 = : title : f.function "move-or-raise"
+Button2 = : title : f.raiselower
+
+Button1 = : icon : f.function "move-or-iconify"
+Button2 = : icon : f.iconify
+
+Button1 = : iconmgr : f.iconify
+Button2 = : iconmgr : f.iconify
+
+menu "main"
+{
+		"Main Menu"		f.title
+		"Acme"			f.exec "acme.rc &"
+		"9term"			f.exec "9term.rc &"
+		"ANSI Terminal"		f.exec "st &"
+		"Web Browser"		f.exec "firefox &"
+		"File Manager"		f.exec "Thunar &"
+		"Music Player"		f.exec "strawberry &"
+		"G.I.M.P"		f.exec "gimp &"
+		""			f.nop
+		"Show Icon Manager"	f.showiconmgr
+		"Hide Icon Manager"	f.hideiconmgr
+		""			f.nop
+		"Exit"			f.menu "Quit-Verify"
+}
+
+menu "Quit-Verify"
+{
+		"Really quit twm?"	f.title
+		"No, restart twm"	f.restart
+		"Yes, really quit"	f.quit
+}
+
+menu "windowops"
+{
+		"Window Ops"		f.title
+		"Iconify"		f.iconify
+		"Resize"		f.resize
+		"Move"			f.move
+		"Raise"			f.raise
+		"Lower"			f.lower
+		""			f.nop
+		"Delete"		f.delete
+		"Destroy"		f.destroy
+}

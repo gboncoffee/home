@@ -3,17 +3,20 @@
 [ -f ~/.xprofile ] && . ~/.xprofile
 plan9start.rc
 
-if [ "$XDG_SESSION_DESKTOP" = "cwm" ]; then
-    trayer --edge top --align right --widthtype request --height 40 --tint 0xffffff --transparent true --alpha 0 &
+if [ "$XDG_SESSION_DESKTOP" = "twm" ]; then
+    trayer --edge bottom --align right --height 40 --widthtype request --tint 0xffffff --transparent true --alpha 0 &
     nm-applet &
     pnmixer &
     xfce4-power-manager &
     xsettingsd &
-    nitrogen --restore
-    #xsetroot -solid '#757373'
-    xclock -digital -strftime '%F %H:%M' -geometry x40+0+0 &
+    #nitrogen --restore
+    xsetroot -solid '#757373'
+    xclock -digital -strftime '%F %H:%M' -geometry x40+0+1040 &
     setxkbmap -option keypad:pointerkeys -layout us -variant altgr-intl
 elif [ "$XDG_SESSION_DESKTOP" = "awesome" ]; then
     xsettingsd &
     setxkbmap -option keypad:pointerkeys -layout us -variant altgr-intl
+    nm-applet &
+    pnmixer &
+    xfce4-power-manager &
 fi
