@@ -9,7 +9,4 @@ fn cd { builtin cd $1 && awd $sysname }
 
 tabstop=8
 
-vfont='/mnt/font/GoMedium/16a/font'
-mfont='/mnt/font/GoMono/16a/font'
-
-9 acme -a -f $vfont -F $mfont
+9 acme -a -f $font -F $font

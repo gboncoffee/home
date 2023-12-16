@@ -2,6 +2,10 @@ NoGrabServer
 DecorateTransients
 DontMoveOff
 ShowIconManager
+NoTitle
+NoRaiseOnMove
+NoRaiseOnResize
+IconifyByUnmapping
 
 TitleFont "terminus-iso8859-9-bold-24"
 ResizeFont "terminus-iso8859-9-bold-24"
@@ -28,14 +32,8 @@ Color
     IconManagerForeground "#000000"
 }
 
-AutoRaise
-{
-	"TWM Icon Manager"
-	"xclock"
-	"panel"
-}
-
 NoTitle {"TWM Icon Manager" "xclock" "panel"}
+IconManagerDontShow {"xclock" "panel"}
 
 MoveDelta 3
 Function "move-or-lower" { f.move f.deltastop f.lower }
@@ -44,10 +42,12 @@ Function "move-or-iconify" { f.move f.deltastop f.iconify }
 
 Button1 = : root : f.menu "main"
 Button3 = : root : f.menu "windowops"
+Button2 = : root : f.menu "TwmWindows"
 
-Button1 = m : window|icon : f.function "move-or-lower"
-Button2 = m : window|icon : f.iconify
-Button3 = m : window|icon : f.function "move-or-raise"
+Button1 = m4 : window|icon : f.function "move-or-lower"
+Button2 = m4 : window|icon : f.iconify
+Button3 = m4 : window|icon : f.function "move-or-raise"
+"f" = m4 : all : f.fullzoom
 
 Button1 = : title : f.function "move-or-raise"
 Button2 = : title : f.raiselower
@@ -57,6 +57,7 @@ Button2 = : icon : f.iconify
 
 Button1 = : iconmgr : f.iconify
 Button2 = : iconmgr : f.iconify
+Button3 = : iconmgr : f.raise
 
 menu "main"
 {
@@ -65,13 +66,15 @@ menu "main"
 		"9term"			f.exec "9term.rc &"
 		"ANSI Terminal"		f.exec "st &"
 		"Web Browser"		f.exec "firefox &"
-		"File Manager"		f.exec "Thunar &"
+		"File Manager"		f.exec "pcmanfm-qt &"
 		"Music Player"		f.exec "strawberry &"
+		"Mail Client"		f.exec "thunderbird &"
 		"G.I.M.P"		f.exec "gimp &"
 		""			f.nop
 		"Show Icon Manager"	f.showiconmgr
 		"Hide Icon Manager"	f.hideiconmgr
 		""			f.nop
+		"Suspend"		f.exec "systemctl suspend"
 		"Exit"			f.menu "Quit-Verify"
 }
 
@@ -88,8 +91,9 @@ menu "windowops"
 		"Iconify"		f.iconify
 		"Resize"		f.resize
 		"Move"			f.move
-		"Raise"			f.raise
-		"Lower"			f.lower
+		"Raise or Lower"	f.raiselower
+		""			f.nop
+		"Fullzoom"		f.fullzoom
 		""			f.nop
 		"Delete"		f.delete
 		"Destroy"		f.destroy

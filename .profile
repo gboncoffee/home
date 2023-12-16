@@ -32,7 +32,7 @@ if [ -d "$HOME/opt/plan9" ]; then
     PLAN9="$HOME/opt/plan9"
     PATH="$PATH:$HOME/opt/plan9/bin"
     export PLAN9
-    export font='/mnt/font/GoMono/16a/font'
+    export font='/mnt/font/TerminusTTF/20a/font'
 fi
 
 export QT_QPA_PLATFORMTHEME=qt5ct
