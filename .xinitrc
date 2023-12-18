@@ -20,5 +20,4 @@ setxkbmap -option keypad:pointerkeys -layout us -variant altgr-intl
 
 export GTK_USE_PORTAL=1
 
-#exec dbus-run-session -- dwm
-exec twm
+exec dbus-run-session -- dwm

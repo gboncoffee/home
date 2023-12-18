@@ -1,6 +1,0 @@
-set guifont=Iosevka\ Medium\ 24
-set guioptions-=T
-set guioptions-=m
-set guioptions-=r
-set guioptions-=L
-set guicursor+=a:blinkon0
