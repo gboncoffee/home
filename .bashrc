@@ -25,7 +25,7 @@ if ! shopt -oq posix; then
     fi
 fi
 
-export PS1='\n\u% '
+export PS1='\n\h% '
 
 alias music-dl='yt-dlp -i -x --audio-format mp3'
 alias fuck='sudo $(fc -ln -1)'

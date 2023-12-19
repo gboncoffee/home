@@ -3,4 +3,4 @@
 newline='
 '
 
-tr $newline ' ' | fmt -w80
+tr $newline ' ' | fmt $1
