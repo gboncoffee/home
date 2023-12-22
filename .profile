@@ -37,4 +37,4 @@ fi
 
 export QT_QPA_PLATFORMTHEME=qt5ct
 export EDITOR=nano
-PATH="$HOME/opt/bin:$PATH:$HOME/.cargo/bin:$HOME/go/bin"
+PATH="$HOME/opt/bin:$PATH:$HOME/go/bin"
