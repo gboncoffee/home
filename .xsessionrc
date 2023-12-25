@@ -1,12 +1,6 @@
 #!/bin/sh
 
-[ -f ~/.xprofile ] && . ~/.xprofile
-plan9start.rc
-
-if [ "$XDG_SESSION_DESKTOP" = "awesome" ]; then
-    xsettingsd &
-    setxkbmap -option keypad:pointerkeys -layout us -variant altgr-intl
-    nm-applet &
-    pnmixer &
-    xfce4-power-manager &
-fi
+kill -9 $(pgrep plumber) 2> /dev/null
+kill -9 $(pgrep fontsrv) 2> /dev/null
+plumber &
+fontsrv &

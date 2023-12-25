@@ -1,40 +1,14 @@
-# ~/.profile: executed by the command interpreter for login shells.
-# This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
-# exists.
-# see /usr/share/doc/bash/examples/startup-files for examples.
-# the files are located in the bash-doc package.
+# Set $PATH to prefer user and Plan 9 applications.
+PATH=${PATH%:$PLAN9/bin}
+PATH="$HOME/.local/bin:$HOME/opt/bin:$PLAN9/bin:$HOME/go/bin:$PATH"
+export PATH
 
-# the default umask is set in /etc/profile; for setting the umask
-# for ssh logins, install and configure the libpam-umask package.
-umask 077
+# Set MANPATH so Unix man can search Plan 9 manpages
+MANPATH="$PLAN9/man:/usr/share/man"
+export MANPATH
 
-# if running bash
-if [ -n "$BASH_VERSION" ]; then
-    # include .bashrc if it exists
-    if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
-    fi
-fi
-
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
-
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/.local/bin:$PATH"
-fi
-
-# set PATH so it includes the plan 9 installation if it exists, and set Plan 9
-# configuration
-if [ -d "$HOME/opt/plan9" ]; then
-    PLAN9="$HOME/opt/plan9"
-    PATH="$PATH:$HOME/opt/plan9/bin"
-    export PLAN9
-    export font='/mnt/font/Hack-Regular/16a/font'
-fi
-
-export QT_QPA_PLATFORMTHEME=qt5ct
-export EDITOR=nano
-PATH="$HOME/opt/bin:$PATH:$HOME/go/bin"
+# Plan 9 fonts
+font=/mnt/font/NotoSansMono-Regular/16a/font
+vfont=/mnt/font/NotoSans-Regular/16a/font
+export font
+export vfont

@@ -1,0 +1,12 @@
+#!/usr/bin/env rc
+
+PAGER=nobs
+EDITOR=E
+SHELL=rc
+
+fn cd { builtin cd $1 && awd $sysname }
+fn man { u man $* }
+
+tabstop=8
+
+9 acme -a -f $vfont -F $font

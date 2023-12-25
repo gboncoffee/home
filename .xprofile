@@ -1,4 +1,0 @@
-#!/bin/sh
-
-# load envvars
-[ -f ~/.profile ] && . ~/.profile

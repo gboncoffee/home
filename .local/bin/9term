@@ -1,0 +1,9 @@
+#!/usr/bin/env rc
+
+SHELL=rc
+PAGER=nobs
+EDITOR=sam
+
+fn man { u man $* }
+
+9 9term
