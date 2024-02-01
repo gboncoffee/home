@@ -31,8 +31,11 @@ fi
 if [ -d "$HOME/opt/plan9" ]; then
     PLAN9="$HOME/opt/plan9"
     PATH="$PATH:$HOME/opt/plan9/bin"
+fi
+if [ -n "$PLAN9" ]; then
     export PLAN9
-    export font='/mnt/font/Hack-Regular/16a/font'
+    export font='/mnt/font/CascadiaCode-Regular/16a/font'
+    export vfont='/mnt/font/NotoSans-Medium/14a/font'
 fi
 
 export EDITOR=nano

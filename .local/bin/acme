@@ -1,12 +1,12 @@
 #!/usr/bin/env rc
 
+SHELL=rc
 PAGER=nobs
 EDITOR=E
-SHELL=rc
+PATH=$HOME/.local/bin:$PLAN9/bin:$PATH
 
 fn cd { builtin cd $1 && awd $sysname }
-fn man { u man $* }
 
 tabstop=8
 
-9 acme -a -f $vfont -F $font
+$PLAN9/bin/acme -a -f $vfont -F $font

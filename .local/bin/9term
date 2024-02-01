@@ -3,7 +3,6 @@
 SHELL=rc
 PAGER=nobs
 EDITOR=sam
+PATH=$HOME/.local/bin:$PLAN9/bin:$PATH
 
-fn man { u man $* }
-
-9 9term
+$PLAN9/bin/9term

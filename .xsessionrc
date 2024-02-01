@@ -1,6 +1,0 @@
-#!/bin/sh
-
-kill -9 $(pgrep plumber) 2> /dev/null
-kill -9 $(pgrep fontsrv) 2> /dev/null
-plumber &
-fontsrv &

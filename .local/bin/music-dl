@@ -1,3 +1,4 @@
 #!/bin/sh
 
+which yt-dlp
 yt-dlp -i -x --audio-format mp3 $@
