@@ -34,9 +34,10 @@ if [ -d "$HOME/opt/plan9" ]; then
 fi
 if [ -n "$PLAN9" ]; then
     export PLAN9
-    export font='/mnt/font/CascadiaCode-Regular/16a/font'
-    export vfont='/mnt/font/NotoSans-Medium/14a/font'
+    export font='/mnt/font/CascadiaCode-Regular/14a/font'
+    export vfont='/mnt/font/NotoSans-Medium/12a/font'
 fi
 
-export EDITOR=nano
+export EDITOR=vim
+export BROWSER=chromium
 PATH="$HOME/opt/bin:$PATH:$HOME/go/bin"
