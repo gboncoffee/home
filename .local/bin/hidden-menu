@@ -1,0 +1,5 @@
+#!/bin/sh
+
+sel="$(hidden -c |dmenu)"
+
+echo $sel | awk -F "':'" '{print $2}' | sed "s/'//" | sh
