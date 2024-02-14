@@ -1,0 +1,31 @@
+import = ["~/.config/alacritty/papertheme.toml"]
+
+[font]
+size = 10.0
+
+[font.normal]
+family = "Fragment Mono"
+
+[shell]
+program = "/bin/tmux"
+args = ["new", ";", "split-window", "-h", "tty-clock -c", ";", "lastp"]
+
+[window]
+title = "Login"
+dynamic_title = false
+
+[window.dimensions]
+columns = 78
+lines = 12
+
+[window.position]
+x = 974
+
+[selection]
+save_to_clipboard = true
+
+[keyboard]
+bindings = [
+   { key = "v", mods = "Control|Shift", action = "Paste" },
+   { key = "c", mods = "Control|Shift", action = "Copy" }
+]
