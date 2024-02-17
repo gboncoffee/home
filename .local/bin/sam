@@ -1,0 +1,4 @@
+#!/bin/env bash
+
+plumber
+$PLAN9/bin/sam -a $@

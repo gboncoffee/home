@@ -1,14 +1,13 @@
 import = ["~/.config/alacritty/papertheme.toml"]
 
+[colors.primary]
+background = "#eaffea"
+
 [font]
 size = 10.0
 
 [font.normal]
 family = "Fragment Mono"
-
-[shell]
-program = "/bin/tmux"
-args = ["new", ";", "split-window", "-h", "tty-clock -c", ";", "lastp"]
 
 [window]
 title = "Login"
