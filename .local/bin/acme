@@ -9,6 +9,4 @@ fn cd { builtin cd $1 && awd $sysname }
 
 tabstop=8
 
-plumber
-$PLAN9/bin/acme -a -f $vfont -F $font
-kill plumber | sh
+$PLAN9/bin/acme -a -f $font -F $font

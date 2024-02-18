@@ -34,8 +34,7 @@ if [ -d "$HOME/opt/plan9" ]; then
 fi
 if [ -n "$PLAN9" ]; then
     export PLAN9
-    export font='/mnt/font/FragmentMono-Regular/14a/font'
-    export vfont='/mnt/font/LiberationSans/12a/font'
+    export font='/mnt/font/LiberationMono/12a/font'
 fi
 
 export EDITOR=vim
