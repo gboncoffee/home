@@ -13,6 +13,10 @@ save_to_clipboard = true
 columns = 80
 lines = 24
 
+[window.position]
+x = 300
+y = 300
+
 [keyboard]
 bindings = [
    { key = "Return", mods = "Control|Shift", action = "SpawnNewInstance" },

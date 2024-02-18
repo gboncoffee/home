@@ -33,8 +33,8 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 export _JAVA_AWT_WM_NONREPARENTING=1
-trayer --edge top --align left --widthtype request --height 64 --alpha 0 &
-xclock -digital -strftime '%Y-%m-%d %H:%M' -face 'Liberation Sans:size=22' -geometry +300+0 &
+trayer --edge top --align left --widthtype request --height 32 --alpha 0 &
+xclock -digital -strftime '%Y-%m-%d %H:%M' -face 'Liberation Sans:size=12' -geometry +500+0 &
 nm-applet &
 pnmixer &
 xfce4-power-manager &

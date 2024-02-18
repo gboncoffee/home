@@ -14,11 +14,11 @@ title = "Login"
 dynamic_title = false
 
 [window.dimensions]
-columns = 78
+columns = 50
 lines = 12
 
 [window.position]
-x = 974
+x = 1313
 
 [selection]
 save_to_clipboard = true
