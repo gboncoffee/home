@@ -4,7 +4,7 @@ import = ["~/.config/alacritty/papertheme.toml"]
 background = "#eaffea"
 
 [font]
-size = 9.0
+size = 8.0
 
 [font.normal]
 family = "Liberation Mono"
@@ -18,7 +18,7 @@ columns = 50
 lines = 12
 
 [window.position]
-x = 1362
+x = 1414
 
 [selection]
 save_to_clipboard = true
