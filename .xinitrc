@@ -33,16 +33,9 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 export _JAVA_AWT_WM_NONREPARENTING=1
-trayer --edge top --align left --widthtype request --height 32 --alpha 0 &
-xclock -digital -strftime '%Y-%m-%d %H:%M' -face 'Liberation Sans:size=12' -geometry +500+0 &
-nm-applet &
-pnmixer &
-xfce4-power-manager &
 xsettingsd &
-#nitrogen --restore
-xsetroot -solid '#757373'
 setxkbmap -option keypad:pointerkeys -layout us -variant altgr-intl
-slstatus &
 redshift -l $(curl -s "https://location.services.mozilla.com/v1/geolocate?key=geoclue" | awk 'OFS=":" {print $3,$5}' | tr -d ',}') &
-iguassu &
-exec alacritty --config-file ~/.config/alacritty/alacritty-login.toml
+wwtobu &
+slstatus &
+exec iguassu
