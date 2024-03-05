@@ -1,0 +1,18 @@
+#!/usr/bin/env -S 9 rc
+
+ctmp=`{mktemp Sizeof.XXXXXX.c}
+
+9p read acme/$winid/body >> $ctmp
+
+echo '#include <stdio.h>' >> $ctmp
+echo 'int main(void){' >> $ctmp
+echo 'printf("%d\n", sizeof(' $1 '));' >> $ctmp
+echo 'return 0;' >> $ctmp
+echo '}' >> $ctmp
+
+size=`{tcc -run $ctmp}
+
+echo -n 'sizeof(' $1 ') = ' | 9p write acme/$winid/errors
+echo $size | 9p write acme/$winid/errors
+
+rm -f $ctmp

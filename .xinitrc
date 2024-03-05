@@ -36,6 +36,5 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 xsettingsd &
 setxkbmap -option keypad:pointerkeys -layout us -variant altgr-intl
 redshift -l $(curl -s "https://location.services.mozilla.com/v1/geolocate?key=geoclue" | awk 'OFS=":" {print $3,$5}' | tr -d ',}') &
-wwtobu &
 slstatus &
-exec iguassu
+exec tibaji
