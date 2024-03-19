@@ -4,7 +4,7 @@ import = ["~/.config/alacritty/papertheme.toml"]
 size = 8.0
 
 [font.normal]
-family = "Go Mono"
+family = "Liberation Mono"
 
 [selection]
 save_to_clipboard = true
