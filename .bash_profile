@@ -34,7 +34,7 @@ if [ -d "$HOME/opt/plan9" ]; then
 fi
 if [ -n "$PLAN9" ]; then
     export PLAN9
-    export font="/mnt/font/LiberationMono/11a/font"
+    export font="$PLAN9/font/pelm/unicode.9.font"
 fi
 
 export EDITOR=sam
