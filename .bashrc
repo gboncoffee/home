@@ -25,4 +25,5 @@ if ! shopt -oq posix; then
     fi
 fi
 
-export PS1='\n\h% '
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'

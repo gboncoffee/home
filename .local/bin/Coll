@@ -1,6 +1,0 @@
-#!/usr/bin/env rc
-
-newline='
-'
-
-tr $newline ' ' | fmt $1

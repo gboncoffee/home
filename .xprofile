@@ -1,6 +1,3 @@
 #!/bin/sh
 
-plumber &
-fontsrv &
-
 . ~/.bash_profile

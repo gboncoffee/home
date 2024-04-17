@@ -16,27 +16,5 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
-
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/.local/bin:$PATH"
-fi
-
-# set PATH so it includes the plan 9 installation if it exists, and set Plan 9
-# configuration
-if [ -d "$HOME/opt/plan9" ]; then
-    PLAN9="$HOME/opt/plan9"
-    PATH="$PATH:$HOME/opt/plan9/bin"
-fi
-if [ -n "$PLAN9" ]; then
-    export PLAN9
-    export font="/mnt/font/LiberationMono/13a/font"
-fi
-
-export EDITOR=sam
 export BROWSER=chromium
-PATH="$HOME/opt/bin:$PATH:$HOME/go/bin"
+PATH="$HOME/.local/bin:$HOME/opt/bin:$PATH:$HOME/go/bin"

@@ -1,8 +1,0 @@
-#!/usr/bin/env rc
-
-SHELL=rc
-PAGER=nobs
-EDITOR=sam
-PATH=$HOME/.local/bin:$PLAN9/bin:$PATH
-
-$PLAN9/bin/9term
