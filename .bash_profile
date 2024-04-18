@@ -1,20 +1,8 @@
-# ~/.profile: executed by the command interpreter for login shells.
-# This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
-# exists.
-# see /usr/share/doc/bash/examples/startup-files for examples.
-# the files are located in the bash-doc package.
+# .bash_profile
 
-# the default umask is set in /etc/profile; for setting the umask
-# for ssh logins, install and configure the libpam-umask package.
-umask 077
-
-# if running bash
-if [ -n "$BASH_VERSION" ]; then
-    # include .bashrc if it exists
-    if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
-    fi
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+    . ~/.bashrc
 fi
 
-export BROWSER=chromium
-PATH="$HOME/.local/bin:$HOME/opt/bin:$PATH:$HOME/go/bin"
+# User specific environment and startup programs
