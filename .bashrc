@@ -27,3 +27,4 @@ unset rc
 PATH="$PATH:$HOME/opt/bin:$HOME/go/bin"
 export PATH
 [ -f "/home/gabriel/.ghcup/env" ] && . "/home/gabriel/.ghcup/env" # ghcup-env
+. "$HOME/.cargo/env"

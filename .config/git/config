@@ -4,7 +4,7 @@
 [advice]
 	addEmptyPathspec = false
 [init]
-	defaultBranch = master
+	defaultBranch = main
 [format]
 	pretty = oneline
 [receive]
