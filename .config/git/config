@@ -9,3 +9,5 @@
 	pretty = oneline
 [receive]
 	denyCurrentBranch = warn
+[core]
+	editor = xed
