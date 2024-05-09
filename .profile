@@ -26,6 +26,11 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+# set PATH so it includes opt/bin if it exists
+if [ -d "$HOME/opt/bin" ] ; then
+    PATH="$HOME/opt/bin:$PATH"
+fi
+
 export ASDF_DIR="$HOME/.asdf"
 . "$HOME/.asdf/asdf.sh"
 export PATH="$PATH:/usr/local/go/bin:$HOME/go/bin"
