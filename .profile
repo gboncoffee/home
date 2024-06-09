@@ -34,3 +34,4 @@ fi
 export ASDF_DIR="$HOME/.asdf"
 . "$HOME/.asdf/asdf.sh"
 export PATH="$PATH:/usr/local/go/bin:$HOME/go/bin"
+. "$HOME/.cargo/env"
